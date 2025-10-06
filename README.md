@@ -10,7 +10,7 @@
 
 | Nombre | Formación | GitHub |
 |--------|-----------|--------|
-| Paula Leylen Ramirez| Licenciada en Economía - UNL | [@paulaleylen](https://github.com/paulaleylen) |
+| Paula Leylén Ramirez| Licenciada en Economía - UNL | [@paulaleylen](https://github.com/paulaleylen) |
 | Juan Ignacio Pintos | Licenciado en Ciencia Política - UDELAR | [@juanpintoselso33](https://github.com/juanpintoselso33) |
 | [Integrante 3] | [Completar] | [@usuario3](https://github.com/usuario3) |
 
@@ -73,5 +73,6 @@ BigDataUBA-GrupoJLP/
 **Universidad de Buenos Aires - Facultad de Ciencias Económicas**  
 **Maestría en Economía Aplicada**  
 **Taller de Programación - 2025**
+
 
 
