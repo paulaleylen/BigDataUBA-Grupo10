@@ -1,4 +1,4 @@
-﻿# BigDataUBA-GrupoJLP
+﻿# BigDataUBA-Grupo10
 
 **Taller de Programación - Big Data**  
 **Universidad de Buenos Aires - Facultad de Ciencias Económicas**  
@@ -101,6 +101,7 @@ jupyter notebook Program_TP1_GrupoJLP.ipynb
 
 **Universidad de Buenos Aires - Facultad de Ciencias Económicas**  
 **Taller de Programación - 2025**
+
 
 
 
