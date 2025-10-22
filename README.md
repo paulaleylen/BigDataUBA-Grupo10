@@ -1,4 +1,4 @@
-﻿# BigDataUBA-GrupoJLP
+﻿# BigDataUBA-Grupo10
 
 **Taller de Programación - Big Data**  
 **Universidad de Buenos Aires - Facultad de Ciencias Económicas**  
