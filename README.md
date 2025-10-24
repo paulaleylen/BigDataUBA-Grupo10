@@ -45,13 +45,33 @@ Análisis comparativo de pobreza usando la Encuesta Permanente de Hogares (EPH-I
 
 ---
 
+### ✅ TP2: Histogramas, Kernels & Métodos No Supervisados
+
+**Estado:** Completado ✅  
+**Fecha entrega:** [24 de octubre]
+
+**Descripción:**  
+Análisis exploratorio con técnicas de visualización (histogramas y kernels) y aplicación de métodos no supervisados (PCA y clustering) sobre datos de la EPH.
+
+**Métodos aplicados:**
+- **Parte I:** Creación de variables, histogramas y distribuciones kernel
+- **Parte II:** Matriz de correlaciones, PCA, K-means, clustering jerárquico
+
+**Tecnologías:** Python, Pandas, Scikit-learn, Matplotlib, Seaborn, SciPy  
+**Entregables:** Notebook, Informe PDF, Módulo de gráficos UBA-FCE
+
+📂 **Ver detalles:** [TP2/README.md](./TP2/README.md)
+
+---
+
 ## 📁 Estructura del Repositorio
 
 ```
 BigDataUBA-GrupoJLP/
 ├── README.md                        # Este archivo
 ├── .gitignore                       # Excluye datos/ de cada TP
-└── TP1/                            # ✅ Trabajo Práctico 1
+├── TP1/                             # ✅ Trabajo Práctico 1
+└── TP2/                             # ✅ Trabajo Práctico 2
 ```
 
 ---
@@ -71,7 +91,14 @@ pip install -r requirements.txt
 jupyter notebook Program_TP1_GrupoJLP.ipynb
 ```
 
-**Nota:** Descargar datos EPH desde [INDEC](https://www.indec.gob.ar/) y colocar en `TP1/datos/` (ver [TP1/README.md](./TP1/README.md))
+### Ejecutar TP2
+```bash
+cd TP2
+pip install -r requirements.txt
+jupyter notebook Program_TP2_Grupo10.ipynb
+```
+
+**Nota:** Descargar datos EPH desde [INDEC](https://www.indec.gob.ar/) y colocar en `TP*/datos/` (ver README de cada TP)
 
 ---
 
@@ -79,7 +106,7 @@ jupyter notebook Program_TP1_GrupoJLP.ipynb
 
 ### Workflow Git
 - **Antes de trabajar:** Siempre `git pull origin main`
-- **Commits selectivos:** `git add TP1/archivo.py` (no `git add .`)
+- **Commits selectivos:** `git add TP*/archivo.py` (no `git add .`)
 - **Mensajes claros:** En español, descriptivos del cambio
 - **NO subir:** Carpetas `datos/` (ver `.gitignore`)
 
@@ -96,6 +123,7 @@ jupyter notebook Program_TP1_GrupoJLP.ipynb
 - **Repositorio:** https://github.com/paulaleylen/BigDataUBA-GrupoJLP
 - **EPH-INDEC:** https://www.indec.gob.ar/indec/web/Institucional-Indec-BasesDeDatos
 - **Documentación TP1:** [TP1/README.md](./TP1/README.md)
+- **Documentación TP2:** [TP2/README.md](./TP2/README.md)
 
 ---
 
