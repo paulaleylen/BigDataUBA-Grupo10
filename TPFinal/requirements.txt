@@ -1,0 +1,52 @@
+# Dependencias - Base de Commodities
+# Universidad de Buenos Aires - Facultad de Ciencias Económicas
+# Instalación: pip install -r requirements.txt
+
+# =============================================================================
+# Core Data Processing
+# =============================================================================
+pandas>=2.0.0              # Manipulación de datos tabulares y time series
+numpy>=1.24.0              # Operaciones numéricas
+openpyxl>=3.1.0            # Lectura de archivos Excel
+
+# =============================================================================
+# Data Download
+# =============================================================================
+yfinance>=0.2.40           # Yahoo Finance API (descarga automática)
+kaggle>=1.6.0              # Kaggle API (descarga automática de datasets)
+
+# =============================================================================
+# Data Visualization
+# =============================================================================
+matplotlib>=3.7.0          # Gráficos estáticos
+seaborn>=0.12.0            # Gráficos estadísticos
+
+# =============================================================================
+# Statistical Libraries (Opcional)
+# =============================================================================
+scipy>=1.10.0              # Funciones estadísticas
+scikit-learn>=1.3.0        # Machine learning
+statsmodels>=0.14.0        # Modelos de series temporales
+
+# =============================================================================
+# Jupyter Environment
+# =============================================================================
+jupyter>=1.0.0             # Jupyter Notebook
+ipykernel>=6.25.0          # Kernel de Python
+notebook>=7.0.0            # Interfaz Jupyter
+
+# =============================================================================
+# Notas de Instalación
+# =============================================================================
+# Instalación básica (solo descarga y procesamiento):
+#   pip install pandas numpy yfinance kaggle matplotlib seaborn openpyxl
+#
+# Instalación completa:
+#   pip install -r requirements.txt
+#
+# Configurar Kaggle API:
+#   1. Crear cuenta en https://www.kaggle.com
+#   2. Ir a Settings > API > Create New Token
+#   3. Guardar kaggle.json en ~/.kaggle/ (Linux/Mac) o C:\Users\<user>\.kaggle\ (Windows)
+#   4. Verificar: kaggle datasets list
+
