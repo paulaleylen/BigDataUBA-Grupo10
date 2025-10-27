@@ -21,9 +21,6 @@ Pipeline automatizado que:
 ### Primera vez trabajando en el proyecto:
 
 ```bash
-# Activar entorno
-conda activate ds
-
 # Instalar paquete en modo editable
 pip install -e .
 ```
