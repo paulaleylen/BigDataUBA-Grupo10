@@ -1,0 +1,119 @@
+{
+  "last_updated": "2025-10-27T12:53:44.546899",
+  "predictors": {
+    "VIX": {
+      "ticker": "^VIX",
+      "name": "VIX",
+      "source": "Yahoo Finance",
+      "frequency": "Daily",
+      "period": {
+        "start": "2000-01-03T00:00:00",
+        "end": "2025-10-27T00:00:00"
+      },
+      "observations": 6494,
+      "file": "vix.csv",
+      "downloaded_at": "2025-10-27T12:53:40.177014",
+      "stats": {
+        "mean": 19.85411148978851,
+        "min": 9.140000343322754,
+        "max": 82.69000244140625,
+        "std": 8.390305932704418
+      }
+    },
+    "DXY": {
+      "ticker": "DX-Y.NYB",
+      "name": "DXY",
+      "source": "Yahoo Finance",
+      "frequency": "Daily",
+      "period": {
+        "start": "2000-01-03T00:00:00",
+        "end": "2025-10-27T00:00:00"
+      },
+      "observations": 6523,
+      "file": "dxy.csv",
+      "downloaded_at": "2025-10-27T12:53:41.139033",
+      "stats": {
+        "mean": 92.8371289499,
+        "min": 71.33000183105469,
+        "max": 120.9000015258789,
+        "std": 11.322492040793774
+      }
+    },
+    "SP500": {
+      "ticker": "^GSPC",
+      "name": "SP500",
+      "source": "Yahoo Finance",
+      "frequency": "Daily",
+      "period": {
+        "start": "2000-01-03T00:00:00",
+        "end": "2025-10-27T00:00:00"
+      },
+      "observations": 6494,
+      "file": "sp500.csv",
+      "downloaded_at": "2025-10-27T12:53:41.936913",
+      "stats": {
+        "mean": 2237.50624219344,
+        "min": 676.530029296875,
+        "max": 6854.4501953125,
+        "std": 1409.051078921026
+      }
+    },
+    "Treasury_10Y": {
+      "ticker": "^TNX",
+      "name": "Treasury_10Y",
+      "source": "Yahoo Finance",
+      "frequency": "Daily",
+      "period": {
+        "start": "2000-01-03T00:00:00",
+        "end": "2025-10-27T00:00:00"
+      },
+      "observations": 6488,
+      "file": "treasury_10y.csv",
+      "downloaded_at": "2025-10-27T12:53:42.921560",
+      "stats": {
+        "mean": 3.305866366792034,
+        "min": 0.49900001287460327,
+        "max": 6.781000137329102,
+        "std": 1.2963819576163063
+      }
+    },
+    "Energy_Index": {
+      "ticker": "^GSPE",
+      "name": "Energy_Index",
+      "source": "Yahoo Finance",
+      "frequency": "Daily",
+      "period": {
+        "start": "2000-01-03T00:00:00",
+        "end": "2025-10-27T00:00:00"
+      },
+      "observations": 6494,
+      "file": "energy_index.csv",
+      "downloaded_at": "2025-10-27T12:53:43.965882",
+      "stats": {
+        "mean": 453.5413441495011,
+        "min": 163.8300018310547,
+        "max": 749.3900146484375,
+        "std": 154.17379059266415
+      }
+    },
+    "Materials_Index": {
+      "ticker": "^GSPMS",
+      "name": "Materials_Index",
+      "source": "Yahoo Finance",
+      "frequency": "Daily",
+      "period": {
+        "start": "NaT",
+        "end": "NaT"
+      },
+      "observations": 0,
+      "file": "materials_index.csv",
+      "downloaded_at": "2025-10-27T12:53:44.531902",
+      "stats": {
+        "mean": NaN,
+        "min": NaN,
+        "max": NaN,
+        "std": NaN
+      }
+    }
+  }
+}
