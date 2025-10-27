@@ -1,10 +1,10 @@
-# 📊 TPFinal - Proyecto de Commodities
+# TPFinal - Proyecto de Commodities
 
 **Taller de Programación - UBA FCE | Grupo JLP**
 
 Base de datos escalable de commodities y predictores macro para análisis y modelado. Estructura modular que facilita colaboración y mantenimiento.
 
-## 🎯 Overview
+## Overview
 
 Pipeline automatizado que:
 
@@ -16,7 +16,7 @@ Pipeline automatizado que:
 
 ---
 
-## � Setup Inicial
+## Setup Inicial
 
 ### Primera vez trabajando en el proyecto:
 
@@ -55,31 +55,31 @@ Notebooks en `notebooks/1.0-exploratory/`:
 ```
 TPFinal/
 │
-├── data/                          # 📂 TODOS LOS DATOS (no se suben a Git)
+├── data/                          # TODOS LOS DATOS (no se suben a Git)
 │   ├── raw/                       # Datos crudos descargados
 │   ├── interim/                   # Datos intermedios procesados
-│   │   ├── commodities/           # → 22 archivos CSV (corn.csv, gold.csv, etc.)
-│   │   └── predictors/            # → 6 archivos CSV (vix.csv, dxy.csv, etc.)
+│   │   ├── commodities/           # 22 archivos CSV (corn.csv, gold.csv, etc.)
+│   │   └── predictors/            # 6 archivos CSV (vix.csv, dxy.csv, etc.)
 │   └── processed/                 # Datos finales listos para modelado
-│       └── commodities_base_daily.csv  # → Dataset final con 250 columnas
+│       └── commodities_base_daily.csv  # Dataset final con 250 columnas
 │
-├── notebooks/                     # 📓 NOTEBOOKS PARA EXPLORACIÓN
+├── notebooks/                     # NOTEBOOKS PARA EXPLORACIÓN
 │   ├── 1.0-exploratory/           # Notebooks de análisis
 │   │   ├── 1.0-initial-exploration.ipynb
 │   │   └── 2.0-correlation-analysis.ipynb
 │   └── legacy/                    # Notebooks antiguos (referencia)
 │
-├── src/                           # 🐍 CÓDIGO REUTILIZABLE
-│   ├── config.py                  # ⚙️ Configuración centralizada (IMPORTANTE!)
+├── src/                           # CÓDIGO REUTILIZABLE
+│   ├── config.py                  # Configuración centralizada (IMPORTANTE!)
 │   └── data/                      # Módulos de datos
 │       ├── download_commodities.py   # Descarga commodities
 │       ├── download_predictors.py    # Descarga predictores
 │       └── process.py                # Procesa y genera features
 │
-├── reports/                       # 📈 VISUALIZACIONES
-│   └── figures/                   # → Gráficos generados (.png)
+├── reports/                       # VISUALIZACIONES
+│   └── figures/                   # Gráficos generados (.png)
 │
-├── references/                    # 📚 DOCUMENTACIÓN
+├── references/                    # DOCUMENTACIÓN
 │   ├── data_dictionary.md         # Diccionario de variables
 │   └── sources.md                 # Fuentes de datos
 │
@@ -164,7 +164,7 @@ FIGURES_DIR = REPORTS_DIR / 'figures'
 
 **Beneficio:** Los paths se calculan automáticamente, no importa dónde esté el proyecto.
 
-### 📊 Commodities a descargar
+### Commodities a descargar
 
 ```python
 COMMODITIES_TICKERS = {
@@ -186,7 +186,7 @@ COMMODITIES_TICKERS = {
 }
 ```
 
-### 📈 Predictores a descargar
+### Predictores a descargar
 
 ```python
 PREDICTORS_TICKERS = {
@@ -200,9 +200,9 @@ PREDICTORS_TICKERS = {
 
 ---
 
-## 🔧 Cómo Modificar el Proyecto
+## Cómo Modificar el Proyecto
 
-### ➕ Agregar un nuevo commodity
+### Agregar un nuevo commodity
 
 **Paso 1:** Editá `src/config.py`, agregá el ticker:
 
@@ -222,7 +222,7 @@ python src/data/process.py               # Regenera base completa
 
 ---
 
-### ➕ Agregar un nuevo predictor
+### Agregar un nuevo predictor
 
 **Paso 1:** Editá `src/config.py`:
 
@@ -242,7 +242,7 @@ python src/data/process.py
 
 ---
 
-### 🎨 Modificar features generadas
+### Modificar features generadas
 
 En `src/data/process.py`, función `main()`, cambiá los parámetros:
 
@@ -265,7 +265,7 @@ python src/data/process.py  # Solo este, no hace falta redescargar
 
 ---
 
-## 📚 Filosofía del Proyecto
+## Filosofía del Proyecto
 
 ### Por qué estructura modular (no solo notebooks)
 
@@ -281,12 +281,12 @@ python src/data/process.py  # Solo este, no hace falta redescargar
 
 ### Qué va en `src/` vs notebooks
 
-**✅ En `src/`:**
+**En `src/`:**
 - Descarga y limpieza de datos
 - Feature engineering genérico
 - Funciones que se reutilizan
 
-**✅ En notebooks:**
+**En notebooks:**
 - Exploración y visualización
 - Análisis específicos
 - Prototipos de modelos
@@ -296,7 +296,7 @@ python src/data/process.py  # Solo este, no hace falta redescargar
 
 ---
 
-## � Workflow del Equipo
+## Workflow del Equipo
 
 ### Cuando trabajás en un análisis nuevo:
 
@@ -354,7 +354,7 @@ python src/data/process.py  # Solo este, no hace falta redescargar
 
 ---
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### Error: `ModuleNotFoundError: No module named 'src'`
 
@@ -394,7 +394,7 @@ mkdir -p reports/figures
 
 ---
 
-## 📖 Recursos de Aprendizaje
+## Recursos de Aprendizaje
 
 Para entender mejor la estructura:
 
@@ -403,7 +403,7 @@ Para entender mejor la estructura:
 
 ---
 
-## 💡 FAQ del Equipo
+## FAQ del Equipo
 
 ### Yahoo Finance falla al descargar, ¿qué hago?
 
@@ -439,7 +439,7 @@ Los notebooks son JSONs, los conflicts son complicados. **Estrategia:**
 
 ---
 
-## 📊 Dataset Final
+## Dataset Final
 
 El archivo `data/processed/commodities_base_daily.csv` contiene:
 
@@ -457,7 +457,7 @@ El archivo `data/processed/commodities_base_daily.csv` contiene:
 
 ---
 
-## 🎓 Créditos
+## Créditos
 
 **UBA - Facultad de Ciencias Económicas**  
 Taller de Programación | Grupo 10
