@@ -50,10 +50,10 @@ ENV/
 # ============================================================================
 # Data (IMPORTANTE: NO commitear datos crudos)
 # ============================================================================
-data/raw/**
-data/interim/**
-data/processed/**
-data/external/**
+#data/raw/**
+#data/interim/**
+#data/processed/**
+#data/external/**
 
 # Excepciones: SÍ commitear estos archivos
 !data/raw/.gitkeep
