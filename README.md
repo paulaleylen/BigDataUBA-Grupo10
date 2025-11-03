@@ -12,7 +12,7 @@
 |--------|-----------|--------|
 | Paula Leylén Ramirez| Licenciada en Economía - UNL | [@paulaleylen](https://github.com/paulaleylen) |
 | Juan Ignacio Pintos | Licenciado en Ciencia Política - UDELAR | [@juanpintoselso33](https://github.com/juanpintoselso33) |
-| Luis Mella| [Completar] | [@usuario3](https://github.com/usuario3) |
+| Luis Mella| M.A. Estádistica aplicada - Universidad de Nebrija | [@usuario3](https://github.com/usuario3) |
 
 ---
 
