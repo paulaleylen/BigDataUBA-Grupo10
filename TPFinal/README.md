@@ -6,13 +6,14 @@ Base de datos escalable de commodities y predictores macro para análisis y mode
 
 ## Overview
 
-Pipeline automatizado que:
+Pipeline modular que:
 
 1. **Descarga** 22 commodities desde Yahoo Finance (granos, energía, metales)
-2. **Descarga** 5 predictores macro (VIX, DXY, S&P500, tasas, índices)
-3. **Procesa** y limpia automáticamente
-4. **Genera** 216 features para ML (lags, rolling stats, returns)
-5. **Exporta** dataset final: `commodities_base_daily.csv` (6,537×250, 25MB)
+2. **Descarga** 15+ predictores macro (VIX, DXY, S&P500, tasas, tipos de cambio)
+3. **Descarga** datos climáticos (NASA POWER, NOAA ONI) y supply-demand (USDA PSD)
+4. **Consolida** datos crudos en formato ancho
+5. **Feature Engineering** en notebooks interactivos (temporal, lags, rolling, returns, climate)
+6. **Exporta** dataset final: `commodities_base_daily.csv` (~250 columnas, 25MB)
 
 ---
 
@@ -31,15 +32,27 @@ pip install -e .
 
 ```bash
 # Pipeline completo (ejecutar en orden)
-python src/data/download_commodities.py  # ~2 min
-python src/data/download_predictors.py   # ~1 min  
-python src/data/process.py               # ~30 seg
+python src/data/download_commodities.py  # ~2 min - Descarga 22 commodities
+python src/data/download_predictors.py   # ~1 min - Descarga predictores macro
+python src/data/download_climate.py      # ~3 min - Descarga datos climáticos (opcional)
+python src/data/process.py               # ~30 seg - Consolida datos (SIN feature engineering)
 ```
 
 **Output:**
 - `data/interim/commodities/` → 22 CSVs individuales
-- `data/interim/predictors/` → 5 CSVs individuales
-- `data/processed/commodities_base_daily.csv` → **Base final** (25 MB)
+- `data/interim/predictors/` → 15+ CSVs individuales
+- `data/interim/climate/` → ONI + 3 regiones NASA POWER (opcional)
+- `data/processed/commodities_base_consolidated.csv` → **Base consolidada** (sin features derivadas)
+
+### Feature Engineering:
+
+Notebooks en `notebooks/2.0-feature-engineering/`:
+- `2.1-temporal-lag-features.ipynb` - Features temporales y lags
+- `2.2-rolling-statistics-features.ipynb` - Media móvil y desviación estándar
+- `2.3-return-features-volatility.ipynb` - Retornos y volatilidad realizada
+- `2.4-climate-features.ipynb` - ET0 FAO-56, GDD, Heat Stress, Precip Deficit
+
+**Output final:** `data/processed/commodities_base_daily.csv` (~250 columnas, 25MB)
 
 ### Explorar:
 

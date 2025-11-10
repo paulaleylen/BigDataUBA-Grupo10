@@ -1,0 +1,27 @@
+{
+  "fecha_generacion": "2025-11-10T15:09:56.014757",
+  "archivo_input": "features_step3_returns_volatility.csv",
+  "archivo_output": "features_step4_climate.csv",
+  "dataset": {
+    "observaciones": 6731,
+    "columnas_totales": 3187,
+    "periodo": "2000-01-03 - 2025-11-10"
+  },
+  "features": {
+    "base": 98,
+    "temporales": 13,
+    "lags": 320,
+    "rolling": 1764,
+    "returns_volatility": 980,
+    "climate": {
+      "total": 11,
+      "zscores": 1,
+      "cumulative_sums": 9,
+      "change_rates": 1
+    }
+  },
+  "missing_values": {
+    "total": 1672101,
+    "porcentaje_global": 7.794725983683248
+  }
+}

@@ -1,927 +1,412 @@
 {
-  "generated_at": "2025-10-27T12:54:44.375288",
+  "generated_at": "2025-11-10T12:11:12.060729",
   "shape": [
-    6537,
-    250
+    6981,
+    99
   ],
   "period": {
-    "start": "2000-01-03T00:00:00",
-    "end": "2025-10-27T00:00:00",
-    "days": 9429
+    "start": "1999-01-04T00:00:00",
+    "end": "2025-11-10T00:00:00",
+    "days": 9807
   },
   "duplicates": 0,
   "missing_values": {
+    "Baltic_Dry_Index": {
+      "count": 275,
+      "percentage": 3.94
+    },
     "Brent_Crude": {
-      "count": 1997,
-      "percentage": 30.55
+      "count": 2431,
+      "percentage": 34.82
     },
     "Cocoa": {
-      "count": 62,
-      "percentage": 0.95
+      "count": 496,
+      "percentage": 7.1
     },
     "Coffee": {
-      "count": 64,
-      "percentage": 0.98
+      "count": 498,
+      "percentage": 7.13
     },
     "Copper": {
-      "count": 219,
-      "percentage": 3.35
+      "count": 653,
+      "percentage": 9.35
     },
     "Corn": {
-      "count": 212,
-      "percentage": 3.24
+      "count": 646,
+      "percentage": 9.25
     },
     "Cotton": {
-      "count": 62,
-      "percentage": 0.95
+      "count": 496,
+      "percentage": 7.1
     },
     "Crude_Oil": {
-      "count": 215,
-      "percentage": 3.29
+      "count": 649,
+      "percentage": 9.3
+    },
+    "Ethanol": {
+      "count": 1966,
+      "percentage": 28.16
     },
     "Feeder_Cattle": {
-      "count": 387,
-      "percentage": 5.92
-    },
-    "Gold": {
-      "count": 224,
-      "percentage": 3.43
-    },
-    "Heating_Oil": {
-      "count": 221,
-      "percentage": 3.38
-    },
-    "Lean_Hogs": {
-      "count": 289,
-      "percentage": 4.42
-    },
-    "Live_Cattle": {
-      "count": 357,
-      "percentage": 5.46
-    },
-    "Lumber": {
-      "count": 814,
-      "percentage": 12.45
-    },
-    "Natural_Gas": {
-      "count": 218,
-      "percentage": 3.33
-    },
-    "Oat": {
-      "count": 209,
-      "percentage": 3.2
-    },
-    "Palladium": {
-      "count": 501,
-      "percentage": 7.66
-    },
-    "Platinum": {
-      "count": 740,
-      "percentage": 11.32
-    },
-    "RBOB_Gasoline": {
-      "count": 260,
-      "percentage": 3.98
-    },
-    "Silver": {
-      "count": 222,
-      "percentage": 3.4
-    },
-    "Soybeans": {
-      "count": 220,
-      "percentage": 3.37
-    },
-    "Sugar": {
-      "count": 101,
-      "percentage": 1.55
-    },
-    "Wheat": {
-      "count": 200,
-      "percentage": 3.06
-    },
-    "DXY": {
-      "count": 14,
-      "percentage": 0.21
-    },
-    "Energy_Index": {
-      "count": 43,
-      "percentage": 0.66
-    },
-    "SP500": {
-      "count": 43,
-      "percentage": 0.66
-    },
-    "Treasury_10Y": {
-      "count": 49,
-      "percentage": 0.75
-    },
-    "VIX": {
-      "count": 43,
-      "percentage": 0.66
-    },
-    "Brent_Crude_lag1": {
-      "count": 1998,
-      "percentage": 30.56
-    },
-    "Brent_Crude_lag7": {
-      "count": 2004,
-      "percentage": 30.66
-    },
-    "Cocoa_lag1": {
-      "count": 63,
-      "percentage": 0.96
-    },
-    "Cocoa_lag7": {
-      "count": 69,
-      "percentage": 1.06
-    },
-    "Coffee_lag1": {
-      "count": 65,
-      "percentage": 0.99
-    },
-    "Coffee_lag7": {
-      "count": 71,
-      "percentage": 1.09
-    },
-    "Copper_lag1": {
-      "count": 220,
-      "percentage": 3.37
-    },
-    "Copper_lag7": {
-      "count": 226,
-      "percentage": 3.46
-    },
-    "Corn_lag1": {
-      "count": 213,
-      "percentage": 3.26
-    },
-    "Corn_lag7": {
-      "count": 219,
-      "percentage": 3.35
-    },
-    "Cotton_lag1": {
-      "count": 63,
-      "percentage": 0.96
-    },
-    "Cotton_lag7": {
-      "count": 69,
-      "percentage": 1.06
-    },
-    "Crude_Oil_lag1": {
-      "count": 216,
-      "percentage": 3.3
-    },
-    "Crude_Oil_lag7": {
-      "count": 222,
-      "percentage": 3.4
-    },
-    "Feeder_Cattle_lag1": {
-      "count": 388,
-      "percentage": 5.94
-    },
-    "Feeder_Cattle_lag7": {
-      "count": 394,
-      "percentage": 6.03
-    },
-    "Gold_lag1": {
-      "count": 225,
-      "percentage": 3.44
-    },
-    "Gold_lag7": {
-      "count": 231,
-      "percentage": 3.53
-    },
-    "Heating_Oil_lag1": {
-      "count": 222,
-      "percentage": 3.4
-    },
-    "Heating_Oil_lag7": {
-      "count": 228,
-      "percentage": 3.49
-    },
-    "Lean_Hogs_lag1": {
-      "count": 290,
-      "percentage": 4.44
-    },
-    "Lean_Hogs_lag7": {
-      "count": 296,
-      "percentage": 4.53
-    },
-    "Live_Cattle_lag1": {
-      "count": 358,
-      "percentage": 5.48
-    },
-    "Live_Cattle_lag7": {
-      "count": 364,
-      "percentage": 5.57
-    },
-    "Lumber_lag1": {
-      "count": 814,
-      "percentage": 12.45
-    },
-    "Lumber_lag7": {
-      "count": 814,
-      "percentage": 12.45
-    },
-    "Natural_Gas_lag1": {
-      "count": 219,
-      "percentage": 3.35
-    },
-    "Natural_Gas_lag7": {
-      "count": 225,
-      "percentage": 3.44
-    },
-    "Oat_lag1": {
-      "count": 210,
-      "percentage": 3.21
-    },
-    "Oat_lag7": {
-      "count": 216,
-      "percentage": 3.3
-    },
-    "Palladium_lag1": {
-      "count": 502,
-      "percentage": 7.68
-    },
-    "Palladium_lag7": {
-      "count": 508,
-      "percentage": 7.77
-    },
-    "Platinum_lag1": {
-      "count": 741,
-      "percentage": 11.34
-    },
-    "Platinum_lag7": {
-      "count": 747,
-      "percentage": 11.43
-    },
-    "RBOB_Gasoline_lag1": {
-      "count": 261,
-      "percentage": 3.99
-    },
-    "RBOB_Gasoline_lag7": {
-      "count": 267,
-      "percentage": 4.08
-    },
-    "Silver_lag1": {
-      "count": 223,
-      "percentage": 3.41
-    },
-    "Silver_lag7": {
-      "count": 229,
-      "percentage": 3.5
-    },
-    "Soybeans_lag1": {
-      "count": 221,
-      "percentage": 3.38
-    },
-    "Soybeans_lag7": {
-      "count": 227,
-      "percentage": 3.47
-    },
-    "Sugar_lag1": {
-      "count": 102,
-      "percentage": 1.56
-    },
-    "Sugar_lag7": {
-      "count": 108,
-      "percentage": 1.65
-    },
-    "Wheat_lag1": {
-      "count": 201,
-      "percentage": 3.07
-    },
-    "Wheat_lag7": {
-      "count": 207,
-      "percentage": 3.17
-    },
-    "DXY_lag1": {
-      "count": 15,
-      "percentage": 0.23
-    },
-    "DXY_lag7": {
-      "count": 21,
-      "percentage": 0.32
-    },
-    "Energy_Index_lag1": {
-      "count": 44,
-      "percentage": 0.67
-    },
-    "Energy_Index_lag7": {
-      "count": 50,
-      "percentage": 0.76
-    },
-    "SP500_lag1": {
-      "count": 44,
-      "percentage": 0.67
-    },
-    "SP500_lag7": {
-      "count": 50,
-      "percentage": 0.76
-    },
-    "Treasury_10Y_lag1": {
-      "count": 50,
-      "percentage": 0.76
-    },
-    "Treasury_10Y_lag7": {
-      "count": 56,
-      "percentage": 0.86
-    },
-    "VIX_lag1": {
-      "count": 44,
-      "percentage": 0.67
-    },
-    "VIX_lag7": {
-      "count": 50,
-      "percentage": 0.76
-    },
-    "Brent_Crude_ma7": {
-      "count": 1946,
-      "percentage": 29.77
-    },
-    "Brent_Crude_std7": {
-      "count": 1949,
-      "percentage": 29.81
-    },
-    "Brent_Crude_ma30": {
-      "count": 1940,
-      "percentage": 29.68
-    },
-    "Brent_Crude_std30": {
-      "count": 1941,
-      "percentage": 29.69
-    },
-    "Cocoa_std7": {
-      "count": 1,
-      "percentage": 0.02
-    },
-    "Cocoa_std30": {
-      "count": 1,
-      "percentage": 0.02
-    },
-    "Coffee_std7": {
-      "count": 1,
-      "percentage": 0.02
-    },
-    "Coffee_std30": {
-      "count": 1,
-      "percentage": 0.02
-    },
-    "Copper_ma7": {
-      "count": 170,
-      "percentage": 2.6
-    },
-    "Copper_std7": {
-      "count": 171,
-      "percentage": 2.62
-    },
-    "Copper_ma30": {
-      "count": 170,
-      "percentage": 2.6
-    },
-    "Copper_std30": {
-      "count": 171,
-      "percentage": 2.62
-    },
-    "Corn_ma7": {
-      "count": 144,
-      "percentage": 2.2
-    },
-    "Corn_std7": {
-      "count": 151,
-      "percentage": 2.31
-    },
-    "Corn_ma30": {
-      "count": 138,
-      "percentage": 2.11
-    },
-    "Corn_std30": {
-      "count": 139,
-      "percentage": 2.13
-    },
-    "Cotton_std7": {
-      "count": 1,
-      "percentage": 0.02
-    },
-    "Cotton_std30": {
-      "count": 1,
-      "percentage": 0.02
-    },
-    "Crude_Oil_ma7": {
-      "count": 165,
-      "percentage": 2.52
-    },
-    "Crude_Oil_std7": {
-      "count": 166,
-      "percentage": 2.54
-    },
-    "Crude_Oil_ma30": {
-      "count": 165,
-      "percentage": 2.52
-    },
-    "Crude_Oil_std30": {
-      "count": 166,
-      "percentage": 2.54
-    },
-    "Feeder_Cattle_ma7": {
-      "count": 328,
-      "percentage": 5.02
-    },
-    "Feeder_Cattle_std7": {
-      "count": 331,
-      "percentage": 5.06
-    },
-    "Feeder_Cattle_ma30": {
-      "count": 321,
-      "percentage": 4.91
-    },
-    "Feeder_Cattle_std30": {
-      "count": 322,
-      "percentage": 4.93
-    },
-    "Gold_ma7": {
-      "count": 170,
-      "percentage": 2.6
-    },
-    "Gold_std7": {
-      "count": 171,
-      "percentage": 2.62
-    },
-    "Gold_ma30": {
-      "count": 170,
-      "percentage": 2.6
-    },
-    "Gold_std30": {
-      "count": 171,
-      "percentage": 2.62
-    },
-    "Heating_Oil_ma7": {
-      "count": 172,
-      "percentage": 2.63
-    },
-    "Heating_Oil_std7": {
-      "count": 173,
-      "percentage": 2.65
-    },
-    "Heating_Oil_ma30": {
-      "count": 172,
-      "percentage": 2.63
-    },
-    "Heating_Oil_std30": {
-      "count": 173,
-      "percentage": 2.65
-    },
-    "Lean_Hogs_ma7": {
-      "count": 246,
-      "percentage": 3.76
-    },
-    "Lean_Hogs_std7": {
-      "count": 247,
-      "percentage": 3.78
-    },
-    "Lean_Hogs_ma30": {
-      "count": 246,
-      "percentage": 3.76
-    },
-    "Lean_Hogs_std30": {
-      "count": 247,
-      "percentage": 3.78
-    },
-    "Live_Cattle_ma7": {
-      "count": 312,
-      "percentage": 4.77
-    },
-    "Live_Cattle_std7": {
-      "count": 315,
-      "percentage": 4.82
-    },
-    "Live_Cattle_ma30": {
-      "count": 298,
-      "percentage": 4.56
-    },
-    "Live_Cattle_std30": {
-      "count": 299,
-      "percentage": 4.57
-    },
-    "Lumber_ma7": {
-      "count": 769,
+      "count": 821,
       "percentage": 11.76
     },
-    "Lumber_std7": {
-      "count": 773,
-      "percentage": 11.82
-    },
-    "Lumber_ma30": {
-      "count": 728,
-      "percentage": 11.14
-    },
-    "Lumber_std30": {
-      "count": 730,
-      "percentage": 11.17
-    },
-    "Natural_Gas_ma7": {
-      "count": 170,
-      "percentage": 2.6
-    },
-    "Natural_Gas_std7": {
-      "count": 171,
-      "percentage": 2.62
-    },
-    "Natural_Gas_ma30": {
-      "count": 170,
-      "percentage": 2.6
-    },
-    "Natural_Gas_std30": {
-      "count": 171,
-      "percentage": 2.62
-    },
-    "Oat_ma7": {
-      "count": 83,
-      "percentage": 1.27
-    },
-    "Oat_std7": {
-      "count": 104,
-      "percentage": 1.59
-    },
-    "Oat_ma30": {
-      "count": 17,
-      "percentage": 0.26
-    },
-    "Oat_std30": {
-      "count": 33,
-      "percentage": 0.5
-    },
-    "Palladium_ma7": {
-      "count": 317,
-      "percentage": 4.85
-    },
-    "Palladium_std7": {
-      "count": 378,
-      "percentage": 5.78
-    },
-    "Palladium_ma30": {
-      "count": 69,
-      "percentage": 1.06
-    },
-    "Palladium_std30": {
-      "count": 99,
-      "percentage": 1.51
-    },
-    "Platinum_ma7": {
-      "count": 559,
-      "percentage": 8.55
-    },
-    "Platinum_std7": {
-      "count": 620,
-      "percentage": 9.48
-    },
-    "Platinum_ma30": {
-      "count": 165,
-      "percentage": 2.52
-    },
-    "Platinum_std30": {
-      "count": 206,
-      "percentage": 3.15
-    },
-    "RBOB_Gasoline_ma7": {
-      "count": 214,
-      "percentage": 3.27
-    },
-    "RBOB_Gasoline_std7": {
-      "count": 215,
-      "percentage": 3.29
-    },
-    "RBOB_Gasoline_ma30": {
-      "count": 214,
-      "percentage": 3.27
-    },
-    "RBOB_Gasoline_std30": {
-      "count": 215,
-      "percentage": 3.29
-    },
-    "Silver_ma7": {
-      "count": 170,
-      "percentage": 2.6
-    },
-    "Silver_std7": {
-      "count": 171,
-      "percentage": 2.62
-    },
-    "Silver_ma30": {
-      "count": 170,
-      "percentage": 2.6
-    },
-    "Silver_std30": {
-      "count": 171,
-      "percentage": 2.62
-    },
-    "Soybeans_ma7": {
-      "count": 181,
-      "percentage": 2.77
-    },
-    "Soybeans_std7": {
-      "count": 182,
-      "percentage": 2.78
-    },
-    "Soybeans_ma30": {
-      "count": 181,
-      "percentage": 2.77
-    },
-    "Soybeans_std30": {
-      "count": 182,
-      "percentage": 2.78
-    },
-    "Sugar_ma7": {
-      "count": 42,
-      "percentage": 0.64
-    },
-    "Sugar_std7": {
-      "count": 43,
-      "percentage": 0.66
-    },
-    "Sugar_ma30": {
-      "count": 42,
-      "percentage": 0.64
-    },
-    "Sugar_std30": {
-      "count": 43,
-      "percentage": 0.66
-    },
-    "Wheat_ma7": {
-      "count": 139,
-      "percentage": 2.13
-    },
-    "Wheat_std7": {
-      "count": 142,
-      "percentage": 2.17
-    },
-    "Wheat_ma30": {
-      "count": 138,
-      "percentage": 2.11
-    },
-    "Wheat_std30": {
-      "count": 139,
-      "percentage": 2.13
-    },
-    "DXY_std7": {
-      "count": 1,
-      "percentage": 0.02
-    },
-    "DXY_std30": {
-      "count": 1,
-      "percentage": 0.02
-    },
-    "Energy_Index_std7": {
-      "count": 1,
-      "percentage": 0.02
-    },
-    "Energy_Index_std30": {
-      "count": 1,
-      "percentage": 0.02
-    },
-    "SP500_std7": {
-      "count": 1,
-      "percentage": 0.02
-    },
-    "SP500_std30": {
-      "count": 1,
-      "percentage": 0.02
-    },
-    "Treasury_10Y_std7": {
-      "count": 1,
-      "percentage": 0.02
-    },
-    "Treasury_10Y_std30": {
-      "count": 1,
-      "percentage": 0.02
-    },
-    "VIX_std7": {
-      "count": 1,
-      "percentage": 0.02
-    },
-    "VIX_std30": {
-      "count": 1,
-      "percentage": 0.02
-    },
-    "Brent_Crude_return1": {
-      "count": 1941,
-      "percentage": 29.69
-    },
-    "Brent_Crude_return7": {
-      "count": 1947,
-      "percentage": 29.78
-    },
-    "Cocoa_return1": {
-      "count": 1,
-      "percentage": 0.02
-    },
-    "Cocoa_return7": {
-      "count": 7,
-      "percentage": 0.11
-    },
-    "Coffee_return1": {
-      "count": 1,
-      "percentage": 0.02
-    },
-    "Coffee_return7": {
-      "count": 7,
-      "percentage": 0.11
-    },
-    "Copper_return1": {
-      "count": 171,
-      "percentage": 2.62
-    },
-    "Copper_return7": {
-      "count": 177,
-      "percentage": 2.71
-    },
-    "Corn_return1": {
-      "count": 139,
-      "percentage": 2.13
-    },
-    "Corn_return7": {
-      "count": 145,
-      "percentage": 2.22
-    },
-    "Cotton_return1": {
-      "count": 1,
-      "percentage": 0.02
-    },
-    "Cotton_return7": {
-      "count": 7,
-      "percentage": 0.11
-    },
-    "Crude_Oil_return1": {
-      "count": 166,
-      "percentage": 2.54
-    },
-    "Crude_Oil_return7": {
-      "count": 172,
-      "percentage": 2.63
-    },
-    "Feeder_Cattle_return1": {
-      "count": 322,
-      "percentage": 4.93
-    },
-    "Feeder_Cattle_return7": {
-      "count": 328,
-      "percentage": 5.02
-    },
-    "Gold_return1": {
-      "count": 171,
-      "percentage": 2.62
-    },
-    "Gold_return7": {
-      "count": 177,
-      "percentage": 2.71
-    },
-    "Heating_Oil_return1": {
-      "count": 173,
-      "percentage": 2.65
-    },
-    "Heating_Oil_return7": {
-      "count": 179,
-      "percentage": 2.74
-    },
-    "Lean_Hogs_return1": {
-      "count": 247,
-      "percentage": 3.78
-    },
-    "Lean_Hogs_return7": {
-      "count": 253,
-      "percentage": 3.87
-    },
-    "Live_Cattle_return1": {
-      "count": 299,
-      "percentage": 4.57
-    },
-    "Live_Cattle_return7": {
-      "count": 305,
-      "percentage": 4.67
-    },
-    "Lumber_return1": {
-      "count": 139,
-      "percentage": 2.13
-    },
-    "Lumber_return7": {
-      "count": 145,
-      "percentage": 2.22
-    },
-    "Natural_Gas_return1": {
-      "count": 171,
-      "percentage": 2.62
-    },
-    "Natural_Gas_return7": {
-      "count": 177,
-      "percentage": 2.71
-    },
-    "Oat_return1": {
-      "count": 1,
-      "percentage": 0.02
-    },
-    "Oat_return7": {
-      "count": 7,
-      "percentage": 0.11
-    },
-    "Palladium_return1": {
-      "count": 2,
-      "percentage": 0.03
-    },
-    "Palladium_return7": {
-      "count": 8,
-      "percentage": 0.12
-    },
-    "Platinum_return1": {
-      "count": 2,
-      "percentage": 0.03
-    },
-    "Platinum_return7": {
-      "count": 8,
-      "percentage": 0.12
-    },
-    "RBOB_Gasoline_return1": {
-      "count": 215,
-      "percentage": 3.29
-    },
-    "RBOB_Gasoline_return7": {
-      "count": 221,
-      "percentage": 3.38
-    },
-    "Silver_return1": {
-      "count": 171,
-      "percentage": 2.62
-    },
-    "Silver_return7": {
-      "count": 177,
-      "percentage": 2.71
-    },
-    "Soybeans_return1": {
-      "count": 182,
-      "percentage": 2.78
-    },
-    "Soybeans_return7": {
-      "count": 188,
-      "percentage": 2.88
-    },
-    "Sugar_return1": {
-      "count": 43,
-      "percentage": 0.66
-    },
-    "Sugar_return7": {
-      "count": 49,
-      "percentage": 0.75
-    },
-    "Wheat_return1": {
-      "count": 139,
-      "percentage": 2.13
-    },
-    "Wheat_return7": {
-      "count": 145,
-      "percentage": 2.22
-    },
-    "DXY_return1": {
-      "count": 1,
-      "percentage": 0.02
-    },
-    "DXY_return7": {
-      "count": 7,
-      "percentage": 0.11
-    },
-    "Energy_Index_return1": {
-      "count": 1,
-      "percentage": 0.02
-    },
-    "Energy_Index_return7": {
-      "count": 7,
-      "percentage": 0.11
-    },
-    "SP500_return1": {
-      "count": 1,
-      "percentage": 0.02
-    },
-    "SP500_return7": {
-      "count": 7,
-      "percentage": 0.11
-    },
-    "Treasury_10Y_return1": {
-      "count": 1,
-      "percentage": 0.02
-    },
-    "Treasury_10Y_return7": {
-      "count": 7,
-      "percentage": 0.11
-    },
-    "VIX_return1": {
-      "count": 1,
-      "percentage": 0.02
-    },
-    "VIX_return7": {
-      "count": 7,
-      "percentage": 0.11
+    "Gold": {
+      "count": 658,
+      "percentage": 9.43
+    },
+    "Heating_Oil": {
+      "count": 655,
+      "percentage": 9.38
+    },
+    "Lean_Hogs": {
+      "count": 723,
+      "percentage": 10.36
+    },
+    "Live_Cattle": {
+      "count": 791,
+      "percentage": 11.33
+    },
+    "Lumber": {
+      "count": 1258,
+      "percentage": 18.02
+    },
+    "Natural_Gas": {
+      "count": 652,
+      "percentage": 9.34
+    },
+    "Oat": {
+      "count": 643,
+      "percentage": 9.21
+    },
+    "Palladium": {
+      "count": 935,
+      "percentage": 13.39
+    },
+    "Platinum": {
+      "count": 1174,
+      "percentage": 16.82
+    },
+    "RBOB_Gasoline": {
+      "count": 694,
+      "percentage": 9.94
+    },
+    "Silver": {
+      "count": 656,
+      "percentage": 9.4
+    },
+    "Soybean_Meal": {
+      "count": 643,
+      "percentage": 9.21
+    },
+    "Soybean_Oil": {
+      "count": 605,
+      "percentage": 8.67
+    },
+    "Soybeans": {
+      "count": 654,
+      "percentage": 9.37
+    },
+    "Sugar": {
+      "count": 535,
+      "percentage": 7.66
+    },
+    "Wheat": {
+      "count": 634,
+      "percentage": 9.08
+    },
+    "Wheat_Kansas": {
+      "count": 657,
+      "percentage": 9.41
+    },
+    "Baltic_Dry_Index_volume": {
+      "count": 275,
+      "percentage": 3.94
+    },
+    "Brent_Crude_volume": {
+      "count": 2431,
+      "percentage": 34.82
+    },
+    "Cocoa_volume": {
+      "count": 496,
+      "percentage": 7.1
+    },
+    "Coffee_volume": {
+      "count": 498,
+      "percentage": 7.13
+    },
+    "Copper_volume": {
+      "count": 653,
+      "percentage": 9.35
+    },
+    "Corn_volume": {
+      "count": 646,
+      "percentage": 9.25
+    },
+    "Cotton_volume": {
+      "count": 496,
+      "percentage": 7.1
+    },
+    "Crude_Oil_volume": {
+      "count": 649,
+      "percentage": 9.3
+    },
+    "Ethanol_volume": {
+      "count": 1966,
+      "percentage": 28.16
+    },
+    "Feeder_Cattle_volume": {
+      "count": 821,
+      "percentage": 11.76
+    },
+    "Gold_volume": {
+      "count": 658,
+      "percentage": 9.43
+    },
+    "Heating_Oil_volume": {
+      "count": 655,
+      "percentage": 9.38
+    },
+    "Lean_Hogs_volume": {
+      "count": 723,
+      "percentage": 10.36
+    },
+    "Live_Cattle_volume": {
+      "count": 791,
+      "percentage": 11.33
+    },
+    "Lumber_volume": {
+      "count": 1258,
+      "percentage": 18.02
+    },
+    "Natural_Gas_volume": {
+      "count": 652,
+      "percentage": 9.34
+    },
+    "Oat_volume": {
+      "count": 643,
+      "percentage": 9.21
+    },
+    "Palladium_volume": {
+      "count": 935,
+      "percentage": 13.39
+    },
+    "Platinum_volume": {
+      "count": 1174,
+      "percentage": 16.82
+    },
+    "RBOB_Gasoline_volume": {
+      "count": 694,
+      "percentage": 9.94
+    },
+    "Silver_volume": {
+      "count": 656,
+      "percentage": 9.4
+    },
+    "Soybean_Meal_volume": {
+      "count": 643,
+      "percentage": 9.21
+    },
+    "Soybean_Oil_volume": {
+      "count": 605,
+      "percentage": 8.67
+    },
+    "Soybeans_volume": {
+      "count": 654,
+      "percentage": 9.37
+    },
+    "Sugar_volume": {
+      "count": 535,
+      "percentage": 7.66
+    },
+    "Wheat_volume": {
+      "count": 634,
+      "percentage": 9.08
+    },
+    "Wheat_Kansas_volume": {
+      "count": 657,
+      "percentage": 9.41
+    },
+    "DXY": {
+      "count": 448,
+      "percentage": 6.42
+    },
+    "EUR_USD": {
+      "count": 1287,
+      "percentage": 18.44
+    },
+    "Energy_Index": {
+      "count": 477,
+      "percentage": 6.83
+    },
+    "Materials_Index": {
+      "count": 477,
+      "percentage": 6.83
+    },
+    "SP500": {
+      "count": 477,
+      "percentage": 6.83
+    },
+    "TIPS": {
+      "count": 1463,
+      "percentage": 20.96
+    },
+    "Treasury_10Y": {
+      "count": 483,
+      "percentage": 6.92
+    },
+    "Treasury_2Y": {
+      "count": 483,
+      "percentage": 6.92
+    },
+    "USD_ARS": {
+      "count": 1199,
+      "percentage": 17.18
+    },
+    "USD_BRL": {
+      "count": 1706,
+      "percentage": 24.44
+    },
+    "USD_CNY": {
+      "count": 885,
+      "percentage": 12.68
+    },
+    "USD_RUB": {
+      "count": 1396,
+      "percentage": 20.0
+    },
+    "USD_UAH": {
+      "count": 1273,
+      "percentage": 18.24
+    },
+    "VIX": {
+      "count": 477,
+      "percentage": 6.83
+    },
+    "ONI": {
+      "count": 250,
+      "percentage": 3.58
+    },
+    "Temp_Global_Grain": {
+      "count": 251,
+      "percentage": 3.6
+    },
+    "Precip_Global_Grain": {
+      "count": 251,
+      "percentage": 3.6
+    },
+    "RH_Global_Grain": {
+      "count": 251,
+      "percentage": 3.6
+    },
+    "SolarRad_Global_Grain": {
+      "count": 256,
+      "percentage": 3.67
+    },
+    "WindSpeed_Global_Grain": {
+      "count": 251,
+      "percentage": 3.6
+    },
+    "ET0_Global_Grain": {
+      "count": 256,
+      "percentage": 3.67
+    },
+    "GDD_Global_Grain": {
+      "count": 251,
+      "percentage": 3.6
+    },
+    "Heat_Stress_Days": {
+      "count": 250,
+      "percentage": 3.58
+    },
+    "Precip_Deficit": {
+      "count": 250,
+      "percentage": 3.58
+    },
+    "psd_world_Production": {
+      "count": 422,
+      "percentage": 6.04
+    },
+    "psd_world_Ending_Stocks": {
+      "count": 422,
+      "percentage": 6.04
+    },
+    "psd_world_Exports": {
+      "count": 422,
+      "percentage": 6.04
+    },
+    "psd_world_Imports": {
+      "count": 422,
+      "percentage": 6.04
+    },
+    "psd_world_Stock_to_Use_Ratio": {
+      "count": 422,
+      "percentage": 6.04
+    },
+    "psd_brazil_Production": {
+      "count": 422,
+      "percentage": 6.04
+    },
+    "psd_brazil_Ending_Stocks": {
+      "count": 422,
+      "percentage": 6.04
+    },
+    "psd_brazil_Exports": {
+      "count": 422,
+      "percentage": 6.04
+    },
+    "psd_brazil_Stock_to_Use_Ratio": {
+      "count": 422,
+      "percentage": 6.04
+    },
+    "psd_united_states_Production": {
+      "count": 422,
+      "percentage": 6.04
+    },
+    "psd_united_states_Ending_Stocks": {
+      "count": 422,
+      "percentage": 6.04
+    },
+    "psd_united_states_Exports": {
+      "count": 422,
+      "percentage": 6.04
+    },
+    "psd_united_states_Stock_to_Use_Ratio": {
+      "count": 422,
+      "percentage": 6.04
+    },
+    "psd_argentina_Production": {
+      "count": 422,
+      "percentage": 6.04
+    },
+    "psd_argentina_Exports": {
+      "count": 422,
+      "percentage": 6.04
+    },
+    "psd_argentina_Stock_to_Use_Ratio": {
+      "count": 422,
+      "percentage": 6.04
+    },
+    "psd_china_Imports": {
+      "count": 422,
+      "percentage": 6.04
+    },
+    "psd_china_Crush": {
+      "count": 422,
+      "percentage": 6.04
+    },
+    "psd_china_Ending_Stocks": {
+      "count": 422,
+      "percentage": 6.04
+    },
+    "psd_china_Stock_to_Use_Ratio": {
+      "count": 422,
+      "percentage": 6.04
     }
   },
   "columns": [
     "date",
+    "Baltic_Dry_Index",
     "Brent_Crude",
     "Cocoa",
     "Coffee",
@@ -929,6 +414,7 @@
     "Corn",
     "Cotton",
     "Crude_Oil",
+    "Ethanol",
     "Feeder_Cattle",
     "Gold",
     "Heating_Oil",
@@ -941,239 +427,87 @@
     "Platinum",
     "RBOB_Gasoline",
     "Silver",
+    "Soybean_Meal",
+    "Soybean_Oil",
     "Soybeans",
     "Sugar",
     "Wheat",
+    "Wheat_Kansas",
+    "Baltic_Dry_Index_volume",
+    "Brent_Crude_volume",
+    "Cocoa_volume",
+    "Coffee_volume",
+    "Copper_volume",
+    "Corn_volume",
+    "Cotton_volume",
+    "Crude_Oil_volume",
+    "Ethanol_volume",
+    "Feeder_Cattle_volume",
+    "Gold_volume",
+    "Heating_Oil_volume",
+    "Lean_Hogs_volume",
+    "Live_Cattle_volume",
+    "Lumber_volume",
+    "Natural_Gas_volume",
+    "Oat_volume",
+    "Palladium_volume",
+    "Platinum_volume",
+    "RBOB_Gasoline_volume",
+    "Silver_volume",
+    "Soybean_Meal_volume",
+    "Soybean_Oil_volume",
+    "Soybeans_volume",
+    "Sugar_volume",
+    "Wheat_volume",
+    "Wheat_Kansas_volume",
     "DXY",
+    "EUR_USD",
     "Energy_Index",
+    "Materials_Index",
     "SP500",
+    "TIPS",
     "Treasury_10Y",
+    "Treasury_2Y",
+    "USD_ARS",
+    "USD_BRL",
+    "USD_CNY",
+    "USD_RUB",
+    "USD_UAH",
     "VIX",
-    "year",
-    "month",
-    "quarter",
-    "day_of_week",
-    "day_of_year",
-    "week_of_year",
-    "Brent_Crude_lag1",
-    "Brent_Crude_lag7",
-    "Cocoa_lag1",
-    "Cocoa_lag7",
-    "Coffee_lag1",
-    "Coffee_lag7",
-    "Copper_lag1",
-    "Copper_lag7",
-    "Corn_lag1",
-    "Corn_lag7",
-    "Cotton_lag1",
-    "Cotton_lag7",
-    "Crude_Oil_lag1",
-    "Crude_Oil_lag7",
-    "Feeder_Cattle_lag1",
-    "Feeder_Cattle_lag7",
-    "Gold_lag1",
-    "Gold_lag7",
-    "Heating_Oil_lag1",
-    "Heating_Oil_lag7",
-    "Lean_Hogs_lag1",
-    "Lean_Hogs_lag7",
-    "Live_Cattle_lag1",
-    "Live_Cattle_lag7",
-    "Lumber_lag1",
-    "Lumber_lag7",
-    "Natural_Gas_lag1",
-    "Natural_Gas_lag7",
-    "Oat_lag1",
-    "Oat_lag7",
-    "Palladium_lag1",
-    "Palladium_lag7",
-    "Platinum_lag1",
-    "Platinum_lag7",
-    "RBOB_Gasoline_lag1",
-    "RBOB_Gasoline_lag7",
-    "Silver_lag1",
-    "Silver_lag7",
-    "Soybeans_lag1",
-    "Soybeans_lag7",
-    "Sugar_lag1",
-    "Sugar_lag7",
-    "Wheat_lag1",
-    "Wheat_lag7",
-    "DXY_lag1",
-    "DXY_lag7",
-    "Energy_Index_lag1",
-    "Energy_Index_lag7",
-    "SP500_lag1",
-    "SP500_lag7",
-    "Treasury_10Y_lag1",
-    "Treasury_10Y_lag7",
-    "VIX_lag1",
-    "VIX_lag7",
-    "Brent_Crude_ma7",
-    "Brent_Crude_std7",
-    "Brent_Crude_ma30",
-    "Brent_Crude_std30",
-    "Cocoa_ma7",
-    "Cocoa_std7",
-    "Cocoa_ma30",
-    "Cocoa_std30",
-    "Coffee_ma7",
-    "Coffee_std7",
-    "Coffee_ma30",
-    "Coffee_std30",
-    "Copper_ma7",
-    "Copper_std7",
-    "Copper_ma30",
-    "Copper_std30",
-    "Corn_ma7",
-    "Corn_std7",
-    "Corn_ma30",
-    "Corn_std30",
-    "Cotton_ma7",
-    "Cotton_std7",
-    "Cotton_ma30",
-    "Cotton_std30",
-    "Crude_Oil_ma7",
-    "Crude_Oil_std7",
-    "Crude_Oil_ma30",
-    "Crude_Oil_std30",
-    "Feeder_Cattle_ma7",
-    "Feeder_Cattle_std7",
-    "Feeder_Cattle_ma30",
-    "Feeder_Cattle_std30",
-    "Gold_ma7",
-    "Gold_std7",
-    "Gold_ma30",
-    "Gold_std30",
-    "Heating_Oil_ma7",
-    "Heating_Oil_std7",
-    "Heating_Oil_ma30",
-    "Heating_Oil_std30",
-    "Lean_Hogs_ma7",
-    "Lean_Hogs_std7",
-    "Lean_Hogs_ma30",
-    "Lean_Hogs_std30",
-    "Live_Cattle_ma7",
-    "Live_Cattle_std7",
-    "Live_Cattle_ma30",
-    "Live_Cattle_std30",
-    "Lumber_ma7",
-    "Lumber_std7",
-    "Lumber_ma30",
-    "Lumber_std30",
-    "Natural_Gas_ma7",
-    "Natural_Gas_std7",
-    "Natural_Gas_ma30",
-    "Natural_Gas_std30",
-    "Oat_ma7",
-    "Oat_std7",
-    "Oat_ma30",
-    "Oat_std30",
-    "Palladium_ma7",
-    "Palladium_std7",
-    "Palladium_ma30",
-    "Palladium_std30",
-    "Platinum_ma7",
-    "Platinum_std7",
-    "Platinum_ma30",
-    "Platinum_std30",
-    "RBOB_Gasoline_ma7",
-    "RBOB_Gasoline_std7",
-    "RBOB_Gasoline_ma30",
-    "RBOB_Gasoline_std30",
-    "Silver_ma7",
-    "Silver_std7",
-    "Silver_ma30",
-    "Silver_std30",
-    "Soybeans_ma7",
-    "Soybeans_std7",
-    "Soybeans_ma30",
-    "Soybeans_std30",
-    "Sugar_ma7",
-    "Sugar_std7",
-    "Sugar_ma30",
-    "Sugar_std30",
-    "Wheat_ma7",
-    "Wheat_std7",
-    "Wheat_ma30",
-    "Wheat_std30",
-    "DXY_ma7",
-    "DXY_std7",
-    "DXY_ma30",
-    "DXY_std30",
-    "Energy_Index_ma7",
-    "Energy_Index_std7",
-    "Energy_Index_ma30",
-    "Energy_Index_std30",
-    "SP500_ma7",
-    "SP500_std7",
-    "SP500_ma30",
-    "SP500_std30",
-    "Treasury_10Y_ma7",
-    "Treasury_10Y_std7",
-    "Treasury_10Y_ma30",
-    "Treasury_10Y_std30",
-    "VIX_ma7",
-    "VIX_std7",
-    "VIX_ma30",
-    "VIX_std30",
-    "Brent_Crude_return1",
-    "Brent_Crude_return7",
-    "Cocoa_return1",
-    "Cocoa_return7",
-    "Coffee_return1",
-    "Coffee_return7",
-    "Copper_return1",
-    "Copper_return7",
-    "Corn_return1",
-    "Corn_return7",
-    "Cotton_return1",
-    "Cotton_return7",
-    "Crude_Oil_return1",
-    "Crude_Oil_return7",
-    "Feeder_Cattle_return1",
-    "Feeder_Cattle_return7",
-    "Gold_return1",
-    "Gold_return7",
-    "Heating_Oil_return1",
-    "Heating_Oil_return7",
-    "Lean_Hogs_return1",
-    "Lean_Hogs_return7",
-    "Live_Cattle_return1",
-    "Live_Cattle_return7",
-    "Lumber_return1",
-    "Lumber_return7",
-    "Natural_Gas_return1",
-    "Natural_Gas_return7",
-    "Oat_return1",
-    "Oat_return7",
-    "Palladium_return1",
-    "Palladium_return7",
-    "Platinum_return1",
-    "Platinum_return7",
-    "RBOB_Gasoline_return1",
-    "RBOB_Gasoline_return7",
-    "Silver_return1",
-    "Silver_return7",
-    "Soybeans_return1",
-    "Soybeans_return7",
-    "Sugar_return1",
-    "Sugar_return7",
-    "Wheat_return1",
-    "Wheat_return7",
-    "DXY_return1",
-    "DXY_return7",
-    "Energy_Index_return1",
-    "Energy_Index_return7",
-    "SP500_return1",
-    "SP500_return7",
-    "Treasury_10Y_return1",
-    "Treasury_10Y_return7",
-    "VIX_return1",
-    "VIX_return7"
+    "ONI",
+    "Temp_Global_Grain",
+    "Precip_Global_Grain",
+    "RH_Global_Grain",
+    "SolarRad_Global_Grain",
+    "WindSpeed_Global_Grain",
+    "ET0_Global_Grain",
+    "GDD_Global_Grain",
+    "Heat_Stress_Days",
+    "Precip_Deficit",
+    "psd_world_Production",
+    "psd_world_Ending_Stocks",
+    "psd_world_Exports",
+    "psd_world_Imports",
+    "psd_world_Stock_to_Use_Ratio",
+    "psd_brazil_Production",
+    "psd_brazil_Ending_Stocks",
+    "psd_brazil_Exports",
+    "psd_brazil_Stock_to_Use_Ratio",
+    "psd_united_states_Production",
+    "psd_united_states_Ending_Stocks",
+    "psd_united_states_Exports",
+    "psd_united_states_Stock_to_Use_Ratio",
+    "psd_argentina_Production",
+    "psd_argentina_Exports",
+    "psd_argentina_Stock_to_Use_Ratio",
+    "psd_china_Imports",
+    "psd_china_Crush",
+    "psd_china_Ending_Stocks",
+    "psd_china_Stock_to_Use_Ratio"
   ],
   "dtypes": {
     "date": "datetime64[ns]",
+    "Baltic_Dry_Index": "float64",
     "Brent_Crude": "float64",
     "Cocoa": "float64",
     "Coffee": "float64",
@@ -1181,6 +515,7 @@
     "Corn": "float64",
     "Cotton": "float64",
     "Crude_Oil": "float64",
+    "Ethanol": "float64",
     "Feeder_Cattle": "float64",
     "Gold": "float64",
     "Heating_Oil": "float64",
@@ -1193,235 +528,82 @@
     "Platinum": "float64",
     "RBOB_Gasoline": "float64",
     "Silver": "float64",
+    "Soybean_Meal": "float64",
+    "Soybean_Oil": "float64",
     "Soybeans": "float64",
     "Sugar": "float64",
     "Wheat": "float64",
+    "Wheat_Kansas": "float64",
+    "Baltic_Dry_Index_volume": "float64",
+    "Brent_Crude_volume": "float64",
+    "Cocoa_volume": "float64",
+    "Coffee_volume": "float64",
+    "Copper_volume": "float64",
+    "Corn_volume": "float64",
+    "Cotton_volume": "float64",
+    "Crude_Oil_volume": "float64",
+    "Ethanol_volume": "float64",
+    "Feeder_Cattle_volume": "float64",
+    "Gold_volume": "float64",
+    "Heating_Oil_volume": "float64",
+    "Lean_Hogs_volume": "float64",
+    "Live_Cattle_volume": "float64",
+    "Lumber_volume": "float64",
+    "Natural_Gas_volume": "float64",
+    "Oat_volume": "float64",
+    "Palladium_volume": "float64",
+    "Platinum_volume": "float64",
+    "RBOB_Gasoline_volume": "float64",
+    "Silver_volume": "float64",
+    "Soybean_Meal_volume": "float64",
+    "Soybean_Oil_volume": "float64",
+    "Soybeans_volume": "float64",
+    "Sugar_volume": "float64",
+    "Wheat_volume": "float64",
+    "Wheat_Kansas_volume": "float64",
     "DXY": "float64",
+    "EUR_USD": "float64",
     "Energy_Index": "float64",
+    "Materials_Index": "float64",
     "SP500": "float64",
+    "TIPS": "float64",
     "Treasury_10Y": "float64",
+    "Treasury_2Y": "float64",
+    "USD_ARS": "float64",
+    "USD_BRL": "float64",
+    "USD_CNY": "float64",
+    "USD_RUB": "float64",
+    "USD_UAH": "float64",
     "VIX": "float64",
-    "year": "int32",
-    "month": "int32",
-    "quarter": "int32",
-    "day_of_week": "int32",
-    "day_of_year": "int32",
-    "week_of_year": "UInt32",
-    "Brent_Crude_lag1": "float64",
-    "Brent_Crude_lag7": "float64",
-    "Cocoa_lag1": "float64",
-    "Cocoa_lag7": "float64",
-    "Coffee_lag1": "float64",
-    "Coffee_lag7": "float64",
-    "Copper_lag1": "float64",
-    "Copper_lag7": "float64",
-    "Corn_lag1": "float64",
-    "Corn_lag7": "float64",
-    "Cotton_lag1": "float64",
-    "Cotton_lag7": "float64",
-    "Crude_Oil_lag1": "float64",
-    "Crude_Oil_lag7": "float64",
-    "Feeder_Cattle_lag1": "float64",
-    "Feeder_Cattle_lag7": "float64",
-    "Gold_lag1": "float64",
-    "Gold_lag7": "float64",
-    "Heating_Oil_lag1": "float64",
-    "Heating_Oil_lag7": "float64",
-    "Lean_Hogs_lag1": "float64",
-    "Lean_Hogs_lag7": "float64",
-    "Live_Cattle_lag1": "float64",
-    "Live_Cattle_lag7": "float64",
-    "Lumber_lag1": "float64",
-    "Lumber_lag7": "float64",
-    "Natural_Gas_lag1": "float64",
-    "Natural_Gas_lag7": "float64",
-    "Oat_lag1": "float64",
-    "Oat_lag7": "float64",
-    "Palladium_lag1": "float64",
-    "Palladium_lag7": "float64",
-    "Platinum_lag1": "float64",
-    "Platinum_lag7": "float64",
-    "RBOB_Gasoline_lag1": "float64",
-    "RBOB_Gasoline_lag7": "float64",
-    "Silver_lag1": "float64",
-    "Silver_lag7": "float64",
-    "Soybeans_lag1": "float64",
-    "Soybeans_lag7": "float64",
-    "Sugar_lag1": "float64",
-    "Sugar_lag7": "float64",
-    "Wheat_lag1": "float64",
-    "Wheat_lag7": "float64",
-    "DXY_lag1": "float64",
-    "DXY_lag7": "float64",
-    "Energy_Index_lag1": "float64",
-    "Energy_Index_lag7": "float64",
-    "SP500_lag1": "float64",
-    "SP500_lag7": "float64",
-    "Treasury_10Y_lag1": "float64",
-    "Treasury_10Y_lag7": "float64",
-    "VIX_lag1": "float64",
-    "VIX_lag7": "float64",
-    "Brent_Crude_ma7": "float64",
-    "Brent_Crude_std7": "float64",
-    "Brent_Crude_ma30": "float64",
-    "Brent_Crude_std30": "float64",
-    "Cocoa_ma7": "float64",
-    "Cocoa_std7": "float64",
-    "Cocoa_ma30": "float64",
-    "Cocoa_std30": "float64",
-    "Coffee_ma7": "float64",
-    "Coffee_std7": "float64",
-    "Coffee_ma30": "float64",
-    "Coffee_std30": "float64",
-    "Copper_ma7": "float64",
-    "Copper_std7": "float64",
-    "Copper_ma30": "float64",
-    "Copper_std30": "float64",
-    "Corn_ma7": "float64",
-    "Corn_std7": "float64",
-    "Corn_ma30": "float64",
-    "Corn_std30": "float64",
-    "Cotton_ma7": "float64",
-    "Cotton_std7": "float64",
-    "Cotton_ma30": "float64",
-    "Cotton_std30": "float64",
-    "Crude_Oil_ma7": "float64",
-    "Crude_Oil_std7": "float64",
-    "Crude_Oil_ma30": "float64",
-    "Crude_Oil_std30": "float64",
-    "Feeder_Cattle_ma7": "float64",
-    "Feeder_Cattle_std7": "float64",
-    "Feeder_Cattle_ma30": "float64",
-    "Feeder_Cattle_std30": "float64",
-    "Gold_ma7": "float64",
-    "Gold_std7": "float64",
-    "Gold_ma30": "float64",
-    "Gold_std30": "float64",
-    "Heating_Oil_ma7": "float64",
-    "Heating_Oil_std7": "float64",
-    "Heating_Oil_ma30": "float64",
-    "Heating_Oil_std30": "float64",
-    "Lean_Hogs_ma7": "float64",
-    "Lean_Hogs_std7": "float64",
-    "Lean_Hogs_ma30": "float64",
-    "Lean_Hogs_std30": "float64",
-    "Live_Cattle_ma7": "float64",
-    "Live_Cattle_std7": "float64",
-    "Live_Cattle_ma30": "float64",
-    "Live_Cattle_std30": "float64",
-    "Lumber_ma7": "float64",
-    "Lumber_std7": "float64",
-    "Lumber_ma30": "float64",
-    "Lumber_std30": "float64",
-    "Natural_Gas_ma7": "float64",
-    "Natural_Gas_std7": "float64",
-    "Natural_Gas_ma30": "float64",
-    "Natural_Gas_std30": "float64",
-    "Oat_ma7": "float64",
-    "Oat_std7": "float64",
-    "Oat_ma30": "float64",
-    "Oat_std30": "float64",
-    "Palladium_ma7": "float64",
-    "Palladium_std7": "float64",
-    "Palladium_ma30": "float64",
-    "Palladium_std30": "float64",
-    "Platinum_ma7": "float64",
-    "Platinum_std7": "float64",
-    "Platinum_ma30": "float64",
-    "Platinum_std30": "float64",
-    "RBOB_Gasoline_ma7": "float64",
-    "RBOB_Gasoline_std7": "float64",
-    "RBOB_Gasoline_ma30": "float64",
-    "RBOB_Gasoline_std30": "float64",
-    "Silver_ma7": "float64",
-    "Silver_std7": "float64",
-    "Silver_ma30": "float64",
-    "Silver_std30": "float64",
-    "Soybeans_ma7": "float64",
-    "Soybeans_std7": "float64",
-    "Soybeans_ma30": "float64",
-    "Soybeans_std30": "float64",
-    "Sugar_ma7": "float64",
-    "Sugar_std7": "float64",
-    "Sugar_ma30": "float64",
-    "Sugar_std30": "float64",
-    "Wheat_ma7": "float64",
-    "Wheat_std7": "float64",
-    "Wheat_ma30": "float64",
-    "Wheat_std30": "float64",
-    "DXY_ma7": "float64",
-    "DXY_std7": "float64",
-    "DXY_ma30": "float64",
-    "DXY_std30": "float64",
-    "Energy_Index_ma7": "float64",
-    "Energy_Index_std7": "float64",
-    "Energy_Index_ma30": "float64",
-    "Energy_Index_std30": "float64",
-    "SP500_ma7": "float64",
-    "SP500_std7": "float64",
-    "SP500_ma30": "float64",
-    "SP500_std30": "float64",
-    "Treasury_10Y_ma7": "float64",
-    "Treasury_10Y_std7": "float64",
-    "Treasury_10Y_ma30": "float64",
-    "Treasury_10Y_std30": "float64",
-    "VIX_ma7": "float64",
-    "VIX_std7": "float64",
-    "VIX_ma30": "float64",
-    "VIX_std30": "float64",
-    "Brent_Crude_return1": "float64",
-    "Brent_Crude_return7": "float64",
-    "Cocoa_return1": "float64",
-    "Cocoa_return7": "float64",
-    "Coffee_return1": "float64",
-    "Coffee_return7": "float64",
-    "Copper_return1": "float64",
-    "Copper_return7": "float64",
-    "Corn_return1": "float64",
-    "Corn_return7": "float64",
-    "Cotton_return1": "float64",
-    "Cotton_return7": "float64",
-    "Crude_Oil_return1": "float64",
-    "Crude_Oil_return7": "float64",
-    "Feeder_Cattle_return1": "float64",
-    "Feeder_Cattle_return7": "float64",
-    "Gold_return1": "float64",
-    "Gold_return7": "float64",
-    "Heating_Oil_return1": "float64",
-    "Heating_Oil_return7": "float64",
-    "Lean_Hogs_return1": "float64",
-    "Lean_Hogs_return7": "float64",
-    "Live_Cattle_return1": "float64",
-    "Live_Cattle_return7": "float64",
-    "Lumber_return1": "float64",
-    "Lumber_return7": "float64",
-    "Natural_Gas_return1": "float64",
-    "Natural_Gas_return7": "float64",
-    "Oat_return1": "float64",
-    "Oat_return7": "float64",
-    "Palladium_return1": "float64",
-    "Palladium_return7": "float64",
-    "Platinum_return1": "float64",
-    "Platinum_return7": "float64",
-    "RBOB_Gasoline_return1": "float64",
-    "RBOB_Gasoline_return7": "float64",
-    "Silver_return1": "float64",
-    "Silver_return7": "float64",
-    "Soybeans_return1": "float64",
-    "Soybeans_return7": "float64",
-    "Sugar_return1": "float64",
-    "Sugar_return7": "float64",
-    "Wheat_return1": "float64",
-    "Wheat_return7": "float64",
-    "DXY_return1": "float64",
-    "DXY_return7": "float64",
-    "Energy_Index_return1": "float64",
-    "Energy_Index_return7": "float64",
-    "SP500_return1": "float64",
-    "SP500_return7": "float64",
-    "Treasury_10Y_return1": "float64",
-    "Treasury_10Y_return7": "float64",
-    "VIX_return1": "float64",
-    "VIX_return7": "float64"
+    "ONI": "float64",
+    "Temp_Global_Grain": "float64",
+    "Precip_Global_Grain": "float64",
+    "RH_Global_Grain": "float64",
+    "SolarRad_Global_Grain": "float64",
+    "WindSpeed_Global_Grain": "float64",
+    "ET0_Global_Grain": "float64",
+    "GDD_Global_Grain": "float64",
+    "Heat_Stress_Days": "float64",
+    "Precip_Deficit": "float64",
+    "psd_world_Production": "float64",
+    "psd_world_Ending_Stocks": "float64",
+    "psd_world_Exports": "float64",
+    "psd_world_Imports": "float64",
+    "psd_world_Stock_to_Use_Ratio": "float64",
+    "psd_brazil_Production": "float64",
+    "psd_brazil_Ending_Stocks": "float64",
+    "psd_brazil_Exports": "float64",
+    "psd_brazil_Stock_to_Use_Ratio": "float64",
+    "psd_united_states_Production": "float64",
+    "psd_united_states_Ending_Stocks": "float64",
+    "psd_united_states_Exports": "float64",
+    "psd_united_states_Stock_to_Use_Ratio": "float64",
+    "psd_argentina_Production": "float64",
+    "psd_argentina_Exports": "float64",
+    "psd_argentina_Stock_to_Use_Ratio": "float64",
+    "psd_china_Imports": "float64",
+    "psd_china_Crush": "float64",
+    "psd_china_Ending_Stocks": "float64",
+    "psd_china_Stock_to_Use_Ratio": "float64"
   }
 }

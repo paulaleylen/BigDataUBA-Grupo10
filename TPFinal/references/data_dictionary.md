@@ -399,6 +399,316 @@ El notebook `02_process_data.ipynb` genera 4 gráficos principales guardados en 
 
 ---
 
+## 10. Predictores Macroeconómicos (Nuevos)
+
+**Archivo separado:** `data/interim/predictors/*.csv` (11 archivos)  
+**Integración:** Se merge con base de commodities por fecha en `process.py`  
+**Fuente:** Yahoo Finance vía `yfinance`  
+**Granularidad:** Diaria  
+**Período:** 2000-2025 (según disponibilidad por ticker)
+
+### Columnas comunes en archivos de predictores:
+- `date` - Fecha de observación
+- `predictor` - Nombre del predictor
+- `open`, `high`, `low`, `close`, `adj_close` - Precios OHLC
+- `volume` - Volumen (cuando aplica)
+
+---
+
+### 10.1 Volatilidad y Sentimiento
+
+#### VIX (^VIX)
+- **Nombre completo:** CBOE Volatility Index
+- **Descripción:** Índice de volatilidad implícita del S&P 500 (30 días adelante)
+- **Ticker Yahoo Finance:** ^VIX
+- **Unidad:** Porcentaje anualizado (reportado como número, ej: 20 = 20%)
+- **Rango típico:** 10-30 (normal), 40-80+ (pánico extremo)
+- **Interpretación:**
+  - VIX < 15: Complacencia, baja volatilidad esperada
+  - VIX 15-30: Rango normal
+  - VIX > 30: Incertidumbre elevada, aversión al riesgo
+  - VIX > 40: Pánico (crisis 2008: 80+, COVID-19: 85+)
+- **Relación con commodities:** Correlación negativa (~-0.3 a -0.5) - VIX alto → caída en commodities
+- **Fuente:** Chicago Board Options Exchange (CBOE)
+- **Cobertura:** 1990-presente (VIX original), 2004-presente (VIX moderno)
+- **Archivo:** `data/interim/predictors/vix.csv`
+
+#### SP500 (^GSPC)
+- **Nombre completo:** S&P 500 Index
+- **Descripción:** Índice bursátil ponderado por capitalización de 500 empresas de EE.UU.
+- **Ticker Yahoo Finance:** ^GSPC
+- **Unidad:** Puntos del índice (sin unidad monetaria directa)
+- **Rango histórico:** 800 (2009) → 4.800 (2025)
+- **Interpretación:**
+  - S&P500 en alza: Optimismo económico, apetito por riesgo → positivo para commodities
+  - S&P500 en baja: Recesión esperada, aversión al riesgo → negativo para commodities
+- **Relación con commodities:** Correlación positiva moderada (~0.3-0.5) - ambos suben en expansión económica
+- **Fuente:** Standard & Poor's Dow Jones Indices
+- **Cobertura:** 1928-presente (histórico completo disponible)
+- **Archivo:** `data/interim/predictors/sp500.csv`
+
+---
+
+### 10.2 Índice Dólar
+
+#### DXY (DX-Y.NYB)
+- **Nombre completo:** U.S. Dollar Index (USDX)
+- **Descripción:** Valor del USD vs canasta de 6 monedas: EUR (57.6%), JPY (13.6%), GBP (11.9%), CAD (9.1%), SEK (4.2%), CHF (3.6%)
+- **Ticker Yahoo Finance:** DX-Y.NYB
+- **Unidad:** Puntos del índice (base 100 en marzo 1973)
+- **Rango histórico:** 70 (2008, 2021) → 165 (1985, punto Volcker)
+- **Rango reciente:** 90-105 (2020-2025)
+- **Interpretación:**
+  - DXY > 100: Dólar fuerte → commodities más caros en otras monedas → presión bajista
+  - DXY < 90: Dólar débil → commodities más baratos en otras monedas → presión alcista
+- **Relación con commodities:** **Correlación negativa fuerte** (~-0.5 a -0.7) - clave para predicción
+- **Referencia académica:** Un aumento de 1% en DXY reduce precios de soja en ~0.3-0.5% ([TheBalance](https://www.thebalancemoney.com))
+- **Fuente:** ICE (Intercontinental Exchange)
+- **Cobertura:** 1973-presente (histórico completo disponible)
+- **Archivo:** `data/interim/predictors/dxy.csv`
+
+---
+
+### 10.3 Tipos de Cambio (Exportadores/Importadores de Soja)
+
+#### USD_BRL (BRL=X) 🇧🇷
+- **Nombre completo:** USD/BRL - Dólar estadounidense / Real brasileño
+- **Descripción:** Tipo de cambio spot del dólar frente al real de Brasil
+- **País:** Brasil - **Exportador #1 mundial de soja** (50% producción global, ~140 millones ton/año)
+- **Ticker Yahoo Finance:** BRL=X
+- **Unidad:** Reales por 1 USD (ej: 5.00 = 5 reales por dólar)
+- **Rango histórico:** 1.5 (2011) → 6.0 (2021, pandemia)
+- **Rango reciente:** 4.5-5.5 (2023-2025)
+- **Interpretación:**
+  - USD/BRL alto (real débil): Costos locales menores en USD → incentivo exportación → mayor oferta global → presión bajista en precios
+  - USD/BRL bajo (real fuerte): Costos locales más caros en USD → desincentivo exportación → menor oferta global → presión alcista
+- **Mecanismo:** Productor brasileño recibe pago en USD pero tiene costos en BRL. Real débil mejora márgenes, incentiva plantar más soja.
+- **Relación con commodities:** Correlación negativa con precio soja (~-0.3)
+- **Fuente:** Banco Central do Brasil | FRED (serie DEXBZUS) | Yahoo Finance
+- **Cobertura:** ~2000-presente (BRL flotante desde 1999)
+- **Archivo:** `data/interim/predictors/usd_brl.csv`
+
+#### USD_CNY (CNY=X) 🇨🇳
+- **Nombre completo:** USD/CNY - Dólar estadounidense / Yuan renminbi chino
+- **Descripción:** Tipo de cambio spot del dólar frente al yuan de China
+- **País:** China - **Importador #1 mundial de soja** (60% importaciones globales, ~100 millones ton/año)
+- **Ticker Yahoo Finance:** CNY=X
+- **Unidad:** Yuanes por 1 USD (ej: 7.00 = 7 yuanes por dólar)
+- **Rango histórico:** 6.0 (2014, yuan fuerte) → 7.3 (2023, yuan débil)
+- **Rango reciente:** 6.8-7.3 (2020-2025)
+- **Interpretación:**
+  - USD/CNY bajo (yuan fuerte): Mayor poder de compra chino → aumento demanda importaciones soja → presión alcista
+  - USD/CNY alto (yuan débil): Menor poder de compra chino → reducción demanda importaciones → presión bajista
+- **Mecanismo:** China importa soja pagando en USD. Yuan fuerte hace soja más barata en términos locales, estimula demanda (crushing, alimento porcino).
+- **Relación con commodities:** Correlación negativa con precio soja (~-0.2)
+- **Fuente:** Banco Popular de China | Yahoo Finance
+- **Nota:** China maneja tipo de cambio con banda flotante (no totalmente libre)
+- **Cobertura:** ~2005-presente (dato confiable desde flotación parcial)
+- **Archivo:** `data/interim/predictors/usd_cny.csv`
+
+#### USD_ARS (ARS=X) 🇦🇷
+- **Nombre completo:** USD/ARS - Dólar estadounidense / Peso argentino
+- **Descripción:** Tipo de cambio spot del dólar frente al peso de Argentina
+- **País:** Argentina - **Exportador #3 mundial de soja** (~7% producción global, ~50 millones ton/año)
+- **Ticker Yahoo Finance:** ARS=X
+- **Unidad:** Pesos por 1 USD (ej: 350 = 350 pesos por dólar)
+- **Rango histórico:** 1.0 (convertibilidad 1991-2001) → 1.000+ (2023-2025, hiperinflación)
+- **Interpretación:**
+  - USD/ARS alto (peso depreciado): Mejora competitividad exportadora argentina → mayor oferta global
+  - Complicación: Retenciones a la exportación (hasta 33%) reducen incentivo
+  - Control cambiario ("cepo") distorsiona mercado oficial
+- **ADVERTENCIA CRÍTICA:** ARS=X refleja **tipo de cambio oficial**, NO mercados paralelos:
+  - **Dólar oficial:** Tipo de cambio regulado por BCRA (dato de ARS=X)
+  - **Dólar blue:** Mercado informal
+  - **Dólar MEP/CCL:** Tipos de cambio financieros (más altos que oficial)
+  - **Brecha:** Puede ser 50-100% entre oficial y paralelos
+- **Relación con commodities:** Correlación débil y compleja por distorsiones regulatorias
+- **Fuente:** Banco Central de la República Argentina | Yahoo Finance
+- **Cobertura:** ~2000-presente (con saltos por crisis cambiarias)
+- **Nota:** Usar con precaución para modelado - preferir USD/BRL como proxy de competitividad sudamericana
+- **Archivo:** `data/interim/predictors/usd_ars.csv`
+
+---
+
+### 10.4 Tasas de Interés de EE.UU.
+
+#### Treasury_10Y (^TNX)
+- **Nombre completo:** U.S. Treasury 10-Year Note Yield
+- **Descripción:** Rendimiento (yield) de bonos del Tesoro de EE.UU. a 10 años
+- **Ticker Yahoo Finance:** ^TNX
+- **Unidad:** Porcentaje anual (reportado como número, ej: 4.25 = 4.25%)
+- **Rango histórico:** 0.5% (2020, COVID) → 15.8% (1981, Volcker)
+- **Rango reciente:** 1.5-5.0% (2020-2025)
+- **Interpretación:**
+  - Tasas altas (>4%): Mayor costo de carry (almacenamiento) + atractivo de renta fija → capital sale de commodities → presión bajista
+  - Tasas bajas (<2%): Menor costo de carry + poco atractivo de renta fija → capital busca retorno en commodities → presión alcista
+- **Mecanismo económico:**
+  1. **Costo de carry:** Tasa alta encarece financiamiento de inventarios de granos/metales
+  2. **Oportunidad:** Bonos 10Y con 5% compiten con retorno esperado de commodities
+  3. **Recesión:** Tasas muy altas preceden recesiones (menor demanda futura)
+- **Relación con commodities:** Correlación negativa (~-0.2 a -0.4)
+- **Fuente:** U.S. Department of the Treasury | FRED (serie DGS10)
+- **Cobertura:** 1962-presente (histórico completo disponible)
+- **Archivo:** `data/interim/predictors/treasury_10y.csv`
+
+#### Treasury_2Y (^IRX)
+- **Nombre completo:** U.S. Treasury 2-Year Note Yield
+- **Descripción:** Rendimiento de bonos del Tesoro a 2 años
+- **Ticker Yahoo Finance:** ^IRX
+- **Unidad:** Porcentaje anual
+- **Rango reciente:** 0.1-5.0% (2020-2025)
+- **Interpretación:**
+  - **Curva de rendimiento (2Y vs 10Y):**
+    - Normal: 10Y > 2Y (pendiente positiva) → expansión económica esperada
+    - Invertida: 2Y > 10Y (pendiente negativa) → **recesión esperada** (históricamente predice recesiones con 12-18 meses anticipación)
+  - Inversión de curva (2023-2024): 2Y en 5.0%, 10Y en 4.0% → recesión anticipada 2024-2025
+- **Relación con commodities:** Curva invertida → menor demanda futura de commodities
+- **Fuente:** U.S. Department of the Treasury
+- **Cobertura:** 1976-presente
+- **Uso:** Calcular pendiente de curva (10Y - 2Y) como predictor de ciclo
+- **Archivo:** `data/interim/predictors/treasury_2y.csv`
+
+---
+
+### 10.5 Índices Sectoriales
+
+#### Energy_Index (^GSPE)
+- **Nombre completo:** S&P 500 Energy Sector Index
+- **Descripción:** Índice de empresas del sector energético dentro del S&P 500 (Exxon, Chevron, ConocoPhillips, etc.)
+- **Ticker Yahoo Finance:** ^GSPE
+- **Unidad:** Puntos del índice
+- **Rango histórico:** 200 (2020, COVID) → 800 (2022, guerra Ucrania)
+- **Interpretación:**
+  - Índice alto: Precio del petróleo alto → mayores costos de producción agrícola (combustible, transporte, fertilizantes) → presión alcista en commodities agrícolas
+  - Índice bajo: Energía barata → menores costos de producción
+- **Relación con commodities:**
+  - **Correlación positiva** con petróleo/gas (~0.8-0.9, obvio)
+  - **Correlación positiva débil** con granos (~0.2-0.3, vía costos)
+- **Fuente:** S&P Dow Jones Indices
+- **Cobertura:** 1989-presente
+- **Archivo:** `data/interim/predictors/energy_index.csv`
+
+#### Materials_Index (^GSPMS)
+- **Nombre completo:** S&P 500 Materials Sector Index
+- **Descripción:** Índice de empresas del sector materiales (minería, químicos, packaging, metales): Dow Chemical, Freeport-McMoRan, Newmont Mining, etc.
+- **Ticker Yahoo Finance:** ^GSPMS
+- **Unidad:** Puntos del índice
+- **Interpretación:**
+  - Índice alto: Demanda industrial fuerte (construcción, manufactura) → mayor demanda de metales industriales (cobre, aluminio)
+  - Índice bajo: Desaceleración industrial → menor demanda de materias primas
+- **Relación con commodities:**
+  - **Correlación positiva fuerte** con metales industriales (~0.6-0.7)
+  - **Correlación moderada** con metales preciosos (~0.3-0.4)
+- **Fuente:** S&P Dow Jones Indices
+- **Cobertura:** 1989-presente
+- **Archivo:** `data/interim/predictors/materials_index.csv`
+
+---
+
+### 10.6 Inflación (Proxy)
+
+#### TIPS (TIP)
+- **Nombre completo:** iShares TIPS Bond ETF
+- **Descripción:** ETF que invierte en bonos del Tesoro de EE.UU. protegidos contra inflación (Treasury Inflation-Protected Securities)
+- **Ticker Yahoo Finance:** TIP
+- **Unidad:** USD por share del ETF
+- **Rango histórico:** 90-130 (2007-2025)
+- **Interpretación:**
+  - TIP en alza: Expectativas inflacionarias crecientes → inversionistas buscan protección
+  - Inflación alta → commodities suben como hedge (cobertura)
+  - TIP es **proxy** de expectativas inflacionarias, NO inflación realizada
+- **Por qué TIPS y no IPC:**
+  - Yahoo Finance **no ofrece** series de IPC (Consumer Price Index) directamente
+  - FRED API tiene IPC oficial (serie CPIAUCSL), pero requiere API key separada
+  - TIP capta expectativas de mercado en tiempo real (IPC es publicación mensual con rezago)
+- **Relación con commodities:** Correlación positiva (~0.3-0.5) - inflación alta → commodities suben
+- **Referencia académica:** Commodities como hedge inflacionario documentado en literatura ([ResearchGate](https://www.researchgate.net))
+- **Fuente:** iShares by BlackRock (ETF inception 2003)
+- **Cobertura:** 2003-presente
+- **Limitación:** No disponible para período 2000-2003 (ETF no existía)
+- **Alternativa futura:** Agregar FRED API y descargar serie CPIAUCSL (IPC oficial mensual)
+- **Archivo:** `data/interim/predictors/tips.csv`
+
+---
+
+### 10.7 Variables Derivadas de Predictores (Feature Engineering)
+
+Una vez descargados, los predictores permiten crear features adicionales:
+
+#### spread_10y_2y
+- **Descripción:** Pendiente de la curva de rendimiento (Treasury 10Y - Treasury 2Y)
+- **Fórmula:** treasury_10y_close - treasury_2y_close
+- **Unidad:** Puntos porcentuales (pp)
+- **Interpretación:**
+  - spread > 0: Curva normal → expansión económica esperada
+  - spread < 0: Curva invertida → **recesión esperada** (señal muy confiable históricamente)
+  - spread > 2: Expansión fuerte
+  - spread < -0.5: Alta probabilidad recesión en 12-18 meses
+- **Uso:** Predictor adelantado de ciclo económico
+
+#### dxy_change_pct
+- **Descripción:** Cambio porcentual diario del DXY
+- **Fórmula:** (dxy_close - dxy_close_lag1) / dxy_close_lag1 × 100
+- **Unidad:** Porcentaje
+- **Uso:** Capturar movimientos bruscos del dólar (más relevante que nivel absoluto)
+
+#### vix_regime
+- **Descripción:** Régimen de volatilidad categórico
+- **Fórmula:**
+  - 'bajo': VIX < 15
+  - 'normal': 15 <= VIX < 30
+  - 'alto': 30 <= VIX < 40
+  - 'panico': VIX >= 40
+- **Tipo:** Categórico (para análisis segmentado)
+- **Uso:** Feature para modelos de clasificación
+
+---
+
+### 10.8 Consideraciones de Integración
+
+**Merge strategy en `process.py`:**
+```python
+# Cargar commodities base
+df_commodities = pd.read_csv(PROCESSED_DIR / 'commodities_base_daily.csv')
+
+# Cargar predictores
+predictors_files = INTERIM_PREDICTORS_DIR.glob('*.csv')
+df_predictors = pd.concat([pd.read_csv(f) for f in predictors_files], ignore_index=True)
+
+# Pivot para tener 1 columna por predictor
+df_predictors_pivot = df_predictors.pivot(index='date', columns='predictor', values='close')
+df_predictors_pivot.columns = [f'pred_{col.lower()}' for col in df_predictors_pivot.columns]
+
+# Merge por fecha (left join para preservar todas las observaciones de commodities)
+df_final = df_commodities.merge(df_predictors_pivot, on='date', how='left')
+
+# Forward-fill predictores (los feriados de mercado USA no afectan precios de commodities fuera de USA)
+predictor_cols = [col for col in df_final.columns if col.startswith('pred_')]
+df_final[predictor_cols] = df_final.groupby('commodity')[predictor_cols].ffill()
+```
+
+**Columnas resultantes en dataset final:**
+- `pred_vix` - VIX close
+- `pred_sp500` - S&P 500 close
+- `pred_dxy` - Dollar Index close
+- `pred_usd_brl` - USD/BRL close
+- `pred_usd_cny` - USD/CNY close
+- `pred_usd_ars` - USD/ARS close
+- `pred_treasury_10y` - Treasury 10Y yield
+- `pred_treasury_2y` - Treasury 2Y yield
+- `pred_energy_index` - Energy Index close
+- `pred_materials_index` - Materials Index close
+- `pred_tips` - TIPS ETF close
+
+**Total nuevo:** +11 columnas de predictores
+
+**Dataset final:**
+- **Columnas anteriores:** 19 (commodities + features)
+- **Columnas nuevas:** 11 (predictores macro)
+- **Total:** 30 columnas
+
+---
+
 ## Referencias de Conversión
 
 ### Bushel a Tonelada Métrica

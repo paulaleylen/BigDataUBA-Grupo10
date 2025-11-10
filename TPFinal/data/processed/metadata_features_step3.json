@@ -1,0 +1,36 @@
+{
+  "fecha_generacion": "2025-11-10T14:15:18.254408",
+  "archivo_input": "features_step2_rolling_stats.csv",
+  "archivo_output": "features_step3_returns_volatility.csv",
+  "dataset": {
+    "observaciones": 6731,
+    "columnas_totales": 3176,
+    "periodo": "2000-01-03 - 2025-11-10"
+  },
+  "features": {
+    "base": 98,
+    "temporales": 13,
+    "lags": 320,
+    "rolling": 1764,
+    "returns_volatility": {
+      "total": 980,
+      "log_returns": 392,
+      "simple_returns": 392,
+      "volatility_ratios": 196,
+      "horizontes_returns": [
+        1,
+        7,
+        30,
+        90
+      ],
+      "ratios_volatility": [
+        "7/30",
+        "30/90"
+      ]
+    }
+  },
+  "missing_values": {
+    "total": 1672084,
+    "porcentaje_global": 7.821643308321548
+  }
+}

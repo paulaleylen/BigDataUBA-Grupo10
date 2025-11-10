@@ -1,5 +1,5 @@
 {
-  "last_updated": "2025-10-27T12:53:44.546899",
+  "last_updated": "2025-11-10T11:51:14.325877",
   "predictors": {
     "VIX": {
       "ticker": "^VIX",
@@ -8,16 +8,16 @@
       "frequency": "Daily",
       "period": {
         "start": "2000-01-03T00:00:00",
-        "end": "2025-10-27T00:00:00"
+        "end": "2025-11-10T00:00:00"
       },
-      "observations": 6494,
+      "observations": 6504,
       "file": "vix.csv",
-      "downloaded_at": "2025-10-27T12:53:40.177014",
+      "downloaded_at": "2025-11-10T11:51:01.033956",
       "stats": {
-        "mean": 19.85411148978851,
+        "mean": 19.850988624720557,
         "min": 9.140000343322754,
         "max": 82.69000244140625,
-        "std": 8.390305932704418
+        "std": 8.384329874683685
       }
     },
     "DXY": {
@@ -27,16 +27,16 @@
       "frequency": "Daily",
       "period": {
         "start": "2000-01-03T00:00:00",
-        "end": "2025-10-27T00:00:00"
+        "end": "2025-11-10T00:00:00"
       },
-      "observations": 6523,
+      "observations": 6533,
       "file": "dxy.csv",
-      "downloaded_at": "2025-10-27T12:53:41.139033",
+      "downloaded_at": "2025-11-10T11:51:02.632969",
       "stats": {
-        "mean": 92.8371289499,
+        "mean": 92.84753254940513,
         "min": 71.33000183105469,
         "max": 120.9000015258789,
-        "std": 11.322492040793774
+        "std": 11.316955486577037
       }
     },
     "SP500": {
@@ -46,16 +46,16 @@
       "frequency": "Daily",
       "period": {
         "start": "2000-01-03T00:00:00",
-        "end": "2025-10-27T00:00:00"
+        "end": "2025-11-10T00:00:00"
       },
-      "observations": 6494,
+      "observations": 6504,
       "file": "sp500.csv",
-      "downloaded_at": "2025-10-27T12:53:41.936913",
+      "downloaded_at": "2025-11-10T11:51:01.865852",
       "stats": {
-        "mean": 2237.50624219344,
+        "mean": 2244.542147393596,
         "min": 676.530029296875,
-        "max": 6854.4501953125,
-        "std": 1409.051078921026
+        "max": 6890.89013671875,
+        "std": 1419.3413793729662
       }
     },
     "Treasury_10Y": {
@@ -65,16 +65,16 @@
       "frequency": "Daily",
       "period": {
         "start": "2000-01-03T00:00:00",
-        "end": "2025-10-27T00:00:00"
+        "end": "2025-11-10T00:00:00"
       },
-      "observations": 6488,
+      "observations": 6498,
       "file": "treasury_10y.csv",
-      "downloaded_at": "2025-10-27T12:53:42.921560",
+      "downloaded_at": "2025-11-10T11:51:10.103171",
       "stats": {
-        "mean": 3.305866366792034,
+        "mean": 3.307066941809823,
         "min": 0.49900001287460327,
         "max": 6.781000137329102,
-        "std": 1.2963819576163063
+        "std": 1.2957460885283874
       }
     },
     "Energy_Index": {
@@ -84,35 +84,187 @@
       "frequency": "Daily",
       "period": {
         "start": "2000-01-03T00:00:00",
-        "end": "2025-10-27T00:00:00"
+        "end": "2025-11-10T00:00:00"
       },
-      "observations": 6494,
+      "observations": 6504,
       "file": "energy_index.csv",
-      "downloaded_at": "2025-10-27T12:53:43.965882",
+      "downloaded_at": "2025-11-10T11:51:11.708439",
       "stats": {
-        "mean": 453.5413441495011,
+        "mean": 453.8798399194433,
         "min": 163.8300018310547,
         "max": 749.3900146484375,
-        "std": 154.17379059266415
+        "std": 154.29667669335612
       }
     },
     "Materials_Index": {
-      "ticker": "^GSPMS",
+      "ticker": "XLB",
       "name": "Materials_Index",
       "source": "Yahoo Finance",
       "frequency": "Daily",
       "period": {
-        "start": "NaT",
-        "end": "NaT"
+        "start": "2000-01-03T00:00:00",
+        "end": "2025-11-10T00:00:00"
       },
-      "observations": 0,
+      "observations": 6504,
       "file": "materials_index.csv",
-      "downloaded_at": "2025-10-27T12:53:44.531902",
+      "downloaded_at": "2025-11-10T11:51:13.166839",
       "stats": {
-        "mean": NaN,
-        "min": NaN,
-        "max": NaN,
-        "std": NaN
+        "mean": 38.3632789916218,
+        "min": 9.794899940490723,
+        "max": 95.71856689453125,
+        "std": 23.64613577703612
+      }
+    },
+    "USD_BRL": {
+      "ticker": "BRL=X",
+      "name": "USD_BRL",
+      "source": "Yahoo Finance",
+      "frequency": "Daily",
+      "period": {
+        "start": "2003-12-01T00:00:00",
+        "end": "2025-11-07T00:00:00"
+      },
+      "observations": 5275,
+      "file": "usd_brl.csv",
+      "downloaded_at": "2025-11-10T11:51:03.460278",
+      "stats": {
+        "mean": 3.347072636188489,
+        "min": 1.5336999893188477,
+        "max": 6.300000190734863,
+        "std": 1.410761140288793
+      }
+    },
+    "USD_CNY": {
+      "ticker": "CNY=X",
+      "name": "USD_CNY",
+      "source": "Yahoo Finance",
+      "frequency": "Daily",
+      "period": {
+        "start": "2001-06-25T00:00:00",
+        "end": "2025-11-10T00:00:00"
+      },
+      "observations": 6096,
+      "file": "usd_cny.csv",
+      "downloaded_at": "2025-11-10T11:51:04.668607",
+      "stats": {
+        "mean": 7.012433581855979,
+        "min": 5.86299991607666,
+        "max": 8.277799606323242,
+        "std": 0.6815444287144719
+      }
+    },
+    "USD_ARS": {
+      "ticker": "ARS=X",
+      "name": "USD_ARS",
+      "source": "Yahoo Finance",
+      "frequency": "Daily",
+      "period": {
+        "start": "2001-07-13T00:00:00",
+        "end": "2025-11-10T00:00:00"
+      },
+      "observations": 5782,
+      "file": "usd_ars.csv",
+      "downloaded_at": "2025-11-10T11:51:05.743201",
+      "stats": {
+        "mean": 121.67577063486841,
+        "min": 0.9979000091552734,
+        "max": 1490.2386474609375,
+        "std": 294.2441296328686
+      }
+    },
+    "Treasury_2Y": {
+      "ticker": "^IRX",
+      "name": "Treasury_2Y",
+      "source": "Yahoo Finance",
+      "frequency": "Daily",
+      "period": {
+        "start": "2000-01-03T00:00:00",
+        "end": "2025-11-10T00:00:00"
+      },
+      "observations": 6498,
+      "file": "treasury_2y.csv",
+      "downloaded_at": "2025-11-10T11:51:10.759018",
+      "stats": {
+        "mean": 1.863260693622612,
+        "min": -0.10499999672174454,
+        "max": 6.21999979019165,
+        "std": 1.9314047750441194
+      }
+    },
+    "TIPS": {
+      "ticker": "TIP",
+      "name": "TIPS",
+      "source": "Yahoo Finance",
+      "frequency": "Daily",
+      "period": {
+        "start": "2003-12-05T00:00:00",
+        "end": "2025-11-10T00:00:00"
+      },
+      "observations": 5518,
+      "file": "tips.csv",
+      "downloaded_at": "2025-11-10T11:51:14.292174",
+      "stats": {
+        "mean": 82.93762785250314,
+        "min": 50.85798263549805,
+        "max": 112.447265625,
+        "std": 17.256661128815377
+      }
+    },
+    "USD_RUB": {
+      "ticker": "RUB=X",
+      "name": "USD_RUB",
+      "source": "Yahoo Finance",
+      "frequency": "Daily",
+      "period": {
+        "start": "2003-12-01T00:00:00",
+        "end": "2025-11-10T00:00:00"
+      },
+      "observations": 5585,
+      "file": "usd_rub.csv",
+      "downloaded_at": "2025-11-10T11:51:06.790732",
+      "stats": {
+        "mean": 51.12209291520029,
+        "min": 0.7161999940872192,
+        "max": 138.96510314941406,
+        "std": 23.058464694166737
+      }
+    },
+    "USD_UAH": {
+      "ticker": "UAH=X",
+      "name": "USD_UAH",
+      "source": "Yahoo Finance",
+      "frequency": "Daily",
+      "period": {
+        "start": "2002-04-01T00:00:00",
+        "end": "2025-11-10T00:00:00"
+      },
+      "observations": 5708,
+      "file": "usd_uah.csv",
+      "downloaded_at": "2025-11-10T11:51:07.804178",
+      "stats": {
+        "mean": 18.270856630493064,
+        "min": 4.445899963378906,
+        "max": 42.18320083618164,
+        "std": 12.363341022554685
+      }
+    },
+    "EUR_USD": {
+      "ticker": "EURUSD=X",
+      "name": "EUR_USD",
+      "source": "Yahoo Finance",
+      "frequency": "Daily",
+      "period": {
+        "start": "2003-12-01T00:00:00",
+        "end": "2025-11-10T00:00:00"
+      },
+      "observations": 5694,
+      "file": "eur_usd.csv",
+      "downloaded_at": "2025-11-10T11:51:09.024603",
+      "stats": {
+        "mean": 1.2252777401484813,
+        "min": 0.9596191644668579,
+        "max": 1.5987977981567383,
+        "std": 0.12761307778926534
       }
     }
   }
