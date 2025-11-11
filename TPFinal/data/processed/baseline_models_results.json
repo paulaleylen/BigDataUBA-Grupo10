@@ -1,5 +1,5 @@
 {
-  "fecha_generacion": "2025-11-10T15:05:28.785942",
+  "fecha_generacion": "2025-11-10T16:59:58.707740",
   "models": [
     "Linear Regression",
     "Ridge",
@@ -16,110 +16,110 @@
     {
       "Commodity": "Corn",
       "Model": "Linear Regression",
-      "Test RMSE": 57.44691900003817,
-      "Test MAE": 48.593797372518985,
-      "Test R\u00b2": 0.5145678111716275,
-      "Test Dir Acc": 0.49719101123595505,
-      "Overfitting Gap": 0.4471010353056737
+      "Test RMSE": 32.10300033026731,
+      "Test MAE": 19.585642717586605,
+      "Test R\u00b2": 0.8502159703472204,
+      "Test Dir Acc": 0.5400271370420624,
+      "Overfitting Gap": 0.08928311660177335
     },
     {
       "Commodity": "Corn",
       "Model": "Ridge",
-      "Test RMSE": 54.88301187426226,
-      "Test MAE": 47.275361009256955,
-      "Test R\u00b2": 0.5569314121549762,
-      "Test Dir Acc": 0.49297752808988765,
-      "Overfitting Gap": 0.40386265529072307
+      "Test RMSE": 32.439979581323364,
+      "Test MAE": 20.103228213182135,
+      "Test R\u00b2": 0.8470549562173688,
+      "Test Dir Acc": 0.5373134328358209,
+      "Overfitting Gap": 0.09233842593345754
     },
     {
       "Commodity": "Corn",
       "Model": "Lasso",
-      "Test RMSE": 37.734558985715594,
-      "Test MAE": 30.725681396121267,
-      "Test R\u00b2": 0.7905532406791314,
-      "Test Dir Acc": 0.4957865168539326,
-      "Overfitting Gap": 0.1669482761393496
+      "Test RMSE": 32.00839355768956,
+      "Test MAE": 19.013459618411847,
+      "Test R\u00b2": 0.8510974894138748,
+      "Test Dir Acc": 0.5440976933514247,
+      "Overfitting Gap": 0.08740160296654864
     },
     {
       "Commodity": "Corn",
       "Model": "Elastic Net",
-      "Test RMSE": 52.25332890304661,
-      "Test MAE": 44.43006171670043,
-      "Test R\u00b2": 0.5983728953942636,
-      "Test Dir Acc": 0.4845505617977528,
-      "Overfitting Gap": 0.35897432211047076
+      "Test RMSE": 33.71070227878809,
+      "Test MAE": 21.84846175671271,
+      "Test R\u00b2": 0.8348381024309595,
+      "Test Dir Acc": 0.5305291723202171,
+      "Overfitting Gap": 0.10324309289153222
     },
     {
       "Commodity": "Soybeans",
       "Model": "Linear Regression",
-      "Test RMSE": 69.35818312856108,
-      "Test MAE": 57.686340289794295,
-      "Test R\u00b2": 0.8582916912108947,
-      "Test Dir Acc": 0.5042134831460674,
-      "Overfitting Gap": 0.12260458546961339
+      "Test RMSE": 79.07701879589747,
+      "Test MAE": 59.2408159895215,
+      "Test R\u00b2": 0.8166192752596455,
+      "Test Dir Acc": 0.5468113975576662,
+      "Overfitting Gap": 0.13213243390171492
     },
     {
       "Commodity": "Soybeans",
       "Model": "Ridge",
-      "Test RMSE": 73.05783348757912,
-      "Test MAE": 62.19986292256159,
-      "Test R\u00b2": 0.8427707013360978,
-      "Test Dir Acc": 0.5098314606741573,
-      "Overfitting Gap": 0.13704243422976303
+      "Test RMSE": 77.33239224776865,
+      "Test MAE": 57.202443592583954,
+      "Test R\u00b2": 0.8246216422855513,
+      "Test Dir Acc": 0.5481682496607869,
+      "Overfitting Gap": 0.1240672390097739
     },
     {
       "Commodity": "Soybeans",
       "Model": "Lasso",
-      "Test RMSE": 42.16933226891575,
-      "Test MAE": 33.32657967398204,
-      "Test R\u00b2": 0.94761664052967,
-      "Test Dir Acc": 0.5028089887640449,
-      "Overfitting Gap": 0.02832579566373372
+      "Test RMSE": 64.34549466649307,
+      "Test MAE": 39.079571789931734,
+      "Test R\u00b2": 0.8785802326043042,
+      "Test Dir Acc": 0.5413839891451832,
+      "Overfitting Gap": 0.06921542815789372
     },
     {
       "Commodity": "Soybeans",
       "Model": "Elastic Net",
-      "Test RMSE": 85.69782020663365,
-      "Test MAE": 74.00696098311253,
-      "Test R\u00b2": 0.7836586926888293,
-      "Test Dir Acc": 0.5126404494382022,
-      "Overfitting Gap": 0.18997701864951577
+      "Test RMSE": 76.66077354092002,
+      "Test MAE": 56.690040702250464,
+      "Test R\u00b2": 0.8276546767146522,
+      "Test Dir Acc": 0.5440976933514247,
+      "Overfitting Gap": 0.12070838086093083
     },
     {
       "Commodity": "Wheat",
       "Model": "Linear Regression",
-      "Test RMSE": 36.67868398950755,
-      "Test MAE": 27.818628140802026,
-      "Test R\u00b2": 0.6673664339065064,
-      "Test Dir Acc": 0.5294943820224719,
-      "Overfitting Gap": 0.29385742514747415
+      "Test RMSE": 39.46993553438347,
+      "Test MAE": 29.14124152133067,
+      "Test R\u00b2": 0.6148435222047658,
+      "Test Dir Acc": 0.5413839891451832,
+      "Overfitting Gap": 0.30669071189694463
     },
     {
       "Commodity": "Wheat",
       "Model": "Ridge",
-      "Test RMSE": 35.920910925363806,
-      "Test MAE": 27.25220850052847,
-      "Test R\u00b2": 0.6809687211881099,
-      "Test Dir Acc": 0.523876404494382,
-      "Overfitting Gap": 0.2802393755143877
+      "Test RMSE": 35.946249773225624,
+      "Test MAE": 26.23187910103248,
+      "Test R\u00b2": 0.6805436334699559,
+      "Test Dir Acc": 0.5183175033921302,
+      "Overfitting Gap": 0.23869869405620858
     },
     {
       "Commodity": "Wheat",
       "Model": "Lasso",
-      "Test RMSE": 33.687325298342856,
-      "Test MAE": 26.151049386776148,
-      "Test R\u00b2": 0.7194103532404585,
-      "Test Dir Acc": 0.5084269662921348,
-      "Overfitting Gap": 0.24009596521220322
+      "Test RMSE": 35.556155051056976,
+      "Test MAE": 24.945754321653453,
+      "Test R\u00b2": 0.6874395992138091,
+      "Test Dir Acc": 0.5264586160108549,
+      "Overfitting Gap": 0.2316614808169296
     },
     {
       "Commodity": "Wheat",
       "Model": "Elastic Net",
-      "Test RMSE": 34.45589447662223,
-      "Test MAE": 26.14577219442677,
-      "Test R\u00b2": 0.7064611157486733,
-      "Test Dir Acc": 0.526685393258427,
-      "Overfitting Gap": 0.2545448131734548
+      "Test RMSE": 40.713668925264926,
+      "Test MAE": 31.19889402971824,
+      "Test R\u00b2": 0.5901878276334356,
+      "Test Dir Acc": 0.5183175033921302,
+      "Overfitting Gap": 0.3242263080185738
     }
   ],
   "best_models": {
@@ -129,35 +129,35 @@
   },
   "hyperparameters": {
     "ridge_alphas": {
-      "Corn": 100,
-      "Soybeans": 100,
-      "Wheat": 1
+      "Corn": 10,
+      "Soybeans": 10,
+      "Wheat": 100
     },
     "lasso_alphas": {
       "Corn": 1,
-      "Soybeans": 10,
+      "Soybeans": 1,
       "Wheat": 1
     },
     "enet_params": {
       "Corn": {
         "alpha": 0.1,
-        "l1_ratio": 0.3
-      },
-      "Soybeans": {
-        "alpha": 1,
         "l1_ratio": 0.9
       },
-      "Wheat": {
+      "Soybeans": {
         "alpha": 0.01,
+        "l1_ratio": 0.5
+      },
+      "Wheat": {
+        "alpha": 1,
         "l1_ratio": 0.9
       }
     }
   },
   "feature_selection": {
     "lasso": {
-      "Corn": 21,
-      "Soybeans": 7,
-      "Wheat": 10
+      "Corn": 18,
+      "Soybeans": 27,
+      "Wheat": 20
     }
   }
 }
