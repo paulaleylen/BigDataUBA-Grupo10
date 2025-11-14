@@ -1,0 +1,144 @@
+# ============================================================================
+# Python
+# ============================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# ============================================================================
+# Virtual Environments
+# ============================================================================
+venv/
+env/
+ENV/
+.venv/
+.conda/
+
+# ============================================================================
+# IDE / Editors
+# ============================================================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# ============================================================================
+# Jupyter Notebook
+# ============================================================================
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# ============================================================================
+# Data (IMPORTANTE: NO commitear datos crudos)
+# ============================================================================
+# Ignorar carpetas de datos usadas en los TPs y outputs pesados
+TPFinal/data/**
+TP1/datos/**
+TP2/datos/**
+data/raw/**
+data/interim/**
+data/processed/**
+data/external/**
+
+# Excepciones: SÍ commitear estos archivos
+!TPFinal/data/.gitkeep
+!TP1/datos/.gitkeep
+!TP2/datos/.gitkeep
+!data/raw/.gitkeep
+!data/interim/.gitkeep
+!data/processed/.gitkeep
+!data/external/.gitkeep
+!data/interim/predictors/predictors_registry.json
+!data/processed/metadata.json
+
+# ============================================================================
+# Models (NO commitear modelos entrenados - son pesados)
+# ============================================================================
+TPFinal/models/**
+models/*.pkl
+models/*.h5
+models/*.pt
+models/*.pth
+models/*.joblib
+
+# Excepción: SÍ commitear metadata de modelos
+!models/model_registry.json
+!models/.gitkeep
+
+# ============================================================================
+# Reports / Outputs
+# ============================================================================
+reports/figures/*.png
+reports/figures/*.jpg
+reports/figures/*.pdf
+reports/presentations/*.pdf
+reports/presentations/*.pptx
+
+# Excepciones para documentos importantes
+!reports/figures/.gitkeep
+!reports/presentations/.gitkeep
+
+# ============================================================================
+# Environment variables
+# ============================================================================
+.env
+.env.local
+
+# SÍ commitear el template
+!.env.example
+
+# ============================================================================
+# Testing
+# ============================================================================
+.pytest_cache/
+.coverage
+htmlcov/
+*.cover
+
+# ============================================================================
+# Logs
+# ============================================================================
+*.log
+logs/
+
+# ============================================================================
+# Temporary files
+# ============================================================================
+*.tmp
+*.temp
+*.bak
+
+# ============================================================================
+# OS specific
+# ============================================================================
+Thumbs.db
+.DS_Store
+
+# ============================================================================
+# Kaggle credentials (NUNCA commitear)
+# ============================================================================
+kaggle.json
+
+# ============================================================================
+# Documentation (LaTeX outputs)
+# ============================================================================
+doc/
