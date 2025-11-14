@@ -8,11 +8,11 @@
 
 ## 👥 Integrantes del Equipo
 
-| Nombre | Formación | GitHub |
-|--------|-----------|--------|
-| Paula Leylén Ramirez| Licenciada en Economía - UNL | [@paulaleylen](https://github.com/paulaleylen) |
-| Juan Ignacio Pintos | Licenciado en Ciencia Política - UDELAR | [@juanpintoselso33](https://github.com/juanpintoselso33) |
-| Luis Mella| M.A Estadística aplicada - Universidad de Nebrija | [@mella10g]([https://github.com/juanpintoselso33](https://github.com/mella10g) |
+| Nombre                 | Formación                                      | GitHub                                           |
+|------------------------|-----------------------------------------------|--------------------------------------------------|
+| Paula Leylén Ramirez   | Licenciada en Economía - UNL                  | [@paulaleylen](https://github.com/paulaleylen)  |
+| Juan Ignacio Pintos    | Licenciado en Ciencia Política - UDELAR       | [@juanpintoselso33](https://github.com/juanpintoselso33) |
+| Luis Mella             | M.A Estadística aplicada - Universidad de Nebrija | [@mella10g](https://github.com/mella10g)    |
 
 ---
 
@@ -129,6 +129,7 @@ jupyter notebook Program_TP2_Grupo10.ipynb
 
 **Universidad de Buenos Aires - Facultad de Ciencias Económicas**  
 **Taller de Programación - 2025**
+
 
 
 
