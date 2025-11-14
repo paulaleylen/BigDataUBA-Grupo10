@@ -48,18 +48,23 @@ ENV/
 *.ipynb_checkpoints
 
 # ============================================================================
-# Data (IMPORTANTE: NO commitear datos crudos)
+# Data (IMPORTANTE: NO commitear datos grandes)
 # ============================================================================
-# Ignorar carpetas de datos usadas en los TPs y outputs pesados
-TPFinal/data/**
-TP1/datos/**
-TP2/datos/**
-data/raw/**
-data/interim/**
-data/processed/**
-data/external/**
+# Ignorar archivos CSV/Excel grandes específicos (>10MB aprox)
+TPFinal/data/processed/features_final_modeling.csv
+TPFinal/data/processed/features_step3_returns_volatility.csv
+TPFinal/data/processed/features_step4_climate.csv
+TPFinal/data/processed/commodities_base_daily.csv
+TPFinal/data/processed/features_step2_rolling_stats.csv
+TPFinal/data/processed/features_step1_temporal_lags.csv
+TP1/datos/usu_individual_T105.dta
+TP1/datos/usu_individual_T125.xls
+TP1/datos/base_completa_05+25.csv
+TP2/datos/base_final_tp2.csv
+TP2/datos/datos_finales_corregidos.xlsx
+TPFinal/data/external/psd_manual/psd_soybeans_all.csv
 
-# Excepciones: SÍ commitear estos archivos
+# Seguir trackeando JSONs, gitkeeps y archivos pequeños
 !TPFinal/data/.gitkeep
 !TP1/datos/.gitkeep
 !TP2/datos/.gitkeep
