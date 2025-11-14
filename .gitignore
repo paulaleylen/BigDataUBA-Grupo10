@@ -97,6 +97,11 @@ reports/presentations/*.pptx
 !reports/figures/.gitkeep
 !reports/presentations/.gitkeep
 
+# TP PDFs deben estar en el repo (son documentos de entrega)
+!TP1/*.pdf
+!TP2/*.pdf
+!TP3/*.pdf
+
 # ============================================================================
 # Environment variables
 # ============================================================================
