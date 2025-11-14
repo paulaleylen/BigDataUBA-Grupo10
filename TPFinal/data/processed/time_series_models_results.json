@@ -1,5 +1,5 @@
 {
-  "fecha_generacion": "2025-11-10T21:29:40.692997",
+  "fecha_generacion": "2025-11-10T23:01:52.002055",
   "models": [
     "LSTM"
   ],
@@ -310,29 +310,29 @@
     {
       "Commodity": "Corn",
       "Model": "LSTM",
-      "Test RMSE": 9.884106650073113,
-      "Test MAE": 6.937709331512451,
-      "Test R\u00b2": 0.9828996062278748,
-      "Test Dir Acc": 0.46563814866760167,
-      "Overfitting Gap": 0.012475013732910156
+      "Test RMSE": 29.6967748669784,
+      "Test MAE": 13.465804100036621,
+      "Test R\u00b2": 0.8485075831413269,
+      "Test Dir Acc": 0.4670406732117812,
+      "Overfitting Gap": 0.10304605960845947
     },
     {
       "Commodity": "Soybeans",
       "Model": "LSTM",
-      "Test RMSE": 19.208831758576494,
-      "Test MAE": 14.67328929901123,
-      "Test R\u00b2": 0.9882470369338989,
-      "Test Dir Acc": 0.4544179523141655,
-      "Overfitting Gap": 0.006927847862243652
+      "Test RMSE": 61.34630502829816,
+      "Test MAE": 27.930004119873047,
+      "Test R\u00b2": 0.8810262680053711,
+      "Test Dir Acc": 0.4488078541374474,
+      "Overfitting Gap": 0.07543343305587769
     },
     {
       "Commodity": "Wheat",
       "Model": "LSTM",
-      "Test RMSE": 13.981782231711378,
-      "Test MAE": 10.633780479431152,
-      "Test R\u00b2": 0.9405539035797119,
-      "Test Dir Acc": 0.44460028050490885,
-      "Overfitting Gap": 0.052475810050964355
+      "Test RMSE": 32.34486901747807,
+      "Test MAE": 17.868398666381836,
+      "Test R\u00b2": 0.7064456939697266,
+      "Test Dir Acc": 0.45582047685834504,
+      "Overfitting Gap": 0.23879218101501465
     }
   ],
   "best_models": {

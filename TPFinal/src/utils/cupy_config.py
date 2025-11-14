@@ -176,7 +176,7 @@ def get_cupy_config(verbose=False):
     except ImportError as e:
         config['error'] = f"CuPy no instalado: {e}"
         if verbose:
-            print("\n⚠️  CuPy no está instalado - usando CPU")
+            print("\n  CuPy no está instalado - usando CPU")
             print(f"\nPara habilitar aceleración GPU:")
             print(f"  1. Verificar CUDA driver: nvidia-smi")
             print(f"  2. Instalar CuPy: pip install cupy-cuda13x")
@@ -186,7 +186,7 @@ def get_cupy_config(verbose=False):
     except Exception as e:
         config['error'] = str(e)
         if verbose:
-            print(f"\n⚠️  Error al configurar CuPy: {e}")
+            print(f"\n  Error al configurar CuPy: {e}")
             print(f"   Fallback: operaciones usarán CPU")
             import traceback
             print("\nStack trace:")

@@ -1,5 +1,5 @@
 {
-  "fecha_generacion": "2025-11-10T20:43:17.531774",
+  "fecha_generacion": "2025-11-10T23:55:28.325046",
   "models": [
     "Random Forest",
     "XGBoost",
@@ -123,65 +123,65 @@
     {
       "Commodity": "Corn",
       "Model": "Random Forest",
-      "Test RMSE": 67.96738871318843,
-      "Test MAE": 57.70385685210312,
-      "Test R\u00b2": 0.3286091266057283,
-      "Test Dir Acc": 0.4993215739484396,
-      "Overfitting Gap": 0.664515734008169
+      "Test RMSE": 65.55499487173059,
+      "Test MAE": 55.583825515280736,
+      "Test R\u00b2": 0.3754232129116989,
+      "Test Dir Acc": 0.46132971506105835,
+      "Overfitting Gap": 0.617854441451785
     },
     {
       "Commodity": "Corn",
       "Model": "XGBoost",
-      "Test RMSE": 49.25775907298256,
-      "Test MAE": 35.9895702760611,
-      "Test R\u00b2": 0.6473665028258728,
-      "Test Dir Acc": 0.5291723202170964,
-      "Overfitting Gap": 0.3062983090844139
+      "Test RMSE": 49.242302641232996,
+      "Test MAE": 35.973011073781485,
+      "Test R\u00b2": 0.6475877715373973,
+      "Test Dir Acc": 0.4789687924016282,
+      "Overfitting Gap": 0.3060770545517161
     },
     {
       "Commodity": "Corn",
       "Model": "LightGBM",
-      "Test RMSE": 48.74202974826368,
-      "Test MAE": 39.04452167502378,
-      "Test R\u00b2": 0.6547120005751559,
-      "Test Dir Acc": 0.5101763907734057,
-      "Overfitting Gap": 0.24808530310424215
+      "Test RMSE": 48.98136366245488,
+      "Test MAE": 39.077332722658234,
+      "Test R\u00b2": 0.6513127980037577,
+      "Test Dir Acc": 0.48032564450474896,
+      "Overfitting Gap": 0.24538096434583123
     },
     {
       "Commodity": "Soybeans",
       "Model": "Random Forest",
-      "Test RMSE": 118.20941299592974,
-      "Test MAE": 98.72200556045323,
-      "Test R\u00b2": 0.5902138932663687,
-      "Test Dir Acc": 0.5074626865671642,
-      "Overfitting Gap": 0.38879299820315383
+      "Test RMSE": 118.20991372566642,
+      "Test MAE": 98.71448578688366,
+      "Test R\u00b2": 0.5902104215881205,
+      "Test Dir Acc": 0.49796472184531887,
+      "Overfitting Gap": 0.38879646438506577
     },
     {
       "Commodity": "Soybeans",
       "Model": "XGBoost",
-      "Test RMSE": 65.17036151859945,
-      "Test MAE": 38.19982404980601,
-      "Test R\u00b2": 0.875447236166765,
-      "Test Dir Acc": 0.5305291723202171,
-      "Overfitting Gap": 0.08199250447287887
+      "Test RMSE": 65.14167018916515,
+      "Test MAE": 38.17012063263229,
+      "Test R\u00b2": 0.8755568810316527,
+      "Test Dir Acc": 0.514246947082768,
+      "Overfitting Gap": 0.0818828937081072
     },
     {
       "Commodity": "Soybeans",
       "Model": "LightGBM",
-      "Test RMSE": 72.55631730922018,
-      "Test MAE": 47.46854693323191,
-      "Test R\u00b2": 0.8456155441003403,
-      "Test Dir Acc": 0.5047489823609227,
-      "Overfitting Gap": 0.11626041606565052
+      "Test RMSE": 73.92774250653699,
+      "Test MAE": 49.23925867859147,
+      "Test R\u00b2": 0.8397241835652423,
+      "Test Dir Acc": 0.5373134328358209,
+      "Overfitting Gap": 0.12227052594095322
     },
     {
       "Commodity": "Wheat",
       "Model": "Random Forest",
-      "Test RMSE": 86.58921285763455,
-      "Test MAE": 76.98932207429567,
-      "Test R\u00b2": -0.8536680127502694,
-      "Test Dir Acc": 0.5006784260515604,
-      "Overfitting Gap": 1.8465528478309867
+      "Test RMSE": 83.72727810930705,
+      "Test MAE": 75.02051620796077,
+      "Test R\u00b2": -0.7331586469861311,
+      "Test Dir Acc": 0.47489823609226595,
+      "Overfitting Gap": 1.7260629906864273
     },
     {
       "Commodity": "Wheat",
@@ -189,17 +189,17 @@
       "Test RMSE": 39.4960117450129,
       "Test MAE": 28.246362404066318,
       "Test R\u00b2": 0.6143344390786828,
-      "Test Dir Acc": 0.5237449118046132,
+      "Test Dir Acc": 0.5074626865671642,
       "Overfitting Gap": 0.32924535900991303
     },
     {
       "Commodity": "Wheat",
       "Model": "LightGBM",
-      "Test RMSE": 37.81839987096961,
-      "Test MAE": 27.937851475096735,
-      "Test R\u00b2": 0.6464012904503434,
-      "Test Dir Acc": 0.5359565807327001,
-      "Overfitting Gap": 0.24256091368597632
+      "Test RMSE": 37.82149463638834,
+      "Test MAE": 27.950406510328893,
+      "Test R\u00b2": 0.6463434165140115,
+      "Test Dir Acc": 0.5223880597014925,
+      "Overfitting Gap": 0.2426180401834157
     }
   ],
   "best_models": {
@@ -210,10 +210,10 @@
   "hyperparameters": {
     "random_forest": {
       "Corn": {
-        "max_depth": null,
+        "max_depth": 30,
         "max_features": "sqrt",
         "min_samples_split": 2,
-        "n_estimators": 200
+        "n_estimators": 300
       },
       "Soybeans": {
         "max_depth": 10,
@@ -263,7 +263,7 @@
         "colsample_bytree": 0.8,
         "learning_rate": 0.1,
         "n_estimators": 100,
-        "num_leaves": 31,
+        "num_leaves": 63,
         "subsample": 0.8
       },
       "Wheat": {
