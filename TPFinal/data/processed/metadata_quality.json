@@ -1,0 +1,20 @@
+{
+  "fecha_analisis": "2025-11-10T13:36:59.523785",
+  "dataset": {
+    "file": "commodities_base_consolidated.csv",
+    "observaciones": 6731,
+    "variables": 99,
+    "periodo": "2000-01-03 - 2025-11-10"
+  },
+  "calidad_general": {
+    "score_promedio": 79.97938775510204,
+    "pct_missing_global": 6.375446636923386,
+    "variables_excelentes": 23,
+    "variables_pobres": 0
+  },
+  "recomendaciones": {
+    "imputar": [],
+    "eliminar_duplicados": false,
+    "interpolar_gaps": false
+  }
+}
