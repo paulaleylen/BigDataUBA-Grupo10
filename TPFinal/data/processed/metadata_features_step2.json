@@ -1,0 +1,32 @@
+{
+  "fecha_generacion": "2025-11-10T14:14:54.898064",
+  "archivo_input": "features_step1_temporal_lags.csv",
+  "archivo_output": "features_step2_rolling_stats.csv",
+  "dataset": {
+    "observaciones": 6731,
+    "columnas_totales": 2196,
+    "periodo": "2000-01-03 - 2025-11-10"
+  },
+  "features": {
+    "base": 98,
+    "temporales": 13,
+    "lags": 320,
+    "rolling_statistics": {
+      "total": 1764,
+      "ma": 294,
+      "std": 294,
+      "bollinger_bands": 588,
+      "crisis_dummies": 294,
+      "momentum": 294,
+      "ventanas": [
+        7,
+        30,
+        90
+      ]
+    }
+  },
+  "missing_values": {
+    "total": 682902,
+    "porcentaje_global": 4.620047687357979
+  }
+}
