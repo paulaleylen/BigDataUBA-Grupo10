@@ -1,0 +1,109 @@
+{
+  "last_updated": "2025-11-10T10:21:35.148070",
+  "oni": {
+    "ONI_monthly": {
+      "name": "ONI_monthly",
+      "source": "NOAA Climate Prediction Center",
+      "frequency": "Daily",
+      "period": {
+        "start": "1950-01-01T00:00:00",
+        "end": "2025-09-01T00:00:00"
+      },
+      "observations": 909,
+      "file": "oni_monthly.csv",
+      "downloaded_at": "2025-11-10T10:21:18.626278",
+      "url": "https://www.cpc.ncep.noaa.gov/data/indices/oni.ascii.txt",
+      "type": "ENSO Index",
+      "stats": {
+        "ONI": {
+          "mean": 0.010847084708470855,
+          "min": -2.03,
+          "max": 2.64,
+          "missing_pct": 0.0
+        }
+      }
+    },
+    "ONI_daily": {
+      "name": "ONI_daily",
+      "source": "NOAA Climate Prediction Center (forward-filled)",
+      "frequency": "Daily",
+      "period": {
+        "start": "2000-01-01T00:00:00",
+        "end": "2025-11-10T00:00:00"
+      },
+      "observations": 9446,
+      "file": "oni_daily.csv",
+      "downloaded_at": "2025-11-10T10:21:18.672798",
+      "url": "https://www.cpc.ncep.noaa.gov/data/indices/oni.ascii.txt",
+      "type": "ENSO Index",
+      "method": "forward-fill from monthly",
+      "stats": {
+        "ONI": {
+          "mean": -0.0586946855811984,
+          "min": -1.66,
+          "max": 2.64,
+          "missing_pct": 0.0
+        }
+      }
+    }
+  },
+  "nasa_power": {
+    "NASA_POWER_Brazil": {
+      "name": "NASA_POWER_Brazil",
+      "source": "NASA POWER API",
+      "frequency": "Daily",
+      "period": {
+        "start": "2000-01-01T00:00:00",
+        "end": "2025-11-10T00:00:00"
+      },
+      "observations": 9446,
+      "file": "nasa_power_brazil.csv",
+      "downloaded_at": "2025-11-10T10:21:24.450520",
+      "region": "Mato Grosso (Brasil)",
+      "coordinates": {
+        "lat": -13.5,
+        "lon": -55.5
+      },
+      "production_weight": 0.51,
+      "description": "Principal región productora de Brasil (50% producción global)"
+    },
+    "NASA_POWER_USA": {
+      "name": "NASA_POWER_USA",
+      "source": "NASA POWER API",
+      "frequency": "Daily",
+      "period": {
+        "start": "2000-01-01T00:00:00",
+        "end": "2025-11-10T00:00:00"
+      },
+      "observations": 9446,
+      "file": "nasa_power_usa.csv",
+      "downloaded_at": "2025-11-10T10:21:29.334083",
+      "region": "Corn Belt (Iowa, USA)",
+      "coordinates": {
+        "lat": 41.5,
+        "lon": -93.5
+      },
+      "production_weight": 0.29,
+      "description": "Corn Belt estadounidense (principal productor USA)"
+    },
+    "NASA_POWER_Argentina": {
+      "name": "NASA_POWER_Argentina",
+      "source": "NASA POWER API",
+      "frequency": "Daily",
+      "period": {
+        "start": "2000-01-01T00:00:00",
+        "end": "2025-11-10T00:00:00"
+      },
+      "observations": 9446,
+      "file": "nasa_power_argentina.csv",
+      "downloaded_at": "2025-11-10T10:21:35.120086",
+      "region": "Pampa Húmeda (Argentina)",
+      "coordinates": {
+        "lat": -34.5,
+        "lon": -61.0
+      },
+      "production_weight": 0.11,
+      "description": "Región pampeana argentina (3er exportador mundial)"
+    }
+  }
+}
