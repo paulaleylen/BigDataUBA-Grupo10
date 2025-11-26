@@ -525,3 +525,163 @@ Each section needs comprehensive markdown following this structure:
 ✅ **Do** emphasize humanitarian cost of False Negatives in policy discussion  
 ✅ **Do** document why Logit is recommended despite similar AUC (~0.555)  
 ✅ **Do** explain that 0.2% poverty in non-respondents suggests different population
+
+---
+
+## Academic Writing Style Guidelines (LaTeX & Markdown)
+
+### Core Principle: Natural Academic Prose
+
+The documentation must read as professional academic writing, NOT as AI-generated content. The user explicitly requested: "no me gusta que sea tan esquemático... muchas viñetas... que no parezca hecho por IA".
+
+### Structure Over Lists
+
+**Replace bullet points with flowing paragraphs:**
+
+```latex
+% ❌ WRONG - Schematic, AI-like style
+\textbf{Observaciones principales:}
+\begin{itemize}
+    \item \textbf{Accuracy:} CART lidera con 71.8\%
+    \item \textbf{Recall:} Logit destaca con 69.3\%
+    \item \textbf{AUC:} Logit y LASSO comparten 0.746
+\end{itemize}
+
+% ✅ CORRECT - Narrative academic prose
+CART lidera en accuracy con 71,8\%, seguido de cerca por LASSO y Ridge (71,5\%), 
+pero esta métrica puede resultar engañosa en programas de asistencia social donde 
+el costo de los errores es asimétrico. El contraste más notable aparece en recall: 
+mientras que la regresión logística del TP3 detecta el 69,3\% de las personas pobres, 
+LASSO apenas alcanza el 34,2\% y CART el 37,1\%.
+```
+
+### Topic Sentences
+
+Every paragraph must begin with a clear topic sentence that introduces the main idea:
+
+```latex
+% ✅ CORRECT - Strong topic sentences
+La selección del hiperparámetro óptimo se realizó mediante validación cruzada...
+Este resultado contrasta con lo observado en regularización logística...
+Una preocupación natural ante un parámetro de poda tan bajo es la posibilidad de sobreajuste...
+La asimetría en los niveles de penalización óptimos refleja propiedades fundamentales...
+```
+
+### Sentence Variation
+
+Mix short and long sentences to create natural rhythm:
+
+```latex
+% ✅ CORRECT - Varied sentence length
+El árbol alcanza un accuracy de 72,9\% en entrenamiento y 71,8\% en prueba. 
+Esta brecha reducida, inferior al umbral convencional del 5\%, indica que el 
+modelo generaliza adecuadamente sin memorizar el conjunto de entrenamiento. 
+La estructura del árbol resultante refuerza esta conclusión.
+```
+
+### Transition Words and Connectors
+
+Use Spanish academic connectors to link ideas:
+
+- **Causal:** dado que, debido a que, puesto que, en virtud de
+- **Contrast:** sin embargo, no obstante, a diferencia de, por el contrario
+- **Consequence:** en consecuencia, por lo tanto, esto implica que, de modo que
+- **Addition:** asimismo, además, por otra parte, de igual manera
+- **Exemplification:** por ejemplo, tal como, en particular, específicamente
+
+```latex
+% ✅ CORRECT - Natural connectors
+Este fenómeno refleja la ``desconfianza'' de Ridge hacia estimaciones extremas, 
+especialmente cuando provienen de categorías con pocas observaciones donde la 
+varianza muestral es alta. Sin embargo, es importante destacar que Ridge no 
+elimina ninguna variable: todos los coeficientes permanecen distintos de cero.
+```
+
+### Data Integration in Narrative
+
+Numbers and statistics should be woven into prose, not listed separately:
+
+```latex
+% ❌ WRONG - Data as list
+\textbf{Resultados:}
+\begin{itemize}
+    \item $\lambda_{LASSO} = 0.1$
+    \item $\lambda_{Ridge} = 10$
+    \item Error LASSO: 28.5\%
+    \item Error Ridge: 28.1\%
+\end{itemize}
+
+% ✅ CORRECT - Data integrated in narrative
+Los resultados indican que LASSO alcanza su mínimo error de clasificación (28,5\%) 
+con $\lambda = 0,1$ (equivalente a $C = 10$), mientras que Ridge optimiza con 
+$\lambda = 10$ (equivalente a $C = 0,1$), logrando un error ligeramente inferior de 28,1\%.
+```
+
+### Avoid AI Writing Patterns
+
+Common patterns to AVOID:
+
+❌ Starting every paragraph with "En este análisis..." or "Es importante destacar que..."  
+❌ Overusing "se observa que", "cabe mencionar", "resulta relevante"  
+❌ Lists of 3+ items with identical grammatical structure  
+❌ Excessive bold text within paragraphs  
+❌ Numbered conclusions that repeat section content  
+❌ Generic transitions like "Por otro lado..." at every paragraph
+
+### Paragraph Length and Density
+
+- **Minimum:** 4-5 sentences per paragraph
+- **Maximum:** 8-10 sentences before breaking
+- **Each paragraph:** ONE main idea, developed with evidence and interpretation
+- **Avoid:** Single-sentence paragraphs (except for emphasis)
+
+### Active vs Passive Voice
+
+Prefer active constructions when describing methodology:
+
+```latex
+% ✅ CORRECT - Active voice for methodology
+La validación cruzada seleccionó $\lambda = 0,1$ como nivel óptimo.
+El árbol separa a los menores de 18 años del resto de la población.
+
+% Also acceptable - Passive for results
+Se observa shrinkage significativo en todas las variables.
+La diferencia train-test es inferior al 5\%.
+```
+
+### Verb Tense Consistency
+
+- **Methodology:** Past tense (se realizó, se aplicó, se evaluó)
+- **Results:** Present tense (indica, muestra, revela)
+- **Interpretation:** Present tense (sugiere, implica, confirma)
+
+### LaTeX-Specific Guidelines
+
+1. **Tables:** Keep for numerical comparisons only, not for listing concepts
+2. **Equations:** Integrate with surrounding text using proper punctuation
+3. **Bold/Emphasis:** Reserve for variable names or first mention of key terms
+4. **Sections:** Don't end with lists - conclude with interpretive paragraph
+
+```latex
+% ✅ CORRECT - Section ending with interpretation
+La interpretación económica de los predictores se mantiene consistente entre 
+especificaciones: la educación universitaria completa e incompleta reduce la 
+probabilidad de pobreza, la desocupación la incrementa sustancialmente, y la 
+categoría de patrón ejerce un efecto protector. La regularización modifica las 
+magnitudes pero no altera las direcciones de los efectos estimados.
+```
+
+### Quality Checklist Before Submission
+
+Before finalizing any `.tex` or markdown document:
+
+1. ☐ No more than 2 bullet lists per section
+2. ☐ Every paragraph has 4+ sentences
+3. ☐ Topic sentences introduce each paragraph
+4. ☐ Numbers are integrated in prose, not listed
+5. ☐ Transition words connect paragraphs
+6. ☐ Varied sentence lengths (mix short and long)
+7. ☐ Sections end with interpretive conclusions
+8. ☐ No repetitive sentence starters
+9. ☐ Bold/emphasis used sparingly
+10. ☐ Reads naturally when spoken aloud
