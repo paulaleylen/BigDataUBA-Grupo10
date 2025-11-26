@@ -1,0 +1,51 @@
+{
+  "fecha_generacion": "2025-11-10T14:14:10.505635",
+  "archivo_output": "features_step1_temporal_lags.csv",
+  "dataset": {
+    "observaciones": 6731,
+    "columnas_totales": 432,
+    "periodo": "2000-01-03 - 2025-11-10"
+  },
+  "features": {
+    "base": {
+      "total": 98,
+      "targets_agricolas": 15,
+      "volumes": 27,
+      "predictores": 68
+    },
+    "temporales": {
+      "total": 13,
+      "columnas": [
+        "year",
+        "month",
+        "quarter",
+        "day_of_week",
+        "day_of_year",
+        "week_of_year",
+        "is_month_end",
+        "is_quarter_end",
+        "is_year_end",
+        "days_since_year_start",
+        "season",
+        "is_harvest_season",
+        "is_planting_season"
+      ]
+    },
+    "lags": {
+      "total": 320,
+      "estrategia": {
+        "targets_agricolas": "lags [1,2,3,5,7] - capturar momentum reciente",
+        "predictores_alta_correlacion": "lags [1,7,14,30] - transmisi\u00f3n de shocks",
+        "predictores_moderados": "lags [1,7,30] - balance informaci\u00f3n/parsimonia",
+        "predictores_estructurales": "lags [30,60,90] - frecuencia mensual/trimestral"
+      },
+      "observaciones_perdidas_lag_max": 247
+    }
+  },
+  "missing_values": {
+    "total": 182934,
+    "porcentaje_global": 6.291165255286485,
+    "por_lags": 140450,
+    "por_base_features": 42484
+  }
+}

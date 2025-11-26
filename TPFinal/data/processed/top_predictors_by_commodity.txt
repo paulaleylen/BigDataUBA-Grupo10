@@ -1,0 +1,156 @@
+TOP PREDICTORES POR COMMODITY AGRÍCOLA (|r| > 0.5)
+======================================================================
+
+Cocoa:
+  USD_ARS: 0.895
+  Gold: 0.761
+  SP500: 0.718
+  psd_brazil_Exports: 0.710
+  psd_united_states_Exports: 0.686
+  psd_world_Imports: 0.680
+  Materials_Index: 0.676
+  psd_world_Exports: 0.670
+  psd_brazil_Production: 0.668
+  psd_united_states_Production: 0.641
+
+Coffee:
+  Silver: 0.844
+  Gold: 0.842
+  Copper: 0.787
+  psd_world_Imports: 0.719
+  USD_ARS: 0.715
+  psd_world_Exports: 0.696
+  Energy_Index: 0.694
+  psd_brazil_Production: 0.691
+  Materials_Index: 0.658
+  SP500: 0.652
+
+Corn:
+  Heating_Oil: 0.812
+  RBOB_Gasoline: 0.798
+  Silver: 0.762
+  Crude_Oil: 0.743
+  Copper: 0.737
+  Brent_Crude: 0.709
+  USD_CNY: -0.642
+  Platinum: 0.626
+  Energy_Index: 0.602
+  psd_brazil_Ending_Stocks: 0.583
+
+Cotton:
+  RBOB_Gasoline: 0.643
+  Heating_Oil: 0.634
+  Silver: 0.624
+  Copper: 0.616
+  Crude_Oil: 0.605
+  Platinum: 0.537
+  USD_CNY: -0.529
+  Brent_Crude: 0.520
+
+Feeder:
+  Gold: 0.837
+  psd_united_states_Exports: 0.829
+  psd_brazil_Production: 0.815
+  SP500: 0.812
+  psd_world_Imports: 0.808
+  psd_world_Exports: 0.804
+  USD_ARS: 0.802
+  Materials_Index: 0.794
+  psd_brazil_Exports: 0.785
+  psd_world_Production: 0.771
+
+Lean:
+  RBOB_Gasoline: 0.716
+  Heating_Oil: 0.675
+  Copper: 0.652
+  Crude_Oil: 0.635
+  Silver: 0.629
+  Energy_Index: 0.625
+  Gold: 0.569
+  Brent_Crude: 0.527
+  psd_world_Imports: 0.501
+
+Live:
+  Gold: 0.863
+  psd_brazil_Production: 0.846
+  psd_united_states_Exports: 0.838
+  psd_world_Imports: 0.829
+  psd_world_Exports: 0.825
+  Materials_Index: 0.821
+  SP500: 0.820
+  psd_brazil_Exports: 0.805
+  psd_world_Production: 0.797
+  psd_china_Crush: 0.784
+
+Lumber:
+  SP500: 0.751
+  Palladium: 0.739
+  Materials_Index: 0.723
+  USD_BRL: 0.692
+  psd_united_states_Production: 0.607
+  psd_brazil_Exports: 0.604
+  USD_RUB: 0.595
+  USD_ARS: 0.588
+  TIPS: 0.571
+  psd_brazil_Production: 0.570
+
+Oat:
+  Copper: 0.753
+  Heating_Oil: 0.739
+  RBOB_Gasoline: 0.706
+  Crude_Oil: 0.664
+  Materials_Index: 0.654
+  Silver: 0.627
+  TIPS: 0.622
+  Palladium: 0.622
+  psd_brazil_Production: 0.615
+  Gold: 0.609
+
+Soybean:
+  Heating_Oil: 0.831
+  Copper: 0.808
+  RBOB_Gasoline: 0.800
+  Crude_Oil: 0.756
+  Silver: 0.740
+  Energy_Index: 0.655
+  Gold: 0.645
+  Brent_Crude: 0.639
+  psd_brazil_Production: 0.599
+  Materials_Index: 0.599
+
+Soybeans:
+  Heating_Oil: 0.822
+  RBOB_Gasoline: 0.812
+  Crude_Oil: 0.766
+  Copper: 0.750
+  Silver: 0.737
+  USD_CNY: -0.722
+  Brent_Crude: 0.720
+  Energy_Index: 0.676
+  psd_brazil_Ending_Stocks: 0.630
+  Platinum: 0.627
+
+Sugar:
+  Silver: 0.766
+  Copper: 0.717
+  Heating_Oil: 0.652
+  RBOB_Gasoline: 0.649
+  Platinum: 0.633
+  Energy_Index: 0.632
+  Crude_Oil: 0.617
+  Gold: 0.616
+  psd_china_Stock_to_Use_Ratio: 0.597
+  USD_CNY: -0.552
+
+Wheat:
+  Heating_Oil: 0.844
+  RBOB_Gasoline: 0.815
+  Crude_Oil: 0.812
+  Brent_Crude: 0.728
+  Copper: 0.712
+  Platinum: 0.636
+  Energy_Index: 0.632
+  Silver: 0.611
+  Ethanol: 0.559
+  USD_CNY: -0.520
+
