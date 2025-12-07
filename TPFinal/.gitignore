@@ -51,15 +51,19 @@ ENV/
 # Data (IMPORTANTE: NO commitear datos crudos ni archivos grandes)
 # ============================================================================
 
-# Excluir todos los CSVs grandes en data/ (>50MB)
+# Excluir archivos >100MB (CRÍTICO para evitar timeouts en git push)
 data/processed/features_final_modeling.csv
 data/processed/features_step*.csv
-data/processed/features_selected_modeling.csv
 
-# Excluir archivos GDELT y sentiment (muy pesados)
+# Excluir archivos GDELT y sentiment (muy pesados, 150-725 MB c/u)
 data/external/sentiment/**/*.csv
 data/external/sentiment/**/*.parquet
 data/external/sentiment/temp_batches_v1/**
+data/external/sentiment/gdelt_*.csv
+
+# Excluir archivos de datos crudos EPH (>60MB)
+**/usu_individual_T105.dta
+**/usu_individual_T125.xls
 
 # Excluir FUT86_16.txt (160 MB)
 FUT86_16.txt
