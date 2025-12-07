@@ -14,10 +14,11 @@ data/
 ├── external/               # Datos de APIs externas
 │   ├── cftc/              # CFTC Commitments of Traders
 │   │   └── cftc_features_2000_2025.csv (6,731 × 11)
-│   └── gdelt/             # GDELT News Sentiment
-│       ├── gdelt_v1_raw_2000_2013.csv
-│       ├── gdelt_v2_raw_2015_2025.csv
-│       └── sentiment_features_2000_2025.csv (6,731 × 10)
+│   └── sentiment/         # GDELT News Sentiment (1979-2025, consolidado)
+│       ├── GDELT.MASTERREDUCEDV2.TXT (6.3 GB, descarga manual, 1979-2013)
+│       ├── sentiment_daily_2000_2025.csv (3,920 días, BigQuery GDELT 2.0)
+│       ├── sentiment_daily_1979_2025_merged.csv (16,753 días, consolidado)
+│       └── sentiment_features_1979_2025.csv (16,753 × 10, features finales)
 │
 ├── interim/               # Datos intermedios procesados
 │   ├── commodities/       # 22 CSVs individuales (corn.csv, gold.csv, etc.)
@@ -66,9 +67,10 @@ python -m src.data.download_commodities      # ~2 min
 python -m src.data.download_predictors       # ~1 min
 python -m src.data.download_climate          # ~3 min
 
-# Fase 2: Features Académicas (15 min)
+# Fase 2: Features Académicas (5 min)
 python -m src.data.download_cftc_cot         # ~2 min
-python -m src.data.download_sentiment_gdelt  # ~10 min
+python -m src.data.download_sentiment_gdelt --bigquery  # ~30 seg (GDELT 2.0 vía BigQuery)
+# NOTA: GDELT 1.0 requiere descarga manual + procesamiento en notebook 2.6
 python -m src.data.download_bdi              # ~10 seg
 python -m src.data.download_crop_conditions  # ~30 seg
 python -m src.data.download_government_stocks_ers  # ~20 seg
@@ -156,9 +158,29 @@ make clean-all
 - Descargar manualmente de Investing.com
 - O comentar `download_bdi` en Makefile
 
-### Error: "GDELT download muy lento"
-- Normal, descarga ~20 años de datos
-- Esperar ~10 minutos o ejecutar en background
+### GDELT: Proceso Completo
+
+**GDELT 2.0 (2015-2025) - Automático vía BigQuery:**
+```bash
+# Configurar credentials primero
+export GOOGLE_APPLICATION_CREDENTIALS="path/to/credentials.json"
+
+# Descargar (30 segundos)
+python -m src.data.download_sentiment_gdelt --bigquery
+```
+
+**GDELT 1.0 (1979-2013) - Manual:**
+1. Descargar `MASTERREDUCEDV2.TXT` (6.3 GB) desde:
+   https://www.gdeltproject.org/data.html#rawdatafiles
+2. Guardar en: `data/external/sentiment/GDELT.MASTERREDUCEDV2.TXT`
+3. Ejecutar notebook: `notebooks/2.0-feature-engineering/2.6-gdelt-historical-merge.ipynb`
+   - Procesa 87M eventos en ~3 minutos
+   - Genera `sentiment_daily_1979_2025_merged.csv` (16,753 días)
+   - Genera `sentiment_features_1979_2025.csv` (10 features)
+
+**Resultado final:**
+- 46.9 años de cobertura (1979-2025)
+- Gap: 2014 (GDELT 2.0 no tiene archivos históricos para ese año)
 
 ### Make no funciona en Windows
 - Usar PowerShell y ejecutar scripts manualmente

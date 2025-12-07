@@ -13,7 +13,9 @@ Pipeline automatizado que:
 3. **Descarga** datos climáticos (NOAA/NASA APIs)
 4. **Descarga** features académicas:
    - CFTC Commitments of Traders (11 features)
-   - GDELT News Sentiment (10 features)
+   - GDELT News Sentiment (10 features, 1979-2025, 46 años)
+     - Pre-2014: GDELT 1.0 (archivo MASTERREDUCEDV2.TXT, descarga manual)
+     - Post-2014: GDELT 2.0 (BigQuery API, descarga automática)
    - Baltic Dry Index (8 features)
    - Crop Conditions USDA (15 features)
    - Government Stocks USDA ERS (9 features)
@@ -53,7 +55,8 @@ python -m src.data.download_climate          # ~3 min
 
 # Fase 2: Features Académicas
 python -m src.data.download_cftc_cot         # ~2 min
-python -m src.data.download_sentiment_gdelt  # ~10 min (batch download)
+python -m src.data.download_sentiment_gdelt --bigquery  # ~30 seg (GDELT 2.0 vía BigQuery)
+# NOTA: GDELT 1.0 pre-2014 requiere descarga manual de MASTERREDUCEDV2.TXT
 python -m src.data.download_bdi              # ~10 seg (requiere CSV manual)
 python -m src.data.download_crop_conditions  # ~30 seg (requiere NASS_API_KEY)
 python -m src.data.download_government_stocks_ers  # ~20 seg
@@ -68,7 +71,8 @@ python -m src.data.process                   # ~1 min
 - `data/interim/predictors/` → 7 CSVs macro
 - `data/interim/climate/` → Features climáticas
 - `data/external/cftc/` → CFTC features (11 cols)
-- `data/external/gdelt/` → Sentiment features (10 cols)
+- `data/external/sentiment/` → GDELT sentiment consolidado (10 cols, 1979-2025)
+  - `sentiment_features_1979_2025.csv` (16,753 días, 46.9 años)
 - `data/interim/bdi/` → BDI features (8 cols)
 - `data/interim/supply_demand/` → Crop + Gov Stocks (24 cols)
 - `data/interim/fred/` → Economic indicators (33 cols)
@@ -89,7 +93,7 @@ TPFinal/
 │   ├── raw/                       # Datos crudos descargados
 │   ├── external/                  # Datos de APIs externas
 │   │   ├── cftc/                  # CFTC Commitments of Traders
-│   │   └── gdelt/                 # GDELT News Sentiment
+│   │   └── sentiment/             # GDELT News Sentiment (1979-2025, consolidado)
 │   ├── interim/                   # Datos intermedios procesados
 │   │   ├── commodities/           # 22 archivos CSV (corn.csv, gold.csv, etc.)
 │   │   ├── predictors/            # 7 archivos CSV (vix.csv, dxy.csv, etc.)
@@ -162,15 +166,20 @@ make data
 
 Esto ejecuta automáticamente:
 - ✅ Fase 1: Commodities + Predictors + Climate (~6 min)
-- ✅ Fase 2: CFTC + GDELT + BDI + Crop + Gov Stocks + FRED (~15 min)
-- ✅ Fase 3: Procesamiento y consolidación (~1 min)
+- ✅ Fase 2: CFTC + GDELT (BigQuery) + BDI + Crop + Gov Stocks + FRED (~5 min)
+- ✅ Fase 3: Procesamiento y consolidación GDELT 1.0+2.0 (~3 min)
+- ✅ Fase 4: Feature engineering final (~1 min)
 
 **Opción manual:** Ver sección "Generar la base de datos" arriba
 
 **Salida esperada:**
 - `data/interim/` → Múltiples carpetas con features intermedias
-- `data/external/` → CFTC y GDELT raw data
+- `data/external/` → CFTC y GDELT (sentiment consolidado 1979-2025)
 - `data/processed/features_final_modeling.csv` → **Dataset final** (6,731 × 3,239)
+
+**Archivos GDELT generados:**
+- `sentiment_daily_1979_2025_merged.csv` - Datos diarios agregados (GDELT 1.0 + 2.0)
+- `sentiment_features_1979_2025.csv` - Features finales para modelado
 
 **Nota:** Necesitás API keys en `.env` para:
 - `NASS_API_KEY` (crop conditions)

@@ -1,0 +1,31 @@
+{
+  "notebook": "4.6-ensemble-models",
+  "timestamp": "2025-12-07T18:11:39.534186",
+  "models_combined": [
+    "LASSO",
+    "XGBoost"
+  ],
+  "ensemble_methods": [
+    "Soft Voting",
+    "Weighted Voting"
+  ],
+  "results": {
+    "avg_improvement": -0.012535871449402306,
+    "ensemble_win_rate": 0.3333333333333333,
+    "best_ensemble": {
+      "Commodity": "Corn",
+      "Horizon": "t21",
+      "LASSO_AUC": 0.5154291831979343,
+      "XGB_AUC": 0.5940176490962907,
+      "Ensemble_Simple_AUC": 0.5915576390200894,
+      "Ensemble_Weighted_AUC": 0.5915576390200894,
+      "Best_Individual": 0.5940176490962907,
+      "Best_Ensemble": 0.5915576390200894,
+      "Improvement": -0.0024600100762013355,
+      "Weight_LASSO": 0.5,
+      "Weight_XGB": 0.5
+    },
+    "avg_weight_lasso": 0.5,
+    "avg_weight_xgb": 0.5
+  }
+}
