@@ -1,5 +1,5 @@
 {
-  "last_updated": "2025-10-27T12:53:44.546899",
+  "last_updated": "2025-12-06T20:05:21.101490",
   "predictors": {
     "VIX": {
       "ticker": "^VIX",
@@ -8,16 +8,16 @@
       "frequency": "Daily",
       "period": {
         "start": "2000-01-03T00:00:00",
-        "end": "2025-10-27T00:00:00"
+        "end": "2025-12-05T00:00:00"
       },
-      "observations": 6494,
+      "observations": 6522,
       "file": "vix.csv",
-      "downloaded_at": "2025-10-27T12:53:40.177014",
+      "downloaded_at": "2025-12-06T20:05:16.282821",
       "stats": {
-        "mean": 19.85411148978851,
+        "mean": 19.849639683623725,
         "min": 9.140000343322754,
         "max": 82.69000244140625,
-        "std": 8.390305932704418
+        "std": 8.374613055202758
       }
     },
     "DXY": {
@@ -27,16 +27,16 @@
       "frequency": "Daily",
       "period": {
         "start": "2000-01-03T00:00:00",
-        "end": "2025-10-27T00:00:00"
+        "end": "2025-12-05T00:00:00"
       },
-      "observations": 6523,
+      "observations": 6551,
       "file": "dxy.csv",
-      "downloaded_at": "2025-10-27T12:53:41.139033",
+      "downloaded_at": "2025-12-06T20:05:17.210595",
       "stats": {
-        "mean": 92.8371289499,
+        "mean": 92.86590293869138,
         "min": 71.33000183105469,
         "max": 120.9000015258789,
-        "std": 11.322492040793774
+        "std": 11.30683352899861
       }
     },
     "SP500": {
@@ -46,16 +46,16 @@
       "frequency": "Daily",
       "period": {
         "start": "2000-01-03T00:00:00",
-        "end": "2025-10-27T00:00:00"
+        "end": "2025-12-05T00:00:00"
       },
-      "observations": 6494,
+      "observations": 6522,
       "file": "sp500.csv",
-      "downloaded_at": "2025-10-27T12:53:41.936913",
+      "downloaded_at": "2025-12-06T20:05:17.776697",
       "stats": {
-        "mean": 2237.50624219344,
+        "mean": 2256.9957584496915,
         "min": 676.530029296875,
-        "max": 6854.4501953125,
-        "std": 1409.051078921026
+        "max": 6890.89013671875,
+        "std": 1437.0269676632888
       }
     },
     "Treasury_10Y": {
@@ -65,16 +65,16 @@
       "frequency": "Daily",
       "period": {
         "start": "2000-01-03T00:00:00",
-        "end": "2025-10-27T00:00:00"
+        "end": "2025-12-05T00:00:00"
       },
-      "observations": 6488,
+      "observations": 6516,
       "file": "treasury_10y.csv",
-      "downloaded_at": "2025-10-27T12:53:42.921560",
+      "downloaded_at": "2025-12-06T20:05:18.299543",
       "stats": {
-        "mean": 3.305866366792034,
+        "mean": 3.3092186906042826,
         "min": 0.49900001287460327,
         "max": 6.781000137329102,
-        "std": 1.2963819576163063
+        "std": 1.2946029917631667
       }
     },
     "Energy_Index": {
@@ -84,16 +84,16 @@
       "frequency": "Daily",
       "period": {
         "start": "2000-01-03T00:00:00",
-        "end": "2025-10-27T00:00:00"
+        "end": "2025-12-05T00:00:00"
       },
-      "observations": 6494,
+      "observations": 6522,
       "file": "energy_index.csv",
-      "downloaded_at": "2025-10-27T12:53:43.965882",
+      "downloaded_at": "2025-12-06T20:05:20.622943",
       "stats": {
-        "mean": 453.5413441495011,
+        "mean": 454.52846652969413,
         "min": 163.8300018310547,
         "max": 749.3900146484375,
-        "std": 154.17379059266415
+        "std": 154.57678812780355
       }
     },
     "Materials_Index": {
@@ -107,7 +107,26 @@
       },
       "observations": 0,
       "file": "materials_index.csv",
-      "downloaded_at": "2025-10-27T12:53:44.531902",
+      "downloaded_at": "2025-12-06T20:05:21.085491",
+      "stats": {
+        "mean": NaN,
+        "min": NaN,
+        "max": NaN,
+        "std": NaN
+      }
+    },
+    "Fed_Funds_Rate": {
+      "ticker": "FEDFUNDS",
+      "name": "Fed_Funds_Rate",
+      "source": "Yahoo Finance",
+      "frequency": "Daily",
+      "period": {
+        "start": "NaT",
+        "end": "NaT"
+      },
+      "observations": 0,
+      "file": "fed_funds_rate.csv",
+      "downloaded_at": "2025-12-06T20:05:19.866768",
       "stats": {
         "mean": NaN,
         "min": NaN,

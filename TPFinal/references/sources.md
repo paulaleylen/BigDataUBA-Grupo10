@@ -284,4 +284,188 @@ pip install yfinance pandas numpy matplotlib seaborn openpyxl
 - Juan Ignacio Pintos (@juanpintoselso33)
 - Luis Mella
 
-**Última revisión de fuentes:** Octubre 2025
+---
+
+## 3. Fuentes de Datos Académicas (Diciembre 2025)
+
+### 3.1. CFTC - Commitments of Traders (COT)
+**URL:** https://www.cftc.gov/MarketReports/CommitmentsofTraders/index.htm  
+**Descripción:** Reportes semanales de posiciones de futuros y opciones  
+**Cobertura:** 2000-2025  
+**Frecuencia:** Semanal (martes, publicado viernes)  
+**Formato:** Legacy Reports TXT (fixed-width)  
+
+**Commodities:**
+- Corn (CBOT, código 002602)
+- Soybeans (CBOT, código 005602)
+- Wheat (CBOT, código 001602)
+
+**Variables extraídas:**
+- Commercial long/short (hedgers)
+- Non-commercial long/short (especuladores)
+- Open interest total
+- Ratios y cambios semanales
+
+**Script:** `src/data/download_cftc_cot.py`  
+**Output:** `data/external/cftc/cftc_features_2000_2025.csv` (6,731 × 11)
+
+---
+
+### 3.2. GDELT - Global Database of Events, Language and Tone
+**URL:** https://www.gdeltproject.org/  
+**Descripción:** Base de datos global de eventos y sentimiento de noticias  
+**Cobertura:** 
+- v1.0 (2000-2013): Historical files
+- v2.0 (2015-2025): Real-time files  
+**Frecuencia:** 15 minutos (agregado a diario)  
+**Formato:** CSV comprimidos (GZip)  
+
+**Queries por commodity:**
+- "corn AND (agriculture OR grain OR futures)"
+- "soybeans AND (agriculture OR oilseed OR futures)"
+- "wheat AND (agriculture OR grain OR futures)"
+
+**Variables extraídas:**
+- Tone promedio diario (-1 a +1)
+- Event count (número de menciones)
+- Moving averages (7 días)
+
+**Script:** `src/data/download_sentiment_gdelt.py`  
+**Output:** `data/external/gdelt/sentiment_features_2000_2025.csv` (6,731 × 10)  
+**Nota:** Gap 2014 (transición v1→v2), imputado con median(2013, 2015)
+
+---
+
+### 3.3. Baltic Dry Index (BDI)
+**URL:** https://www.investing.com/indices/baltic-dry-historical-data  
+**Descripción:** Índice de costos de transporte marítimo global  
+**Cobertura:** 2000-2025  
+**Frecuencia:** Diaria (días hábiles)  
+**Formato:** CSV (descarga manual)  
+
+**Variables:**
+- BDI level (puntos)
+- Lags (7, 30, 90 días)
+- Rolling means (30 días)
+- Returns y volatilidad
+- Spike indicator (>2σ)
+
+**Script:** `src/data/download_bdi.py`  
+**Input manual:** `data/external/bdi/baltic_dry_index.csv`  
+**Output:** `data/interim/bdi/bdi_features.csv` (6,456 × 8)
+
+---
+
+### 3.4. USDA NASS - Crop Conditions
+**URL:** https://quickstats.nass.usda.gov/api  
+**API Key:** Requerida (gratis)  
+**Descripción:** Condiciones semanales de cultivos (Good/Excellent %)  
+**Cobertura:** 2024-2025 (limitación API)  
+**Frecuencia:** Semanal  
+**Formato:** JSON API  
+
+**Commodities:**
+- Corn, Soybeans, Wheat
+
+**Variables extraídas:**
+- % Good + Excellent semanal
+- Week-over-week change
+- Moving average 4 semanas
+- Deviation de promedio histórico
+- Binary indicator (>60% = good conditions)
+
+**Script:** `src/data/download_crop_conditions.py`  
+**Output:** `data/interim/supply_demand/crop_conditions_all_features.csv` (337 × 15)  
+**API Key:** `.env` → `NASS_API_KEY`
+
+---
+
+### 3.5. USDA ERS - Government Stocks (Ending Stocks)
+**URLs directas (sin API):**
+- Corn: https://www.ers.usda.gov/webdocs/DataFiles/50048/FeedGrainsYearbook.csv
+- Soybeans: https://www.ers.usda.gov/webdocs/DataFiles/50594/oilcropsyearbook.csv
+- Wheat: https://www.ers.usda.gov/webdocs/DataFiles/53786/WheatYearbookTable04.xlsx
+
+**Descripción:** Stocks gubernamentales de fin de año comercial  
+**Cobertura:**
+- Corn: 1960-2025 (66 años)
+- Soybeans: 1980-2024 (45 años)
+- Wheat: 1960-2025 (66 años)  
+**Frecuencia:** Anual (forward-fill a diario)  
+**Formato:** CSV (Corn, Soy) y XLSX multi-sheet (Wheat)  
+
+**Variables extraídas:**
+- Ending stocks absolutos (bushels)
+- Year-over-year change (bushels)
+- YoY percentage change
+
+**Script:** `src/data/download_government_stocks_ers.py`  
+**Output:** `data/interim/supply_demand/government_stocks_ers_all_features.csv` (23,834 × 9)  
+**Nota:** Wheat requiere parser custom para XLSX Table04
+
+---
+
+### 3.6. FRED - Federal Reserve Economic Data
+**URL:** https://fred.stlouisfed.org/docs/api/  
+**API Key:** Requerida (gratis)  
+**Descripción:** Indicadores macroeconómicos de la Reserva Federal  
+**Cobertura:** 2000-2025  
+**Frecuencia:** Daily, Monthly, Quarterly (según serie)  
+**Formato:** JSON API  
+
+**Series descargadas:**
+1. **FEDFUNDS** - Federal Funds Effective Rate (% monthly)
+2. **DFF** - Federal Funds Rate Daily (% daily)
+3. **UNRATE** - Unemployment Rate (% monthly)
+4. **CPIAUCSL** - Consumer Price Index (index monthly)
+5. **GDP** - Gross Domestic Product (billions quarterly)
+
+**Variables extraídas por serie:**
+- Base value
+- Change (diff)
+- Percentage change
+- Lags (7, 30 días)
+- Moving averages (30, 90 días)
+
+**Script:** `src/data/download_fred.py`  
+**Output:** `data/interim/fred/fred_all_features.csv` (9,470 × 33)  
+**API Key:** `.env` → `FRED_API_KEY`  
+**Resampling:** Monthly/quarterly → daily via forward-fill
+
+---
+
+## API Keys Necesarias
+
+Crear archivo `.env` en raíz del proyecto:
+
+```bash
+# USDA NASS Quick Stats API (crop conditions)
+NASS_API_KEY=tu_key_aqui
+
+# Federal Reserve Economic Data API (economic indicators)
+FRED_API_KEY=tu_key_aqui
+```
+
+**Obtener keys (gratis):**
+- NASS: https://quickstats.nass.usda.gov/api (registro simple)
+- FRED: https://fred.stlouisfed.org/docs/api/api_key.html (crear cuenta)
+
+---
+
+## Feature Count Total
+
+| Categoría | Features | Script |
+|-----------|----------|--------|
+| Baseline (Step 4) | 3,186 | download_commodities, download_predictors, download_climate |
+| CFTC (Step 5) | +11 | download_cftc_cot |
+| GDELT (Step 6) | +10 | download_sentiment_gdelt |
+| BDI (Step 7) | +8 | download_bdi |
+| Crop Conditions (Step 8) | +15 | download_crop_conditions |
+| Gov Stocks (Step 9) | +9 | download_government_stocks_ers |
+| **TOTAL** | **3,239** | `make data` (ejecuta todos) |
+
+**Dataset final:** `data/processed/features_final_modeling.csv` (6,731 × 3,239)
+
+---
+
+**Última revisión de fuentes:** Diciembre 2025

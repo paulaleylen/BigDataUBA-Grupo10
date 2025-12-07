@@ -9,10 +9,18 @@ Base de datos escalable de commodities y predictores macro para análisis y mode
 Pipeline automatizado que:
 
 1. **Descarga** 22 commodities desde Yahoo Finance (granos, energía, metales)
-2. **Descarga** 5 predictores macro (VIX, DXY, S&P500, tasas, índices)
-3. **Procesa** y limpia automáticamente
-4. **Genera** 216 features para ML (lags, rolling stats, returns)
-5. **Exporta** dataset final: `commodities_base_daily.csv` (6,537×250, 25MB)
+2. **Descarga** 7 predictores macro (VIX, DXY, S&P500, tasas, índices)
+3. **Descarga** datos climáticos (NOAA/NASA APIs)
+4. **Descarga** features académicas:
+   - CFTC Commitments of Traders (11 features)
+   - GDELT News Sentiment (10 features)
+   - Baltic Dry Index (8 features)
+   - Crop Conditions USDA (15 features)
+   - Government Stocks USDA ERS (9 features)
+   - FRED Economic Indicators (33 features)
+5. **Procesa** y limpia automáticamente
+6. **Genera** 3,239 features para ML (lags, rolling stats, returns, sentiment, fundamentals)
+7. **Exporta** dataset final: `features_final_modeling.csv` (6,731×3,239)
 
 ---
 
@@ -29,17 +37,42 @@ pip install -e .
 
 ### Generar la base de datos:
 
+**Opción 1: Pipeline completo automatizado (recomendado)**
+
 ```bash
-# Pipeline completo (ejecutar en orden)
-python src/data/download_commodities.py  # ~2 min
-python src/data/download_predictors.py   # ~1 min  
-python src/data/process.py               # ~30 seg
+make data  # Ejecuta TODOS los scripts en orden correcto (~15-20 min)
+```
+
+**Opción 2: Ejecutar manualmente**
+
+```bash
+# Fase 1: Datos Core
+python -m src.data.download_commodities      # ~2 min
+python -m src.data.download_predictors       # ~1 min
+python -m src.data.download_climate          # ~3 min
+
+# Fase 2: Features Académicas
+python -m src.data.download_cftc_cot         # ~2 min
+python -m src.data.download_sentiment_gdelt  # ~10 min (batch download)
+python -m src.data.download_bdi              # ~10 seg (requiere CSV manual)
+python -m src.data.download_crop_conditions  # ~30 seg (requiere NASS_API_KEY)
+python -m src.data.download_government_stocks_ers  # ~20 seg
+python -m src.data.download_fred             # ~30 seg (requiere FRED_API_KEY)
+
+# Fase 3: Procesamiento
+python -m src.data.process                   # ~1 min
 ```
 
 **Output:**
 - `data/interim/commodities/` → 22 CSVs individuales
-- `data/interim/predictors/` → 5 CSVs individuales
-- `data/processed/commodities_base_daily.csv` → **Base final** (25 MB)
+- `data/interim/predictors/` → 7 CSVs macro
+- `data/interim/climate/` → Features climáticas
+- `data/external/cftc/` → CFTC features (11 cols)
+- `data/external/gdelt/` → Sentiment features (10 cols)
+- `data/interim/bdi/` → BDI features (8 cols)
+- `data/interim/supply_demand/` → Crop + Gov Stocks (24 cols)
+- `data/interim/fred/` → Economic indicators (33 cols)
+- `data/processed/features_final_modeling.csv` → **Base final** (6,731×3,239)
 
 ### Explorar:
 
@@ -54,11 +87,18 @@ TPFinal/
 │
 ├── data/                          # TODOS LOS DATOS (no se suben a Git)
 │   ├── raw/                       # Datos crudos descargados
+│   ├── external/                  # Datos de APIs externas
+│   │   ├── cftc/                  # CFTC Commitments of Traders
+│   │   └── gdelt/                 # GDELT News Sentiment
 │   ├── interim/                   # Datos intermedios procesados
 │   │   ├── commodities/           # 22 archivos CSV (corn.csv, gold.csv, etc.)
-│   │   └── predictors/            # 6 archivos CSV (vix.csv, dxy.csv, etc.)
+│   │   ├── predictors/            # 7 archivos CSV (vix.csv, dxy.csv, etc.)
+│   │   ├── climate/               # Features climáticas (NOAA/NASA)
+│   │   ├── bdi/                   # Baltic Dry Index features
+│   │   ├── fred/                  # FRED economic indicators
+│   │   └── supply_demand/         # Crop conditions + Gov stocks (USDA)
 │   └── processed/                 # Datos finales listos para modelado
-│       └── commodities_base_daily.csv  # Dataset final con 250 columnas
+│       └── features_final_modeling.csv  # Dataset final con 3,239 columnas
 │
 ├── notebooks/                     # NOTEBOOKS PARA EXPLORACIÓN
 │   ├── 1.0-exploratory/           # Notebooks de análisis
@@ -69,9 +109,16 @@ TPFinal/
 ├── src/                           # CÓDIGO REUTILIZABLE
 │   ├── config.py                  # Configuración centralizada (IMPORTANTE!)
 │   └── data/                      # Módulos de datos
-│       ├── download_commodities.py   # Descarga commodities
-│       ├── download_predictors.py    # Descarga predictores
-│       └── process.py                # Procesa y genera features
+│       ├── download_commodities.py           # Descarga commodities (Yahoo)
+│       ├── download_predictors.py            # Descarga predictores macro (Yahoo)
+│       ├── download_climate.py               # Descarga clima (NOAA/NASA)
+│       ├── download_cftc_cot.py              # CFTC Commitments of Traders
+│       ├── download_sentiment_gdelt.py       # GDELT News Sentiment
+│       ├── download_bdi.py                   # Baltic Dry Index
+│       ├── download_crop_conditions.py       # Crop Conditions (NASS API)
+│       ├── download_government_stocks_ers.py # Gov Stocks (USDA ERS)
+│       ├── download_fred.py                  # Economic indicators (FRED API)
+│       └── process.py                        # Procesa y genera features
 │
 ├── reports/                       # VISUALIZACIONES
 │   └── figures/                   # Gráficos generados (.png)
@@ -107,23 +154,27 @@ pip install -e .
 
 ### Paso 2: Descargar los datos
 
-Ejecutá estos comandos **en orden**:
+**Opción recomendada: Pipeline automatizado**
 
 ```bash
-# 1. Descargar commodities (22 commodities desde Yahoo Finance)
-python src/data/download_commodities.py
-
-# 2. Descargar predictores (VIX, DXY, S&P 500, etc.)
-python src/data/download_predictors.py
-
-# 3. Procesar todo y generar features
-python src/data/process.py
+make data
 ```
 
+Esto ejecuta automáticamente:
+- ✅ Fase 1: Commodities + Predictors + Climate (~6 min)
+- ✅ Fase 2: CFTC + GDELT + BDI + Crop + Gov Stocks + FRED (~15 min)
+- ✅ Fase 3: Procesamiento y consolidación (~1 min)
+
+**Opción manual:** Ver sección "Generar la base de datos" arriba
+
 **Salida esperada:**
-- `data/interim/commodities/` → 22 archivos CSV
-- `data/interim/predictors/` → 6 archivos CSV
-- `data/processed/commodities_base_daily.csv` → **Dataset final** (25 MB, 6,537 filas × 250 columnas)
+- `data/interim/` → Múltiples carpetas con features intermedias
+- `data/external/` → CFTC y GDELT raw data
+- `data/processed/features_final_modeling.csv` → **Dataset final** (6,731 × 3,239)
+
+**Nota:** Necesitás API keys en `.env` para:
+- `NASS_API_KEY` (crop conditions)
+- `FRED_API_KEY` (economic indicators)
 
 ---
 

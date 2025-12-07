@@ -29,6 +29,14 @@ RAW_YAHOO_DIR = RAW_DIR / 'yahoo'
 # Subdirectorios de interim
 INTERIM_COMMODITIES_DIR = INTERIM_DIR / 'commodities'
 INTERIM_PREDICTORS_DIR = INTERIM_DIR / 'predictors'
+INTERIM_CLIMATE_DIR = INTERIM_DIR / 'climate'
+INTERIM_BDI_DIR = INTERIM_DIR / 'bdi'
+INTERIM_SUPPLY_DEMAND_DIR = INTERIM_DIR / 'supply_demand'
+INTERIM_FRED_DIR = INTERIM_DIR / 'fred'
+
+# Subdirectorios de external (datos de APIs externas)
+EXTERNAL_CFTC_DIR = EXTERNAL_DIR / 'cftc'
+EXTERNAL_GDELT_DIR = EXTERNAL_DIR / 'gdelt'
 
 # Otros directorios
 MODELS_DIR = BASE_DIR / 'models'
@@ -40,6 +48,8 @@ REFERENCES_DIR = BASE_DIR / 'references'
 for directory in [RAW_DIR, INTERIM_DIR, PROCESSED_DIR, EXTERNAL_DIR,
                   RAW_KAGGLE_DIR, RAW_YAHOO_DIR,
                   INTERIM_COMMODITIES_DIR, INTERIM_PREDICTORS_DIR,
+                  INTERIM_CLIMATE_DIR, INTERIM_BDI_DIR, INTERIM_SUPPLY_DEMAND_DIR, INTERIM_FRED_DIR,
+                  EXTERNAL_CFTC_DIR, EXTERNAL_GDELT_DIR,
                   MODELS_DIR, FIGURES_DIR]:
     directory.mkdir(parents=True, exist_ok=True)
 
@@ -96,12 +106,18 @@ PREDICTORS_TICKERS = {
     'DXY': 'DX-Y.NYB',                # Dollar Index
     'SP500': '^GSPC',                 # S&P 500
     'Treasury_10Y': '^TNX',           # Tasas 10 años
+    'Treasury_2Y': '^IRX',            # Tasas 2 años (proxy Fed Funds)
     'Energy_Index': '^GSPE',          # Índice sector energía
     'Materials_Index': '^GSPMS',      # Índice sector materiales
 }
 
 # Kaggle Dataset
 KAGGLE_DATASET = 'mattiuzc/commodity-futures-price-history'
+
+# USDA ERS Yearbooks (Government Stocks)
+ERS_FEED_GRAINS_CSV = 'https://www.ers.usda.gov/webdocs/DataFiles/50048/FeedGrainsYearbook.csv'
+ERS_SOYBEANS_CSV = 'https://www.ers.usda.gov/webdocs/DataFiles/50594/oilcropsyearbook.csv'
+ERS_WHEAT_XLSX = 'https://www.ers.usda.gov/webdocs/DataFiles/53786/WheatYearbookTable04.xlsx'
 
 # ============================================================================
 # CONFIGURACIÓN DE VISUALIZACIONES
@@ -134,6 +150,15 @@ TEST_SIZE = 0.2
 COMMODITIES_PROCESSED_FILE = PROCESSED_DIR / 'commodities_base_daily.csv'
 PREDICTORS_PROCESSED_FILE = PROCESSED_DIR / 'predictors_consolidated.csv'
 FULL_DATASET_FILE = PROCESSED_DIR / 'full_dataset.csv'
+FINAL_MODELING_FILE = PROCESSED_DIR / 'features_final_modeling.csv'
+
+# Features académicas (outputs intermedios)
+CFTC_FEATURES_FILE = EXTERNAL_CFTC_DIR / 'cftc_features_2000_2025.csv'
+GDELT_FEATURES_FILE = EXTERNAL_GDELT_DIR / 'sentiment_features_2000_2025.csv'
+BDI_FEATURES_FILE = INTERIM_BDI_DIR / 'bdi_features.csv'
+CROP_CONDITIONS_FILE = INTERIM_SUPPLY_DEMAND_DIR / 'crop_conditions_all_features.csv'
+GOV_STOCKS_FILE = INTERIM_SUPPLY_DEMAND_DIR / 'government_stocks_ers_all_features.csv'
+FRED_FEATURES_FILE = INTERIM_FRED_DIR / 'fred_all_features.csv'
 
 # Metadata
 METADATA_FILE = PROCESSED_DIR / 'metadata.json'

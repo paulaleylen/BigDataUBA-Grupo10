@@ -18,6 +18,10 @@ setup(
         'seaborn>=0.12.0',
         'openpyxl>=3.1.0',
         'kaggle>=1.5.16',
+        'requests>=2.31.0',      # Para CFTC, GDELT, FRED APIs
+        'beautifulsoup4>=4.12.0', # Para web scraping (si necesario)
+        'python-dotenv>=1.0.0',  # Para .env con API keys
+        'tqdm>=4.65.0',          # Progress bars para downloads largos
     ],
     extras_require={
         'dev': [
