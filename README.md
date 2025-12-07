@@ -12,7 +12,7 @@
 |--------|-----------|--------|
 | Paula Leylén Ramirez| Licenciada en Economía - UNL | [@paulaleylen](https://github.com/paulaleylen) |
 | Juan Ignacio Pintos | Licenciado en Ciencia Política - UDELAR | [@juanpintoselso33](https://github.com/juanpintoselso33) |
-| Luis Mella| M.A Estadística aplicada - Universidad de Nebrija |
+| Luis Mella| M.A Estadística aplicada - Universidad de Nebrija | [@mella10g](https://github.com/mella10g) |
 
 ---
 
@@ -269,6 +269,7 @@ jupyter notebook notebooks/3.0-modeling/  # Explora notebooks de modelado
 
 **Universidad de Buenos Aires - Facultad de Ciencias Económicas**  
 **Taller de Programación - Big Data | 2025**
+
 
 
 
