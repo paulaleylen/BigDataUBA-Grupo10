@@ -12,14 +12,38 @@ install:  ## Instalar paquete en modo editable + dependencias
 install-prod:  ## Instalar solo dependencias de producción
 	pip install -e .
 
-data:  ## Descargar todos los datos (commodities + predictors)
+data:  ## Descargar todos los datos (commodities + predictors + features académicas)
+	@echo "=== FASE 1: Datos Core ==="
 	@echo "Descargando datos de commodities..."
 	python -m src.data.download_commodities
 	@echo ""
-	@echo "Descargando predictores..."
+	@echo "Descargando predictores macro..."
 	python -m src.data.download_predictors
 	@echo ""
-	@echo "Procesando datos..."
+	@echo "Descargando datos climáticos..."
+	python -m src.data.download_climate
+	@echo ""
+	@echo "=== FASE 2: Features Académicas ==="
+	@echo "Descargando CFTC Commitments of Traders..."
+	python -m src.data.download_cftc_cot
+	@echo ""
+	@echo "Descargando GDELT sentiment (puede tardar ~10min)..."
+	python -m src.data.download_sentiment_gdelt
+	@echo ""
+	@echo "Descargando Baltic Dry Index..."
+	python -m src.data.download_bdi
+	@echo ""
+	@echo "Descargando Crop Conditions (NASS)..."
+	python -m src.data.download_crop_conditions
+	@echo ""
+	@echo "Descargando Government Stocks (USDA ERS)..."
+	python -m src.data.download_government_stocks_ers
+	@echo ""
+	@echo "Descargando indicadores FRED..."
+	python -m src.data.download_fred
+	@echo ""
+	@echo "=== FASE 3: Procesamiento Final ==="
+	@echo "Procesando y consolidando datos..."
 	python -m src.data.process
 
 clean:  ## Limpiar datos intermedios y procesados

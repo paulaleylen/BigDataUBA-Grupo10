@@ -1,0 +1,64 @@
+{
+  "date": "2025-12-06 16:43:42",
+  "methodology": "Ensemble ARIMA + LSTM (residuals)",
+  "train_test_split": "70-30",
+  "lstm_seq_len": 30,
+  "arima_orders": {
+    "corn": [
+      2,
+      1,
+      3
+    ],
+    "soybeans": [
+      3,
+      1,
+      3
+    ],
+    "wheat": [
+      2,
+      1,
+      3
+    ]
+  },
+  "results": [
+    {
+      "commodity": "corn",
+      "arima_order": "(2, 1, 3)",
+      "arima_rmse": 168.45394789109997,
+      "arima_r2": -0.8386803022814917,
+      "arima_da": 49.949698189134814,
+      "ensemble_rmse": 169.02678044003676,
+      "ensemble_r2": -0.851206535725648,
+      "ensemble_da": 49.949698189134814,
+      "improvement_rmse_pct": -0.3400529082922445,
+      "improvement_r2": -0.012526233444156265,
+      "improvement_da_pp": 0.0
+    },
+    {
+      "commodity": "soybeans",
+      "arima_order": "(3, 1, 3)",
+      "arima_rmse": 305.7607044432432,
+      "arima_r2": -0.43003273208442483,
+      "arima_da": 54.0241448692153,
+      "ensemble_rmse": 305.5168072273612,
+      "ensemble_r2": -0.4277522435178749,
+      "ensemble_da": 53.82293762575453,
+      "improvement_rmse_pct": 0.0797673515064981,
+      "improvement_r2": 0.002280488566549943,
+      "improvement_da_pp": -0.20120724346077168
+    },
+    {
+      "commodity": "wheat",
+      "arima_order": "(2, 1, 3)",
+      "arima_rmse": 214.51419220235317,
+      "arima_r2": -1.2322210466044758,
+      "arima_da": 52.51509054325956,
+      "ensemble_rmse": 214.80580446778436,
+      "ensemble_r2": -1.2382941691160951,
+      "ensemble_da": 52.51509054325956,
+      "improvement_rmse_pct": -0.13594077969261026,
+      "improvement_r2": -0.006073122511619289,
+      "improvement_da_pp": 0.0
+    }
+  ]
+}

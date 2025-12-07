@@ -48,20 +48,38 @@ ENV/
 *.ipynb_checkpoints
 
 # ============================================================================
-# Data (IMPORTANTE: NO commitear datos crudos)
+# Data (IMPORTANTE: NO commitear datos crudos ni archivos grandes)
 # ============================================================================
-#data/raw/**
-#data/interim/**
-#data/processed/**
-#data/external/**
 
-# Excepciones: SÍ commitear estos archivos
+# Excluir archivos >100MB (CRÍTICO para evitar timeouts en git push)
+data/processed/features_final_modeling.csv
+data/processed/features_step*.csv
+
+# Excluir archivos GDELT y sentiment (muy pesados, 150-725 MB c/u)
+data/external/sentiment/**/*.csv
+data/external/sentiment/**/*.parquet
+data/external/sentiment/temp_batches_v1/**
+data/external/sentiment/gdelt_*.csv
+
+# Excluir archivos de datos crudos EPH (>60MB)
+**/usu_individual_T105.dta
+**/usu_individual_T125.xls
+
+# Excluir FUT86_16.txt (160 MB)
+FUT86_16.txt
+
+# Excepciones: SÍ commitear estos archivos pequeños/importantes
 !data/raw/.gitkeep
 !data/interim/.gitkeep
 !data/processed/.gitkeep
 !data/external/.gitkeep
 !data/interim/predictors/predictors_registry.json
-!data/processed/metadata.json
+!data/processed/metadata*.json
+!data/processed/selected_features_list.txt
+
+# Permitir CSVs pequeños (<10MB) si existen
+!data/processed/*_summary.csv
+!data/processed/*_metadata.csv
 
 # ============================================================================
 # Models (NO commitear modelos entrenados - son pesados)

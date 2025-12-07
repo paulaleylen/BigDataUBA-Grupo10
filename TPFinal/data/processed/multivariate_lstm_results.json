@@ -1,0 +1,50 @@
+{
+  "fecha_generacion": "2025-12-06T15:03:04.627798",
+  "model": "LSTM Multivariado con Attention",
+  "commodities": [
+    "Corn",
+    "Soybeans",
+    "Wheat"
+  ],
+  "horizon": 7,
+  "sequence_length": 30,
+  "temporal_features": [
+    "Corn_ma7",
+    "Corn_ma90",
+    "Soybeans_ma7",
+    "Wheat_ma90",
+    "Wheat_bb_upper30",
+    "Wheat_bb_upper7",
+    "Corn_price_to_ma7",
+    "Copper_bb_upper30",
+    "Copper_ma30",
+    "Corn_price_to_ma30"
+  ],
+  "static_features": [],
+  "results": {
+    "Corn": {
+      "test_r2": 0.7639387731642369,
+      "test_rmse": 35.76255085142776,
+      "test_dir_acc": 0.5473833097595474,
+      "overfitting_gap": 0.15805245507924048,
+      "epochs": 33,
+      "training_time_seconds": 175.45448389998637
+    },
+    "Soybeans": {
+      "test_r2": 0.8441414394926023,
+      "test_rmse": 69.01823860479536,
+      "test_dir_acc": 0.5134370579915134,
+      "overfitting_gap": 0.07838552504042051,
+      "epochs": 21,
+      "training_time_seconds": 107.07834340003319
+    },
+    "Wheat": {
+      "test_r2": -1.5585888118461706,
+      "test_rmse": 87.2523091090898,
+      "test_dir_acc": 0.45403111739745405,
+      "overfitting_gap": 2.456016413317899,
+      "epochs": 28,
+      "training_time_seconds": 173.49590390000958
+    }
+  }
+}
