@@ -1,6 +1,6 @@
 {
-  "fecha_generacion": "2025-12-07T16:51:43.534381",
-  "modelo": "LogisticRegression with L1 (LASSO)",
+  "fecha_generacion": "2025-12-08T18:56:48.943836",
+  "modelo": "LogisticRegression with Elastic Net / LASSO (config \u00f3ptima por commodity) + Platt Scaling",
   "commodities": [
     "Corn",
     "Soybeans",
@@ -11,137 +11,183 @@
     "t5": 5,
     "t21": 21
   },
-  "optimization": {
-    "cv_method": "TimeSeriesSplit",
-    "n_splits": 5,
-    "param_grid": {
-      "C": [
-        0.001,
-        0.01,
-        0.1,
-        0.5,
-        1.0,
-        5.0,
-        10.0,
-        50.0,
-        100.0
-      ]
+  "optimal_config_by_commodity": {
+    "Corn": {
+      "model_type": "ElasticNet_poly",
+      "C": 0.01,
+      "l1_ratio": 0.7,
+      "add_interactions": true,
+      "description": "Elastic Net (70% L1) + Polynomial Features"
     },
-    "refit_metric": "roc_auc"
+    "Soybeans": {
+      "model_type": "LASSO_puro",
+      "C": 0.5,
+      "l1_ratio": 1.0,
+      "add_interactions": false,
+      "description": "LASSO puro (L1)"
+    },
+    "Wheat": {
+      "model_type": "ElasticNet",
+      "C": 0.1,
+      "l1_ratio": 0.7,
+      "add_interactions": false,
+      "description": "Elastic Net (70% L1)"
+    }
+  },
+  "calibration": {
+    "method": "Platt Scaling (sigmoid)",
+    "cv": 5,
+    "avg_brier_improvement": -0.08154261377424275
   },
   "results": {
     "Corn": {
       "t1": {
-        "best_C": 0.5,
-        "n_features": 60,
-        "cv_auc": 0.5013048436221397,
+        "model_type": "Elastic Net (L1=70%, L2=30%)",
+        "best_C": 0.01,
+        "best_l1_ratio": 0.7,
+        "n_features": 17,
+        "sparsity_pct": 96.34408602150538,
+        "cv_auc": 0.4885296521409728,
         "test_metrics": {
-          "accuracy": 0.4852150537634409,
-          "roc_auc": 0.4877734318412284,
-          "precision": 0.4693446088794926,
-          "recall": 0.6271186440677966,
-          "f1": 0.5368802902055623
-        }
+          "accuracy": 0.4771505376344086,
+          "roc_auc": 0.5172316384180791,
+          "precision": 0.47619047619047616,
+          "recall": 0.9887005649717514,
+          "f1": 0.642791551882461
+        },
+        "brier_calibrated": null
       },
       "t5": {
-        "best_C": 5.0,
-        "n_features": 109,
-        "cv_auc": 0.5151524677624822,
+        "model_type": "Elastic Net (L1=70%, L2=30%)",
+        "best_C": 0.01,
+        "best_l1_ratio": 0.7,
+        "n_features": 31,
+        "sparsity_pct": 93.33333333333333,
+        "cv_auc": 0.5085828500968896,
         "test_metrics": {
-          "accuracy": 0.4905913978494624,
-          "roc_auc": 0.5322080456861965,
-          "precision": 0.4893292682926829,
-          "recall": 0.8794520547945206,
-          "f1": 0.6287952987267384
-        }
+          "accuracy": 0.5161290322580645,
+          "roc_auc": 0.5294104890302527,
+          "precision": 0.5174825174825175,
+          "recall": 0.20273972602739726,
+          "f1": 0.29133858267716534
+        },
+        "brier_calibrated": 0.25854047673132746
       },
       "t21": {
-        "best_C": 0.1,
-        "n_features": 83,
-        "cv_auc": 0.5735998342793417,
+        "model_type": "Elastic Net (L1=70%, L2=30%)",
+        "best_C": 0.01,
+        "best_l1_ratio": 0.7,
+        "n_features": 44,
+        "sparsity_pct": 90.53763440860216,
+        "cv_auc": 0.5337817706595739,
         "test_metrics": {
-          "accuracy": 0.5336021505376344,
-          "roc_auc": 0.6416207942068235,
-          "precision": 0.47892074198988194,
-          "recall": 0.8819875776397516,
-          "f1": 0.6207650273224044
-        }
+          "accuracy": 0.5147849462365591,
+          "roc_auc": 0.6906258279120425,
+          "precision": 0.4634146341463415,
+          "recall": 0.7670807453416149,
+          "f1": 0.5777777777777777
+        },
+        "brier_calibrated": 0.27154556430638355
       }
     },
     "Soybeans": {
       "t1": {
-        "best_C": 0.001,
-        "n_features": 0,
-        "cv_auc": 0.5,
+        "model_type": "LASSO (L1 puro)",
+        "best_C": 0.5,
+        "best_l1_ratio": 1.0,
+        "n_features": 51,
+        "sparsity_pct": 5.555555555555558,
+        "cv_auc": 0.494316005764497,
         "test_metrics": {
-          "accuracy": 0.5147849462365591,
-          "roc_auc": 0.5,
-          "precision": 0.0,
-          "recall": 0.0,
-          "f1": 0.0
-        }
+          "accuracy": 0.489247311827957,
+          "roc_auc": 0.4808010819959063,
+          "precision": 0.48600883652430044,
+          "recall": 0.9141274238227147,
+          "f1": 0.6346153846153846
+        },
+        "brier_calibrated": null
       },
       "t5": {
-        "best_C": 1.0,
+        "model_type": "LASSO (L1 puro)",
+        "best_C": 0.5,
+        "best_l1_ratio": 1.0,
         "n_features": 103,
-        "cv_auc": 0.5232801750316037,
+        "sparsity_pct": 6.36363636363636,
+        "cv_auc": 0.514387155809716,
         "test_metrics": {
-          "accuracy": 0.5188172043010753,
-          "roc_auc": 0.4636841952690166,
-          "precision": 0.3125,
-          "recall": 0.014204545454545454,
-          "f1": 0.02717391304347826
-        }
+          "accuracy": 0.521505376344086,
+          "roc_auc": 0.46345228432282004,
+          "precision": 0.3888888888888889,
+          "recall": 0.019886363636363636,
+          "f1": 0.03783783783783784
+        },
+        "brier_calibrated": 0.2552414873377337
       },
       "t21": {
-        "best_C": 0.25,
+        "model_type": "LASSO (L1 puro)",
+        "best_C": 0.5,
+        "best_l1_ratio": 1.0,
         "n_features": 99,
-        "cv_auc": 0.5527986655347668,
+        "sparsity_pct": 6.6037735849056585,
+        "cv_auc": 0.5518109549027168,
         "test_metrics": {
-          "accuracy": 0.45161290322580644,
-          "roc_auc": 0.5869620206078191,
-          "precision": 0.42998585572843,
-          "recall": 0.9838187702265372,
-          "f1": 0.5984251968503937
-        }
+          "accuracy": 0.4529569892473118,
+          "roc_auc": 0.5823643194583938,
+          "precision": 0.4309859154929577,
+          "recall": 0.9902912621359223,
+          "f1": 0.6005888125613347
+        },
+        "brier_calibrated": 0.30850596438655903
       }
     },
     "Wheat": {
       "t1": {
-        "best_C": 0.01,
-        "n_features": 2,
-        "cv_auc": 0.5021854468177093,
+        "model_type": "Elastic Net (L1=70%, L2=30%)",
+        "best_C": 0.1,
+        "best_l1_ratio": 0.7,
+        "n_features": 44,
+        "sparsity_pct": 27.86885245901639,
+        "cv_auc": 0.4917337348856434,
         "test_metrics": {
-          "accuracy": 0.46908602150537637,
-          "roc_auc": 0.4902356780275562,
-          "precision": 0.46938775510204084,
-          "recall": 0.9857142857142858,
-          "f1": 0.6359447004608295
-        }
+          "accuracy": 0.4946236559139785,
+          "roc_auc": 0.4966497461928935,
+          "precision": 0.46798029556650245,
+          "recall": 0.5428571428571428,
+          "f1": 0.5026455026455027
+        },
+        "brier_calibrated": null
       },
       "t5": {
-        "best_C": 2.0,
-        "n_features": 109,
-        "cv_auc": 0.5198759500353141,
+        "model_type": "Elastic Net (L1=70%, L2=30%)",
+        "best_C": 0.1,
+        "best_l1_ratio": 0.7,
+        "n_features": 86,
+        "sparsity_pct": 23.214285714285708,
+        "cv_auc": 0.5034361131248372,
         "test_metrics": {
-          "accuracy": 0.5067204301075269,
-          "roc_auc": 0.5376422770118023,
-          "precision": 0.4887459807073955,
-          "recall": 0.8611898016997167,
-          "f1": 0.6235897435897436
-        }
+          "accuracy": 0.510752688172043,
+          "roc_auc": 0.5529658100461518,
+          "precision": 0.4900900900900901,
+          "recall": 0.7705382436260623,
+          "f1": 0.5991189427312775
+        },
+        "brier_calibrated": 0.25799339552363576
       },
       "t21": {
-        "best_C": 0.005,
-        "n_features": 3,
-        "cv_auc": 0.5037949640389572,
+        "model_type": "Elastic Net (L1=70%, L2=30%)",
+        "best_C": 0.1,
+        "best_l1_ratio": 0.7,
+        "n_features": 90,
+        "sparsity_pct": 16.666666666666664,
+        "cv_auc": 0.5039630205201766,
         "test_metrics": {
-          "accuracy": 0.5766129032258065,
-          "roc_auc": 0.5502876041486993,
-          "precision": 0.47265625,
-          "recall": 0.4019933554817276,
-          "f1": 0.43447037701974867
-        }
+          "accuracy": 0.4771505376344086,
+          "roc_auc": 0.5715335638166233,
+          "precision": 0.4341317365269461,
+          "recall": 0.9634551495016611,
+          "f1": 0.5985552115583075
+        },
+        "brier_calibrated": 0.24432497528192568
       }
     }
   }

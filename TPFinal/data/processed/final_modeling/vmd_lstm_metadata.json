@@ -1,0 +1,138 @@
+{
+  "notebook": "4.3-vmd-lstm-classifier",
+  "timestamp": "2025-12-08T19:21:33.302225",
+  "objetivo": "Superar LASSO (4.2) en AUC",
+  "baseline": "logit_lasso_results_summary.csv (4.2)",
+  "vmd_config": {
+    "K": 5,
+    "alpha": 2000,
+    "tau": 0,
+    "DC": 0,
+    "init": 1,
+    "tol": 1e-07
+  },
+  "lstm_config": {
+    "sequence_length": 42,
+    "lstm_units_1": 64,
+    "lstm_units_2": 32,
+    "dropout_rate": 0.3,
+    "learning_rate": 0.001,
+    "batch_size": 32,
+    "epochs": 150,
+    "patience_es": 20,
+    "patience_lr": 10
+  },
+  "production_info": {
+    "Corn": {
+      "feature_list": [
+        "Corn_bb_upper90",
+        "Silver_bb_lower90",
+        "Soybean_Oil_bb_upper90",
+        "Oat_volume_bb_upper90",
+        "Gold_bb_lower90",
+        "Natural_Gas_bb_lower30",
+        "Coffee_volume_bb_upper90",
+        "Sugar_volume_bb_upper90",
+        "Treasury_10Y_bb_lower90",
+        "Heating_Oil_volume_bb_upper90",
+        "tone_ma30",
+        "Crude_Oil_volume_bb_upper90",
+        "Corn_bb_lower90",
+        "Sugar_volume_bb_upper30",
+        "Cocoa_volume_std30",
+        "Silver_std90",
+        "Natural_Gas_bb_upper30",
+        "Oat_volume_bb_lower90",
+        "Soybean_Meal_volume_bb_lower90",
+        "Copper_bb_lower90"
+      ],
+      "n_features": 21,
+      "sequence_length": 42,
+      "scale_imfs": false
+    },
+    "Soybeans": {
+      "feature_list": [
+        "Treasury_10Y_bb_lower90",
+        "tone_std",
+        "Soybean_Meal_bb_upper90",
+        "Palladium_std90",
+        "Soybeans_bb_lower90",
+        "Soybeans_volume_bb_upper90",
+        "USD_ARS_bb_lower90",
+        "Cocoa_volume_bb_upper90",
+        "Lumber_bb_upper30",
+        "USD_CNY_bb_lower90",
+        "Heating_Oil_volume_bb_upper90",
+        "WindSpeed_Global_Grain_bb_upper90",
+        "Energy_Index_bb_lower90",
+        "Corn_volume_ma30",
+        "Corn_volume_std30",
+        "ET0_Global_Grain_bb_lower30",
+        "Wheat_Kansas_bb_lower90",
+        "RBOB_Gasoline_bb_lower90",
+        "Cocoa_bb_upper90",
+        "Lumber_volume_bb_upper90"
+      ],
+      "n_features": 21,
+      "sequence_length": 42,
+      "scale_imfs": false
+    },
+    "Wheat": {
+      "feature_list": [
+        "Wheat_Kansas_bb_lower90",
+        "Heating_Oil_volume_bb_upper90",
+        "Wheat_volume_bb_upper90",
+        "Energy_Index_bb_upper90",
+        "Sugar_volume_bb_upper30",
+        "Copper_bb_lower90",
+        "Soybean_Oil_bb_upper90",
+        "Soybeans_volume_bb_upper30",
+        "Wheat_Kansas_bb_upper90",
+        "VIX_ma90",
+        "Cotton_volume_std90",
+        "Wheat_std30",
+        "Soybeans_volume_bb_lower90",
+        "Natural_Gas_bb_upper90",
+        "Corn_volume_std30",
+        "WindSpeed_Global_Grain_bb_upper90",
+        "Corn_volume_bb_lower90",
+        "Sugar_volume_bb_upper90",
+        "Corn_bb_lower90",
+        "Oat_bb_lower90"
+      ],
+      "n_features": 21,
+      "sequence_length": 42,
+      "scale_imfs": false
+    }
+  },
+  "resultados": {
+    "Corn": {
+      "vmd_lstm_auc": 0.6979352346999406,
+      "lasso_auc": 0.6906258279120425,
+      "delta_vs_lasso": 0.007309406787898043,
+      "beats_lasso": "True"
+    },
+    "Soybeans": {
+      "vmd_lstm_auc": 0.738115250134481,
+      "lasso_auc": 0.5823643194583938,
+      "delta_vs_lasso": 0.15575093067608714,
+      "beats_lasso": "True"
+    },
+    "Wheat": {
+      "vmd_lstm_auc": 0.7431542373310169,
+      "lasso_auc": 0.5715335638166233,
+      "delta_vs_lasso": 0.17162067351439358,
+      "beats_lasso": "True"
+    }
+  },
+  "notas": [
+    "VMD-LSTM se compara contra LASSO de notebook 4.2",
+    "Las IMFs NO se escalan - el LSTM aprende de su escala natural",
+    "Solo se escalan las features extras con StandardScaler"
+  ],
+  "literatura": [
+    "Zhang & Tang (2024): VMD-SGMD-LSTM mejora 74-76% vs LSTM",
+    "Frontiers (2024): VMD-LSTM mejora RMSE 74%",
+    "Wang (2016) Stanford: Corn 71-80% accuracy"
+  ]
+}
