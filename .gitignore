@@ -63,6 +63,8 @@ TP1/datos/base_completa_05+25.csv
 TP2/datos/base_final_tp2.csv
 TP2/datos/datos_finales_corregidos.xlsx
 TPFinal/data/external/psd_manual/psd_soybeans_all.csv
+TPFinal/data/external/sentiment/GDELT.MASTERREDUCEDV2.TXT
+TPFinal/gdelt-sentiment-480514-d6bace263798.json
 
 # Seguir trackeando JSONs, gitkeeps y archivos pequeños
 !TPFinal/data/.gitkeep
