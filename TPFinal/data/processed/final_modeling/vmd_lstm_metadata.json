@@ -1,6 +1,6 @@
 {
   "notebook": "4.3-vmd-lstm-classifier",
-  "timestamp": "2025-12-08T19:21:33.302225",
+  "timestamp": "2025-12-08T21:47:39.167864",
   "objetivo": "Superar LASSO (4.2) en AUC",
   "baseline": "logit_lasso_results_summary.csv (4.2)",
   "vmd_config": {
@@ -107,21 +107,21 @@
   },
   "resultados": {
     "Corn": {
-      "vmd_lstm_auc": 0.6979352346999406,
+      "vmd_lstm_auc": 0.6559054598270284,
       "lasso_auc": 0.6906258279120425,
-      "delta_vs_lasso": 0.007309406787898043,
-      "beats_lasso": "True"
+      "delta_vs_lasso": -0.03472036808501411,
+      "beats_lasso": "False"
     },
     "Soybeans": {
-      "vmd_lstm_auc": 0.738115250134481,
+      "vmd_lstm_auc": 0.7487980769230769,
       "lasso_auc": 0.5823643194583938,
-      "delta_vs_lasso": 0.15575093067608714,
+      "delta_vs_lasso": 0.16643375746468303,
       "beats_lasso": "True"
     },
     "Wheat": {
-      "vmd_lstm_auc": 0.7431542373310169,
+      "vmd_lstm_auc": 0.7991178727746527,
       "lasso_auc": 0.5715335638166233,
-      "delta_vs_lasso": 0.17162067351439358,
+      "delta_vs_lasso": 0.2275843089580294,
       "beats_lasso": "True"
     }
   },
