@@ -1,5 +1,5 @@
 {
-  "fecha_generacion": "2025-11-10T14:15:18.254408",
+  "fecha_generacion": "2025-12-09T23:46:14.487225",
   "archivo_input": "features_step2_rolling_stats.csv",
   "archivo_output": "features_step3_returns_volatility.csv",
   "dataset": {

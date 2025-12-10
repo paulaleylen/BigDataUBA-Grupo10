@@ -1,5 +1,5 @@
 {
-  "fecha_generacion": "2025-11-10T15:09:56.014757",
+  "fecha_generacion": "2025-12-10T00:09:51.421138",
   "archivo_input": "features_step3_returns_volatility.csv",
   "archivo_output": "features_step4_climate.csv",
   "dataset": {
