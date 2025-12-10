@@ -1,0 +1,23 @@
+{
+  "notebook": "4.8-lasso-elasticnet-optimized",
+  "timestamp": "2025-12-08T18:19:17.078713",
+  "horizon": "t21",
+  "configs_tested": [
+    "LASSO_puro",
+    "ElasticNet",
+    "LASSO_poly",
+    "ElasticNet_poly"
+  ],
+  "best_per_commodity": {
+    "Corn": "LASSO_poly",
+    "Soybeans": "LASSO_puro",
+    "Wheat": "LASSO_puro"
+  },
+  "literature_references": [
+    "Garcia-Carretero (2020): Elastic Net AUC=0.76",
+    "Van Peer (EUR Thesis): LASSO/Ridge/EN for commodity prices",
+    "Fj\u00f8sne (2025): EN with fractional polynomials",
+    "IJITCS (2025): Ensemble with LASSO for agricultural prices",
+    "Healthcare Analytics (2024): RFE + Logit"
+  ]
+}

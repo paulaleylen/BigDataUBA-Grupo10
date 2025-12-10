@@ -1,0 +1,88 @@
+{
+  "fecha_generacion": "2025-12-07T17:24:08.606035",
+  "gpu_used": false,
+  "mejoras_implementadas": [
+    "Elastic Net (L1 + L2)",
+    "Threshold Optimization (Youdens J)",
+    "Probability Calibration (Platt Scaling)"
+  ],
+  "literatura_consultada": [
+    "DiVA portal (2021) - Elastic Net vs LASSO",
+    "EUR thesis (2022) - Stock prediction regularization",
+    "PMC (2023) - Clinical biostatistics regularization",
+    "MachineLearningMastery - Threshold optimization"
+  ],
+  "resultados": {
+    "Corn": {
+      "t5": {
+        "elastic_net_params": {
+          "C": 2.0,
+          "l1_ratio": 1.0
+        },
+        "elastic_net_auc": 0.532656233057433,
+        "optimal_threshold": 0.9877676988798378,
+        "f1_with_opt_threshold": 0.3333333333333333,
+        "brier_calibrated": 0.2571405085411736
+      },
+      "t21": {
+        "elastic_net_params": {
+          "C": 0.01,
+          "l1_ratio": 0.5
+        },
+        "elastic_net_auc": 0.6060978481646111,
+        "optimal_threshold": 0.5175641383641875,
+        "f1_with_opt_threshold": 0.6255707762557078,
+        "brier_calibrated": 0.2569369949164144
+      }
+    },
+    "Soybeans": {
+      "t5": {
+        "elastic_net_params": {
+          "C": 1.0,
+          "l1_ratio": 1.0
+        },
+        "elastic_net_auc": 0.4636841952690166,
+        "optimal_threshold": 0.36423478047917923,
+        "f1_with_opt_threshold": 0.2222222222222222,
+        "brier_calibrated": 0.2548393524549285
+      },
+      "t21": {
+        "elastic_net_params": {
+          "C": 0.5,
+          "l1_ratio": 1.0
+        },
+        "elastic_net_auc": 0.5823643194583938,
+        "optimal_threshold": 1.0,
+        "f1_with_opt_threshold": 0.5308056872037915,
+        "brier_calibrated": 0.31449460871177226
+      }
+    },
+    "Wheat": {
+      "t5": {
+        "elastic_net_params": {
+          "C": 2.0,
+          "l1_ratio": 1.0
+        },
+        "elastic_net_auc": 0.5376422770118023,
+        "optimal_threshold": 0.7928768230449602,
+        "f1_with_opt_threshold": 0.4923547400611621,
+        "brier_calibrated": 0.2504130569664994
+      },
+      "t21": {
+        "elastic_net_params": {
+          "C": 0.1,
+          "l1_ratio": 0.7
+        },
+        "elastic_net_auc": 0.5715335638166233,
+        "optimal_threshold": 0.6040613861197612,
+        "f1_with_opt_threshold": 0.591792656587473,
+        "brier_calibrated": 0.24432497528192568
+      }
+    }
+  },
+  "impacto_promedio": {
+    "delta_auc_elasticnet": -0.003071083358746174,
+    "delta_f1_threshold": -0.022856690148136172,
+    "delta_brier_calibration": -0.1253436933448654
+  }
+}

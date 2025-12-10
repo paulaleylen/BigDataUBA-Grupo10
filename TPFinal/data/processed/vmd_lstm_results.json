@@ -1,0 +1,43 @@
+{
+  "fecha_generacion": "2025-12-06T15:24:08.002349",
+  "model": "VMD-LSTM Decomposition",
+  "commodities": [
+    "Corn",
+    "Soybeans",
+    "Wheat"
+  ],
+  "horizon": 7,
+  "vmd_config": {
+    "K_modes": 5,
+    "alpha": 2000,
+    "tau": 0
+  },
+  "lstm_config": {
+    "sequence_length": 30,
+    "lstm_units": 32,
+    "dropout": 0.2
+  },
+  "results": {
+    "Corn": {
+      "test_r2": 0.7940081612118568,
+      "test_rmse": 32.96041076106777,
+      "test_dir_acc": 0.4194915254237288,
+      "overfitting_gap": 0.2046806112221451,
+      "training_time_seconds": 105.08745919994544
+    },
+    "Soybeans": {
+      "test_r2": 0.9294132808821662,
+      "test_rmse": 46.17410509961073,
+      "test_dir_acc": 0.4689265536723164,
+      "overfitting_gap": 0.06849553115102247,
+      "training_time_seconds": 159.42034990002867
+    },
+    "Wheat": {
+      "test_r2": 0.8805145572227369,
+      "test_rmse": 18.4527670458757,
+      "test_dir_acc": 0.6426553672316384,
+      "overfitting_gap": 0.11446341975241692,
+      "training_time_seconds": 93.44880909996573
+    }
+  }
+}

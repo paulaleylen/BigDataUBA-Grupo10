@@ -1,0 +1,24 @@
+{
+  "config": {
+    "VARIANCE_THRESHOLD": 0.01,
+    "CORR_THRESHOLD": 0.95,
+    "MI_TOP_K": 150,
+    "LASSO_C": 0.1,
+    "SPLIT_DATE": "2023-01-01",
+    "HORIZONS": {
+      "t1": 1,
+      "t5": 5,
+      "t21": 21
+    },
+    "TARGET_COMMODITIES": [
+      "Corn",
+      "Soybeans",
+      "Wheat"
+    ]
+  },
+  "pipeline_summary": {
+    "original_features": 3224,
+    "after_variance": 3056,
+    "after_correlation": 1794
+  }
+}

@@ -14,6 +14,10 @@ openpyxl>=3.1.0            # Lectura de archivos Excel
 # =============================================================================
 yfinance>=0.2.40           # Yahoo Finance API (descarga automática)
 kaggle>=1.6.0              # Kaggle API (descarga automática de datasets)
+requests>=2.31.0           # HTTP requests para APIs (CFTC, GDELT, FRED)
+beautifulsoup4>=4.12.0     # Web scraping (si necesario)
+python-dotenv>=1.0.0       # Cargar variables de entorno desde .env
+tqdm>=4.65.0               # Progress bars para downloads largos
 
 # =============================================================================
 # Data Visualization
@@ -49,4 +53,12 @@ notebook>=7.0.0            # Interfaz Jupyter
 #   2. Ir a Settings > API > Create New Token
 #   3. Guardar kaggle.json en ~/.kaggle/ (Linux/Mac) o C:\Users\<user>\.kaggle\ (Windows)
 #   4. Verificar: kaggle datasets list
+#
+# Configurar API Keys (Features Académicas):
+#   Crear archivo .env en raíz del proyecto con:
+#     NASS_API_KEY=tu_key_aqui     # https://quickstats.nass.usda.gov/api
+#     FRED_API_KEY=tu_key_aqui     # https://fred.stlouisfed.org/docs/api/api_key.html
+#
+# Ejecutar pipeline completo:
+#   make data  (o ejecutar scripts manualmente si make no funciona en Windows)
 

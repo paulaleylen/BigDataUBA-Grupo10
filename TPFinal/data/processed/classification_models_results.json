@@ -1,0 +1,108 @@
+{
+  "fecha_generacion": "2025-12-06T15:09:15.194128",
+  "models": [
+    "Logistic Regression",
+    "Random Forest Classifier"
+  ],
+  "commodities": [
+    "Corn",
+    "Soybeans",
+    "Wheat"
+  ],
+  "split_date": "2023-01-01",
+  "results": [
+    {
+      "Commodity": "Corn",
+      "Model": "Logistic Regression",
+      "Test Accuracy": 0.5318860244233379,
+      "Test AUC": 0.5649874055415617,
+      "Test Precision": 0.49523809523809526,
+      "Test Recall": 0.7647058823529411,
+      "Test F1": 0.6011560693641619,
+      "Overfitting Gap": 0.08044068344370736
+    },
+    {
+      "Commodity": "Corn",
+      "Model": "Random Forest (Regularized)",
+      "Test Accuracy": 0.6268656716417911,
+      "Test AUC": 0.6683064157652986,
+      "Test Precision": 0.5905292479108635,
+      "Test Recall": 0.6235294117647059,
+      "Test F1": 0.6065808297567954,
+      "Overfitting Gap": 0.2052706236647064
+    },
+    {
+      "Commodity": "Soybeans",
+      "Model": "Logistic Regression",
+      "Test Accuracy": 0.5943012211668928,
+      "Test AUC": 0.595819178735324,
+      "Test Precision": 0.5528169014084507,
+      "Test Recall": 0.47720364741641336,
+      "Test F1": 0.5122349102773246,
+      "Overfitting Gap": 0.011344344224789249
+    },
+    {
+      "Commodity": "Soybeans",
+      "Model": "Random Forest (Regularized)",
+      "Test Accuracy": 0.5590230664857531,
+      "Test AUC": 0.5814932355921092,
+      "Test Precision": 0.5046511627906977,
+      "Test Recall": 0.6595744680851063,
+      "Test F1": 0.5718050065876152,
+      "Overfitting Gap": 0.21715866058957678
+    },
+    {
+      "Commodity": "Wheat",
+      "Model": "Logistic Regression",
+      "Test Accuracy": 0.5305291723202171,
+      "Test AUC": 0.5554658774997758,
+      "Test Precision": 0.47834645669291337,
+      "Test Recall": 0.75,
+      "Test F1": 0.5841346153846154,
+      "Overfitting Gap": 0.0607519367494338
+    },
+    {
+      "Commodity": "Wheat",
+      "Model": "Random Forest (Regularized)",
+      "Test Accuracy": 0.5644504748982361,
+      "Test AUC": 0.622642214450124,
+      "Test Precision": 0.5041095890410959,
+      "Test Recall": 0.5679012345679012,
+      "Test F1": 0.5341074020319303,
+      "Overfitting Gap": 0.26050359224724584
+    }
+  ],
+  "best_hyperparameters": {
+    "logistic": {
+      "Corn": 0.1,
+      "Soybeans": 100,
+      "Wheat": 0.01
+    },
+    "random_forest": {
+      "Corn": {
+        "class_weight": "balanced",
+        "max_depth": 8,
+        "max_features": 0.5,
+        "min_samples_leaf": 20,
+        "min_samples_split": 50,
+        "n_estimators": 100
+      },
+      "Soybeans": {
+        "class_weight": "balanced",
+        "max_depth": 8,
+        "max_features": 0.5,
+        "min_samples_leaf": 50,
+        "min_samples_split": 50,
+        "n_estimators": 200
+      },
+      "Wheat": {
+        "class_weight": "balanced",
+        "max_depth": 8,
+        "max_features": 0.3,
+        "min_samples_leaf": 20,
+        "min_samples_split": 50,
+        "n_estimators": 100
+      }
+    }
+  }
+}

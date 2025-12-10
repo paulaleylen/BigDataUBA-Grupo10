@@ -1,0 +1,88 @@
+{
+  "fecha_generacion": "2025-12-07T17:44:05.379551",
+  "modelo": "LSTM Classifier",
+  "tensorflow_version": "2.18.0",
+  "gpu_available": false,
+  "configuracion": {
+    "sequence_length": 21,
+    "lstm_units_1": 64,
+    "lstm_units_2": 32,
+    "dropout_rate": 0.3,
+    "learning_rate": 0.001,
+    "batch_size": 32,
+    "epochs": 150,
+    "validation_split": 0.15
+  },
+  "arquitectura": {
+    "lstm_layers": 2,
+    "lstm_units": [
+      64,
+      32
+    ],
+    "dropout_rate": 0.3,
+    "dense_units": 16,
+    "regularization": "L2(0.001)",
+    "batch_normalization": true
+  },
+  "literatura_base": [
+    "Nature Scientific Reports (2025) - 128 units, early stopping",
+    "MDPI Agriculture (2024) - 200 epochs, lr=0.005, batch=32",
+    "PMC BiLSTM (2024) - 2 layers, 24 timesteps",
+    "Frontiers (2024) - VMD-LSTM hybrid"
+  ],
+  "resultados": {
+    "Corn": {
+      "t5": {
+        "auc": 0.53189045124529,
+        "accuracy": 0.5034578146611342,
+        "f1": 0.3364140480591497,
+        "delta_vs_lasso": -0.0003175944409065101,
+        "epochs_trained": 24
+      },
+      "t21": {
+        "auc": 0.6672920282038054,
+        "accuracy": 0.44398340248962653,
+        "f1": 0.6058823529411764,
+        "delta_vs_lasso": 0.0256712339969819,
+        "epochs_trained": 16
+      }
+    },
+    "Soybeans": {
+      "t5": {
+        "auc": 0.5128380559954491,
+        "accuracy": 0.5006915629322268,
+        "f1": 0.2100656455142232,
+        "delta_vs_lasso": 0.04915386072643246,
+        "epochs_trained": 18
+      },
+      "t21": {
+        "auc": 0.5702001400025456,
+        "accuracy": 0.5961272475795297,
+        "f1": 0.0,
+        "delta_vs_lasso": -0.016761880605273505,
+        "epochs_trained": 31
+      }
+    },
+    "Wheat": {
+      "t5": {
+        "auc": 0.48925242971856714,
+        "accuracy": 0.48824343015214383,
+        "f1": 0.24489795918367346,
+        "delta_vs_lasso": -0.0483898472932352,
+        "epochs_trained": 19
+      },
+      "t21": {
+        "auc": 0.606423324958794,
+        "accuracy": 0.5933609958506224,
+        "f1": 0.5050505050505051,
+        "delta_vs_lasso": 0.05613572081009477,
+        "epochs_trained": 27
+      }
+    }
+  },
+  "resumen": {
+    "avg_delta_auc_vs_lasso": 0.01091524886568232,
+    "lstm_wins": 3,
+    "total_comparisons": 6
+  }
+}
